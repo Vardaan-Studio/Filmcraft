@@ -3,21 +3,24 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
 
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
+int main(int argc, char *argv[]) {
+    QGuiApplication app(argc, argv);
+    QQmlApplicationEngine engine;
 
-    QTranslator translator;
-    const QStringList uiLanguages = QLocale::system().uiLanguages();
-    for (const QString &locale : uiLanguages) {
-        const QString baseName = "Vardaancode_" + QLocale(locale).name();
-        if (translator.load(":/i18n/" + baseName)) {
-            a.installTranslator(&translator);
-            break;
-        }
+    // Load the main QML file
+    engine.load(QUrl(QStringLiteral("qrc:/App.qml")));
+
+    // Check if the loading failed
+    if (engine.rootObjects().isEmpty()) {
+        return -1;  // Exit if there was an error
     }
-    MainWindow w;
-    w.show();
-    return a.exec();
+
+    return app.exec();  // Start the application event loop
 }
+
+
+
+

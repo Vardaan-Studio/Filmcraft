@@ -42,6 +42,8 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "E:/Mission-Vardaan-Studio/Vardaancode/*.cpp")
 set(OLD_GLOB
   "E:/Mission-Vardaan-Studio/Vardaancode/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "E:/Mission-Vardaan-Studio/Vardaancode/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/Vardaancode_autogen/EWIEGA46WW/moc_mainwindow.cpp"
+  "E:/Mission-Vardaan-Studio/Vardaancode/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/Vardaancode_autogen/mocs_compilation.cpp"
   "E:/Mission-Vardaan-Studio/Vardaancode/main.cpp"
   "E:/Mission-Vardaan-Studio/Vardaancode/mainwindow.cpp"
   )
@@ -62,6 +64,8 @@ endif()
 # _directory_contents at C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "E:/Mission-Vardaan-Studio/Vardaancode/*.h")
 set(OLD_GLOB
+  "E:/Mission-Vardaan-Studio/Vardaancode/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/Vardaancode_autogen/include/ui_mainwindow.h"
+  "E:/Mission-Vardaan-Studio/Vardaancode/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/Vardaancode_autogen/moc_predefs.h"
   "E:/Mission-Vardaan-Studio/Vardaancode/mainwindow.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

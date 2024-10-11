@@ -1,6 +1,6 @@
 MetaInfo {
     Type {
-        name: "EditorUI.EventListSimulator"
+        name: "VardaanUI.EventListSimulator"
         icon: ":/qtquickplugin/images/item-icon16.png"
 
         Hints {

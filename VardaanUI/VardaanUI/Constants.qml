@@ -22,6 +22,6 @@ QtObject {
 
 
     property StudioApplication application: StudioApplication {
-        fontPath: Qt.resolvedUrl("../EditorUIContent/" + relativeFontDirectory)
+        fontPath: Qt.resolvedUrl("../VardaanUIContent/" + relativeFontDirectory)
     }
 }
