@@ -9,16 +9,25 @@ Rectangle {
     color: "lightgrey" // Background color for visibility
 
     // Define a signal that will be emitted
-    signal mediaImported()
+    signal mediaImported
 
     // Button for user interaction
     Button {
         id: importButton
         text: "Import Media"
-        anchors.centerIn: parent  // Center the button in the parent Rectangle
+        anchors.centerIn: parent // Center the button in the parent Rectangle
 
         // Emit the signal when the button is clicked
-        onClicked: mediaImported  // Emit the signal
+        onClicked: mediaImported // Emit the signal
+    }
 
+    Text {
+        id: _text
+        x: 60
+        y: 309
+        width: 100
+        height: 36
+        text: qsTr("Example")
+        font.pixelSize: 26
     }
 }
