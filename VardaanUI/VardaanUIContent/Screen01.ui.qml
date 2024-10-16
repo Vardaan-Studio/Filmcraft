@@ -30,4 +30,14 @@ Rectangle {
         text: qsTr("Example")
         font.pixelSize: 26
     }
+
+    Text {
+        id: _text1
+        x: 435
+        y: 336
+        width: 81
+        height: 62
+        text: qsTr("Het Anghan")
+        font.pixelSize: 12
+    }
 }
