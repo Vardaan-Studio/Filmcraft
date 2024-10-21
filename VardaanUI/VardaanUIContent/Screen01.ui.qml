@@ -50,4 +50,14 @@ Rectangle {
         text: qsTr("Deep Patel")
         font.pixelSize: 12
     }
+
+    Text {
+        id: _text3
+        x: 158
+        y: 232
+        width: 77
+        height: 57
+        text: qsTr("Het Mistry")
+        font.pixelSize: 12
+    }
 }
