@@ -14,9 +14,9 @@ qt6_add_qml_module(VardaanUI
     VERSION 1.0
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
+        "EventListSimulator.qml"
         "EventListModel.qml"
         "Constants.qml"
-        "EventListSimulator.qml"
 )
 
 

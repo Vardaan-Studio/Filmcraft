@@ -60,4 +60,14 @@ Rectangle {
         text: qsTr("Het Mistry")
         font.pixelSize: 12
     }
+
+    Text {
+        id: _text4
+        x: 207
+        y: 406
+        width: 62
+        height: 43
+        text: qsTr("Vansh Vaghela")
+        font.pixelSize: 12
+    }
 }
