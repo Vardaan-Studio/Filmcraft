@@ -11,63 +11,14 @@ Rectangle {
     // Define a signal that will be emitted
     signal mediaImported
 
+    TabButton {
+        id: tabButton
+        x: 0
+        y: 0
+        width: 72
+        height: 23
+        text: qsTr("Tab Button")
+    }
+
     // Button for user interaction
-    Button {
-        id: importButton
-        text: "Import Media"
-        anchors.centerIn: parent // Center the button in the parent Rectangle
-
-        // Emit the signal when the button is clicked
-        onClicked: mediaImported // Emit the signal
-    }
-
-    Text {
-        id: _text
-        x: 60
-        y: 309
-        width: 100
-        height: 36
-        text: qsTr("Example")
-        font.pixelSize: 26
-    }
-
-    Text {
-        id: _text1
-        x: 435
-        y: 336
-        width: 81
-        height: 62
-        text: qsTr("Het Anghan")
-        font.pixelSize: 12
-    }
-
-    Text {
-        id: _text2
-        x: 362
-        y: 105
-        width: 107
-        height: 65
-        text: qsTr("Deep Patel")
-        font.pixelSize: 12
-    }
-
-    Text {
-        id: _text3
-        x: 158
-        y: 232
-        width: 77
-        height: 57
-        text: qsTr("Het Mistry")
-        font.pixelSize: 12
-    }
-
-    Text {
-        id: _text4
-        x: 207
-        y: 406
-        width: 62
-        height: 43
-        text: qsTr("Vansh Vaghela")
-        font.pixelSize: 12
-    }
 }
