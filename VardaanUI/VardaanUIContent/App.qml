@@ -12,19 +12,18 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         spacing: 10 // Space between logo and menu bar
+        height: 60 // Adjust height of the header row for better spacing
 
         // Add your studio logo
         Image {
             id: logo
-            source: "C://Users//Lenovo//Downloads//vardaan.jpg" // Path to your logo image
-            width: 100 // Set the width of the logo
+            source: "images/vardaan.png" // Path to your logo image
+            width: 130 // Set the width of the logo
             height: 50 // Set the height of the logo
-            // Optional: Ensure the image is scaled to fit
             fillMode: Image.PreserveAspectFit
         }
 
         MenuBar {
-            // Menu bar settings
             anchors.verticalCenter: parent.verticalCenter // Center the menu bar vertically
 
             Menu {
@@ -79,6 +78,60 @@ Item {
                 MenuItem { text: "Suggest Feature" }
                 MenuItem { text: "Feedback" }
                 MenuItem { text: "About Vardaan Studio" }
+            }
+        }
+    }
+
+    // Horizontal feature bar
+    Row {
+        id: featureBar
+        anchors.top: logo.bottom // Position below the header row
+        anchors.topMargin: 20 // Add margin to separate from the header row
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: 200 // Set height for the feature bar
+        spacing: 30 // Adjust spacing between icons for better readability
+        padding: 10 // Extra padding around icons
+
+        // Feature icons
+        Repeater {
+            model: [
+                { name: "Media", icon: "images/soundtrack.png" },
+                { name: "Text", icon: "images/text.png" },
+                { name: "Transition", icon: "images/exchange.png" },
+                { name: "Effects", icon: "images/effects.png" },
+                { name: "Filters", icon: "images/magic-wand.png" },
+                { name: "Colour Grade", icon: "images/color-palette.png" }
+            ]
+
+            delegate: Rectangle {
+                width: 60 // Width of each box
+                height: 60  // Height of each box
+                color: "#e0e0e0"  // Background color of the box
+                radius: 8  // Optional: rounded corners
+                border.color: "#a0a0a0"
+                border.width: 1
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.margins: 5  // Space between boxes
+
+                Column {
+                    anchors.centerIn: parent
+                    spacing: 5
+
+                    Image {
+                        source: modelData.icon
+                        width: 30  // Icon width
+                        height: 30  // Icon height
+                        fillMode: Image.PreserveAspectFit
+                    }
+
+                    Text {
+                        text: modelData.name
+                        font.pixelSize: 12  // Font size for all items
+                        horizontalAlignment: Text.AlignHCenter
+                        color: "#333333"  // Text color
+                    }
+                }
             }
         }
     }

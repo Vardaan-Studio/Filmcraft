@@ -11,6 +11,14 @@ qt6_add_qml_module(VardaanUIContent
     QML_FILES
         "App.qml"
         "Screen01.ui.qml"
+    RESOURCES
+        "images/vardaan.png"
+        "images/soundtrack.png"
+        "images/text.png"
+        "images/exchange.png"
+        "images/color-palette.png"
+        "images/effects.png"
+        "images/magic-wand.png"
 )
 
 
