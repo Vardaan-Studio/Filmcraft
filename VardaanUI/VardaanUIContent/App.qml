@@ -142,5 +142,114 @@ Item {
             }
         }
     }
+
+
+    // Tool Bar
+    Row {
+        id: toolBar
+        anchors.top: featureBar.bottom // Position it below the feature bar
+        anchors.topMargin: 320 // Increase margin for more space
+        anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
+        anchors.left: parent.left
+        anchors.right: parent.right
+        spacing: 20 // Space between the tool buttons
+        height: 50 // Set height for the toolbar
+
+        // Tool buttons with icons
+        Button {
+            text: "Undo"
+            icon.source: "images/undo.png" // Path to the Undo icon
+        }
+
+        Button {
+            text: "Redo"
+            icon.source: "images/forward.png" // Path to the Redo icon
+        }
+
+        Button {
+            text: "Delete"
+            icon.source: "images/delete.png" // Path to the Delete icon
+        }
+
+        Button {
+            text: "Crop"
+            icon.source: "images/crop.png" // Path to the Crop icon
+        }
+
+        Button {
+            text: "Text"
+            icon.source: "images/text.png" // Path to the Text icon
+        }
+
+        Button {
+            text: "Speed"
+            icon.source: "images/download-speed.png" // Path to the Speed icon
+        }
+
+
+        Rectangle {
+            width: 700 // Adjust width as needed to create space for future tools
+            height: toolBar.height
+            color: "transparent" // Make it invisible
+        }
+
+
+        Text {
+            text: "Timeline Size Adjust:"
+            font.pixelSize: 12
+            verticalAlignment: Text.AlignVCenter // Center vertically
+            anchors.verticalCenter: parent.verticalCenter // Center it with respect to the toolbar
+        }
+
+        Rectangle {
+            width: 30 // Width of the circle
+            height: 30 // Height of the circle
+            color: "#e0e0e0" // Background color
+            radius: 15 // Makes it circular
+            anchors.verticalCenter: parent.verticalCenter // Center it vertically
+
+            Text {
+                text: "-"
+                anchors.centerIn: parent // Center text in the circle
+                font.pixelSize: 18 // Font size for better visibility
+            }
+        }
+
+        // Label for the timeline size adjust
+
+
+        // Slider for adjusting timeline size
+        Slider {
+            id: timelineSizeSlider
+            width: 150 // Adjust width as needed
+            from: 0 // Minimum value
+            to: 100 // Maximum value
+            stepSize: 1 // Increment step size
+            anchors.verticalCenter: parent.verticalCenter // Center vertically
+        }
+
+        // Circle for the plus sign
+        Rectangle {
+            width: 30 // Width of the circle
+            height: 30 // Height of the circle
+            color: "#e0e0e0" // Background color
+            radius: 15 // Makes it circular
+            anchors.verticalCenter: parent.verticalCenter // Center it vertically
+
+            Text {
+                text: "+"
+                anchors.centerIn: parent // Center text in the circle
+                font.pixelSize: 18 // Font size for better visibility
+            }
+        }
+
+
+
+
+    }
+
+
+
+
     // Main content area
 }
