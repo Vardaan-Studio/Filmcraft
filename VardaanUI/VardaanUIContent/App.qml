@@ -142,6 +142,5 @@ Item {
             }
         }
     }
-
     // Main content area
 }
