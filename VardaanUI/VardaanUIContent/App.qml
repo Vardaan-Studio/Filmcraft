@@ -97,16 +97,18 @@ Item {
         Repeater {
             model: [
                 { name: "Media", icon: "images/soundtrack.png" },
-                { name: "Text", icon: "images/text.png" },
+                { name: " Text", icon: "images/text.png" },
                 { name: "Transition", icon: "images/exchange.png" },
                 { name: "Effects", icon: "images/effects.png" },
                 { name: "Filters", icon: "images/magic-wand.png" },
-                { name: "Colour Grade", icon: "images/color-palette.png" }
+                { name: "Colour Grade", icon: "images/color-palette.png"}
             ]
 
+
+
             delegate: Rectangle {
-                width: 60 // Width of each box
-                height: 60  // Height of each box
+                width: 80 // Width of each box
+                height: 70  // Height of each box
                 color: "#e0e0e0"  // Background color of the box
                 radius: 8  // Optional: rounded corners
                 border.color: "#a0a0a0"
@@ -118,12 +120,17 @@ Item {
                     anchors.centerIn: parent
                     spacing: 5
 
+
                     Image {
                         source: modelData.icon
                         width: 30  // Icon width
                         height: 30  // Icon height
                         fillMode: Image.PreserveAspectFit
+                        anchors.horizontalCenter: parent.horizontalCenter // Center the icon horizontally
+                        anchors.left: parent.left  // Align to the left of the parent
+                        anchors.leftMargin: modelData.name === "Colour Grade" ? modelData.offset : 0 // Apply offset if it's Colour Grade
                     }
+
 
                     Text {
                         text: modelData.name
