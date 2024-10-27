@@ -288,6 +288,16 @@ Item {
 
     }
 
+    Rectangle {
+        id: rectangle
+        x: 14
+        y: 151
+        width: 742
+        height: 348
+        color: "#ffffff"
+        border.width: 2
+    }
+
 
 
 
