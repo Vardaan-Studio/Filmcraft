@@ -146,10 +146,16 @@ Item {
     Row {
            id: editingBar
            anchors.top: featureBar.bottom // Position it below the feature bar
-           anchors.topMargin: 20 // Margin for spacing
+           anchors.topMargin: 270 // Margin for spacing
            anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
            spacing: 10 // Space between the buttons
            height: 50 // Set height for the editing bar
+
+           Rectangle {
+               width: 980 // Adjust width as needed to create space for future tools
+               height: toolBar.height
+               color: "transparent" // Make it invisible
+           }
 
            // Step Back Button
            Button {
