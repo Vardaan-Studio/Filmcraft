@@ -86,8 +86,8 @@ Item {
    Button
     {
     text: "Export";
-    x:1812;
-    y:50;
+    x:1812
+    y:10
     spacing:10;
     width: 100
     font.pixelSize: 15;
@@ -99,7 +99,10 @@ Item {
     // Horizontal feature bar
     Row {
         id: featureBar
-        anchors.top: logo.bottom // Position below the header row
+        y: 28
+        anchors.top: logo.bottom
+        anchors.leftMargin: 55
+        anchors.rightMargin: -14 // Position below the header row
         anchors.topMargin: 20 // Add margin to separate from the header row
         anchors.left: parent.left
         anchors.right: parent.right
@@ -160,8 +163,8 @@ Item {
     Row {
            id: editingBar
            anchors.top: featureBar.bottom // Position it below the feature bar
-           anchors.topMargin: 270
-           anchors.horizontalCenterOffset: 505 // Margin for spacing
+           anchors.topMargin: 235
+           anchors.horizontalCenterOffset: -48 // Margin for spacing
            anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
            spacing: 10 // Space between the buttons
            height: 50 // Set height for the editing bar
@@ -198,7 +201,7 @@ Item {
        Rectangle {
         id: rectangle1
         x: 1581
-        y: 470
+        y: 463
         width: 339
         height: 50
         color: "transparent"
@@ -226,8 +229,10 @@ Item {
     // Tool Bar
     Row {
         id: toolBar
-        anchors.top: featureBar.bottom // Position it below the feature bar
-        anchors.topMargin: 320 // Increase margin for more space
+        anchors.top: featureBar.bottom
+        anchors.leftMargin: 0 // Position it below the feature bar
+        anchors.topMargin: 287
+        anchors.horizontalCenterOffset: 0 // Increase margin for more space
         anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
         anchors.left: parent.left
         anchors.right: parent.right
@@ -329,20 +334,20 @@ Item {
 
     Rectangle {
         id: rectangle
-        x: 14
-        y: 151
-        width: 742
-        height: 348
+        x: 163
+        y: 186
+        width: 600
+        height: 298
         color: "#ffffff"
         border.width: 2
     }
 
     Rectangle {
             id: rectangle5
-            x: 753
-            y: -93
+            x: 760
+            y: 59
             width: 2
-            height: 454
+            height: 110
             color: "#0e0d0d"
         }
     
@@ -360,8 +365,8 @@ Item {
 
     Rectangle {
         id: rectangle3
-        x: -78
-        y: 143
+        x: -83
+        y: 167
         width: 845
         height: 2
         color: "#100e0e"
@@ -370,7 +375,7 @@ Item {
     Rectangle {
         id: rectangle155
         x: -46
-        y: 512
+        y: 507
         width: 2858
         height: 2
         color: "#111010"
@@ -378,9 +383,9 @@ Item {
 
     Rectangle {
         id: rectangle4
-        x: -30
-        y: 568
-        width: 2858
+        x: -39
+        y: 85
+        width: 800
         height: 2
         color: "#0d0c0c"
     }
@@ -390,17 +395,45 @@ Item {
         x: 775
         y: 59
         width: 2
-        height: 456
+        height: 450
         color: "#111010"
     }
 
     Rectangle {
         id: rectangle7
         x: 775
-        y: 470
+        y: 455
         width: 1200
         height: 2
         color: "#040404"
+    }
+
+    Rectangle {
+        id: rectangle8
+        x: 8
+        y: 192
+        width: 149
+        height: 292
+        color: "#ffffff"
+        border.width: 2
+    }
+
+    Rectangle {
+        id: rectangle9
+        x: -7
+        y: 563
+        width: 2858
+        height: 2
+        color: "#0d0b0b"
+    }
+
+    Rectangle {
+        id: rectangle10
+        x: 777
+        y: 141
+        width: 1200
+        height: 2
+        color: "#0c0c0c"
     }
 
 
