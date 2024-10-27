@@ -6,8 +6,8 @@
 #include <QGuiApplication>
 #include "qqmlextensionplugin.h"
 
-Q_IMPORT_QML_PLUGIN(VardaanUIPlugin)
 Q_IMPORT_QML_PLUGIN(VardaanUIContentPlugin)
+Q_IMPORT_QML_PLUGIN(VardaanUIPlugin)
 
 const char mainQmlFile[] = "qrc:/qt/qml/VardaanUIContent/App.qml";
 

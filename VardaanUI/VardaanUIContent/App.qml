@@ -3,8 +3,8 @@ import QtQuick.Controls 2.15
 
 Item {
     visible: true
-    width: 800
-    height: 600
+    width: 1920
+    height: 1080
 
     // Create a horizontal layout for the logo and menu bar
     Row {
@@ -80,8 +80,22 @@ Item {
                 MenuItem { text: "About Vardaan Studio" }
             }
         }
+
     }
 
+   Button
+    {
+    text: "Export";
+    x:1812;
+    y:50;
+    spacing:10;
+    width: 100
+    font.pixelSize: 15;
+    height: 42
+
+    }
+
+    
     // Horizontal feature bar
     Row {
         id: featureBar
@@ -146,16 +160,13 @@ Item {
     Row {
            id: editingBar
            anchors.top: featureBar.bottom // Position it below the feature bar
-           anchors.topMargin: 270 // Margin for spacing
+           anchors.topMargin: 270
+           anchors.horizontalCenterOffset: 505 // Margin for spacing
            anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
            spacing: 10 // Space between the buttons
            height: 50 // Set height for the editing bar
 
-           Rectangle {
-               width: 980 // Adjust width as needed to create space for future tools
-               height: toolBar.height
-               color: "transparent" // Make it invisible
-           }
+
 
            // Step Back Button
            Button {
@@ -183,6 +194,34 @@ Item {
                width: 40 // Set width for the button
            }
        }
+
+       Rectangle {
+        id: rectangle1
+        x: 1581
+        y: 470
+        width: 339
+        height: 50
+        color: "transparent"
+
+        // New Volume Button
+        Button {
+            x: 225
+            y: 1
+            width: 40
+              icon.source: "images/high-volume.png" // Replace with your volume icon path
+
+          }
+
+        Button {
+            x: 270
+            y: 1
+            spacing: 10
+            width: 40
+              icon.source: "images/full-screen.png" // Replace with your volume icon path
+
+          }
+    }
+
 
     // Tool Bar
     Row {
@@ -298,8 +337,74 @@ Item {
         border.width: 2
     }
 
+    Rectangle {
+            id: rectangle5
+            x: 753
+            y: -93
+            width: 2
+            height: 454
+            color: "#0e0d0d"
+        }
+    
 
 
 
-    // Main content area
+    Rectangle {
+        id: rectangle2
+        x: -110
+        y: 58
+        width: 2858
+        height: 2
+        color: "#120f0f"
+    }
+
+    Rectangle {
+        id: rectangle3
+        x: -78
+        y: 143
+        width: 845
+        height: 2
+        color: "#100e0e"
+    }
+
+    Rectangle {
+        id: rectangle155
+        x: -46
+        y: 512
+        width: 2858
+        height: 2
+        color: "#111010"
+    }
+
+    Rectangle {
+        id: rectangle4
+        x: -30
+        y: 568
+        width: 2858
+        height: 2
+        color: "#0d0c0c"
+    }
+
+    Rectangle {
+        id: rectangle6
+        x: 775
+        y: 59
+        width: 2
+        height: 456
+        color: "#111010"
+    }
+
+    Rectangle {
+        id: rectangle7
+        x: 775
+        y: 470
+        width: 1200
+        height: 2
+        color: "#040404"
+    }
+
+
+
+
+    // Main content area 
 }
