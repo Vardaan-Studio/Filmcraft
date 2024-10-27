@@ -13,17 +13,21 @@ qt6_add_qml_module(VardaanUIContent
         "App.qml"
     RESOURCES
         "images/magic-wand.png"
-        "images/soundtrack.png"
-        "images/download-speed.png"
-        "images/undo.png"
         "images/exchange.png"
+        "images/text.png"
+        "images/crop.png"
         "images/vardaan.png"
         "images/delete.png"
-        "images/text.png"
-        "images/forward.png"
-        "images/effects.png"
-        "images/crop.png"
         "images/color-palette.png"
+        "images/forward.png"
+        "images/download-speed.png"
+        "images/soundtrack.png"
+        "images/undo.png"
+        "images/effects.png"
+        "images/step-back.png"
+        "images/step-forward.png"
+        "images/pause.png"
+        "images/stop.png"
 )
 
 

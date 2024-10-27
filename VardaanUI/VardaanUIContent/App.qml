@@ -143,6 +143,40 @@ Item {
         }
     }
 
+    Row {
+           id: editingBar
+           anchors.top: featureBar.bottom // Position it below the feature bar
+           anchors.topMargin: 20 // Margin for spacing
+           anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
+           spacing: 10 // Space between the buttons
+           height: 50 // Set height for the editing bar
+
+           // Step Back Button
+           Button {
+
+               icon.source: "images/step-back.png" // Path to the Step Back icon
+               width: 40 // Set width for the button
+           }
+
+           // Step Forward Button
+           Button {
+
+               icon.source: "images/step-forward.png" // Path to the Step Forward icon
+               width: 40 // Set width for the button
+           }
+
+           // Pause/Play Button
+           Button {
+               icon.source: "images/pause.png" // Path to the Pause/Play icon
+               width: 40 // Set width for the button
+           }
+
+           // Stop Button
+           Button {
+               icon.source: "images/stop.png" // Path to the Stop icon
+               width: 40 // Set width for the button
+           }
+       }
 
     // Tool Bar
     Row {
