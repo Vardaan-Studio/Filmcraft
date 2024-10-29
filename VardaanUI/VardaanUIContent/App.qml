@@ -7,24 +7,26 @@ Item {
     height: 1080
 
     // Create a horizontal layout for the logo and menu bar
+
     Row {
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
-        spacing: 10 // Space between logo and menu bar
-        height: 60 // Adjust height of the header row for better spacing
+        spacing: 10
+        height: 60
 
-        // Add your studio logo
+        // Studio logo
         Image {
             id: logo
             source: "images/vardaan.png" // Path to your logo image
-            width: 130 // Set the width of the logo
-            height: 50 // Set the height of the logo
+            width: 130
+            height: 50
             fillMode: Image.PreserveAspectFit
         }
 
+        // Menu Bar
         MenuBar {
-            anchors.verticalCenter: parent.verticalCenter // Center the menu bar vertically
+            anchors.verticalCenter: parent.verticalCenter
 
             Menu {
                 title: "File"
@@ -80,22 +82,68 @@ Item {
                 MenuItem { text: "About Vardaan Studio" }
             }
         }
-
     }
 
-   Button
-    {
-    text: "Export";
-    x:1812
-    y:10
-    spacing:10;
-    width: 100
-    font.pixelSize: 15;
-    height: 42
 
+
+    Button {
+        text: "Export"
+        x: 1750
+        y: 5
+        width: 130
+        height: 52
+        spacing: 10
+        font.pixelSize: 18
+        font.bold: true
+        contentItem: Text {
+            text: "Export"
+            color: "white"  // Text color
+            font.pixelSize: 18
+            font.bold: true
+            anchors.centerIn: parent
+        }
+        background: Rectangle {
+            width: parent.width
+            height: parent.height
+            radius: 10
+            color: "#FF6A00" // Base orange color
+            border.color: "#222222" // Slightly darker border
+            border.width: 2
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: "#FFA040" } // Light orange for gloss effect
+                GradientStop { position: 1.0; color: "#FF4A00" } // Darker orange at the bottom
+            }
+            Rectangle { // Inner shadow effect
+                anchors.fill: parent
+                radius: 10
+                color: "transparent"
+                border.color: "#222222"
+                border.width: 1
+                opacity: 0.5
+            }
+            Rectangle { // Bottom shadow for depth
+                width: parent.width - 8
+                height: parent.height - 8
+                radius: 8
+                anchors.centerIn: parent
+                color: "#FF6A00"
+                border.color: "#222222"
+                border.width: 2
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: "#FF6A00" }
+                    GradientStop { position: 1.0; color: "#D65000" }
+                }
+                opacity: 0.8
+            }
+        }
     }
 
-    
+
+
+
+
+
+
     // Horizontal feature bar
     Row {
         id: featureBar
@@ -350,7 +398,7 @@ Item {
             height: 110
             color: "#0e0d0d"
         }
-    
+
 
 
 
@@ -439,5 +487,5 @@ Item {
 
 
 
-    // Main content area 
+    // Main content area
 }
