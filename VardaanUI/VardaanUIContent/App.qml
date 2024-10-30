@@ -30,49 +30,200 @@ Item {
 
             Menu {
                 title: "File"
-                MenuItem { text: "New Project" }
-                MenuItem { text: "Import Media" }
-                MenuItem { text: "Save Project" }
-                MenuItem { text: "Save Project As" }
-                MenuItem { text: "Project Settings" }
-                MenuItem { text: "Exit" }
+
+                MenuItem {
+                    text: "New Project\t                     Ctrl+N"
+                    Shortcut {
+                        sequence: "Ctrl+N"
+                        onActivated: console.log("New Project Triggered") // Replace with your function
+                    }
+                }
+
+                MenuItem {
+                    text: "Import Media\t                      Ctrl+I"
+                    Shortcut {
+                        sequence: "Ctrl+I"
+                        onActivated: console.log("Import Media Triggered") // Replace with your function
+                    }
+                }
+
+                MenuItem {
+                    text: "Save Project\t                     Ctrl+S"
+                    Shortcut {
+                        sequence: "Ctrl+S"
+                        onActivated: console.log("Save Project Triggered") // Replace with your function
+                    }
+                }
+
+                MenuItem {
+                    text: "Save Project As           Ctrl+Shift+S"
+                    Shortcut {
+                        sequence: "Ctrl+Shift+S"
+                        onActivated: console.log("Save Project As Triggered") // Replace with your function
+                    }
+                }
+
+                MenuItem {
+                    text: "Project Settings" // No shortcut for this item
+                }
+
+                MenuItem {
+                    text: "Exit\t                    Alt+F4"
+                    onTriggered: Qt.quit()
+                    Shortcut {
+                        sequence: "Alt+F4"
+                        onActivated: Qt.quit()
+                    }
+                }
             }
 
             Menu {
-                title: "Edit"
-                MenuItem { text: "Undo" }
-                MenuItem { text: "Redo" }
-                MenuItem { text: "Cut" }
-                MenuItem { text: "Copy" }
-                MenuItem { text: "Paste" }
-                MenuItem { text: "Delete" }
+                     title: "Edit"
+
+                         MenuItem {
+                           text: "Undo\t                      Ctrl+Z"
+                                    Shortcut {
+                                            sequence: "Ctrl+Z"
+                                            onActivated: console.log("Undo Triggered") // Replace with your function
+                                                }
+    }
+
+    MenuItem {
+        text: "Redo\t                      Ctrl+Y"
+        Shortcut {
+            sequence: "Ctrl+Y"
+            onActivated: console.log("Redo Triggered") // Replace with your function
+        }
+    }
+
+    MenuItem {
+        text: "Cut\t                     Ctrl+X"
+        Shortcut {
+            sequence: "Ctrl+X"
+            onActivated: console.log("Cut Triggered") // Replace with your function
+        }
+    }
+
+    MenuItem {
+        text: "Copy\t                     Ctrl+C"
+        Shortcut {
+            sequence: "Ctrl+C"
+            onActivated: console.log("Copy Triggered") // Replace with your function
+        }
+    }
+
+    MenuItem {
+        text: "Paste\t                     Ctrl+V"
+        Shortcut {
+            sequence: "Ctrl+V"
+            onActivated: console.log("Paste Triggered") // Replace with your function
+        }
+    }
+
+    MenuItem {
+        text: "Delete\t                     Delete"
+        Shortcut {
+            sequence: "Delete"
+            onActivated: console.log("Delete Triggered") // Replace with your function
+        }
+    }
+}
+
+
+     Menu {
+    title: "Tools"
+
+    Menu {
+        title: "Video"
+        
+        MenuItem {
+            text: "Crop & Zoom\t                     Alt+C"
+            Shortcut {
+                sequence: "Alt+C"
+                onActivated: console.log("Crop & Zoom Triggered") // Replace with your function
             }
+        }
+
+        MenuItem {
+            text: "Crop to Fit\t                     Ctrl+F"
+            Shortcut {
+                sequence: "Ctrl+F"
+                onActivated: console.log("Crop to Fit Triggered") // Replace with your function
+            }
+        }
+    }
+
+    Menu {
+        title: "Audio"
+        
+        MenuItem {
+            text: "Adjust Audio" // No shortcut for this item
+        }
+
+        MenuItem {
+            text: "Detach Audio\t              Ctrl+Alt+D"
+            Shortcut {
+                sequence: "Ctrl+Alt+D"
+                onActivated: console.log("Detach Audio Triggered") // Replace with your function
+            }
+        }
+
+        MenuItem {
+            text: "Mute\t           Ctrl+Shift+M"
+            Shortcut {
+                sequence: "Ctrl+Shift+M"
+                onActivated: console.log("Mute Triggered") // Replace with your function
+            }
+        }
+    }
+
+    Menu {
+        title: "Color Correction"
+        
+        MenuItem {
+            text: "Correction Palette                Alt+M"
+            Shortcut {
+                sequence: "Alt+M"
+                onActivated: console.log("Correction Palette Triggered") // Replace with your function
+            }
+        }
+    }
+
+    MenuItem {
+        text: "Speed Control" // No shortcut for this item
+    }
+}
+
+
 
             Menu {
-                title: "Tools"
-                Menu {
-                    title: "Video"
-                    MenuItem { text: "Crop & Zoom" }
-                    MenuItem { text: "Crop to Fit" }
-                }
-                Menu {
-                    title: "Audio"
-                    MenuItem { text: "Adjust Audio" }
-                    MenuItem { text: "Detach Audio" }
-                    MenuItem { text: "Mute" }
-                }
-                Menu {
-                    title: "Color Correction"
-                    MenuItem { text: "Correction Palette" }
-                }
-            }
+    title: "View"
 
-            Menu {
-                title: "View"
-                MenuItem { text: "Play/Pause" }
-                MenuItem { text: "Stop" }
-                MenuItem { text: "Full Screen View" }
-            }
+    MenuItem {
+        text: "Play/Pause\t                      Space"
+        Shortcut {
+            sequence: "Space"
+            onActivated: console.log("Play/Pause Triggered") // Replace with your function
+        }
+    }
+
+    MenuItem {
+        text: "Stop\t                      Ctrl+/"
+        Shortcut {
+            sequence: "Ctrl+/"
+            onActivated: console.log("Stop Triggered") // Replace with your function
+        }
+    }
+
+    MenuItem {
+        text: "Full Screen View              Alt+Enter"
+        Shortcut {
+            sequence: "Alt+Enter"
+            onActivated: console.log("Full Screen View Triggered") // Replace with your function
+        }
+    }
+}
+
 
             Menu {
                 title: "Help"
@@ -88,7 +239,7 @@ Item {
 
     Button {
         text: "Export"
-        x: 1750
+        x: 1380
         y: 5
         width: 130
         height: 52
@@ -209,69 +360,246 @@ Item {
     }
 
     Row {
-           id: editingBar
-           anchors.top: featureBar.bottom // Position it below the feature bar
-           anchors.topMargin: 235
-           anchors.horizontalCenterOffset: -48 // Margin for spacing
-           anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
-           spacing: 10 // Space between the buttons
-           height: 50 // Set height for the editing bar
+    id: editingBar
+    anchors.top: featureBar.bottom // Position it below the feature bar
+    anchors.topMargin: 235
+    anchors.horizontalCenterOffset: 283 // Margin for spacing
+    anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
+    spacing: 10 // Space between the buttons
+    height: 50 // Set height for the editing bar
 
+    // Step Back Button
+    Button {
+        width: 40 // Set width for the button
+        background: Rectangle {
+            width: parent.width
+            height: parent.height
+            radius: 10
+            color: "#F0F0F0" // Light gray background color
+            border.color: "#CCCCCC" // Slightly darker border for contrast
+            border.width: 1
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
+                GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
+            }
+            Rectangle { // Inner shadow effect
+                anchors.fill: parent
+                radius: 10
+                color: "transparent"
+                border.color: "#CCCCCC"
+                border.width: 1
+                opacity: 0.5
+            }
+            Rectangle { // Bottom shadow for depth
+                width: parent.width - 8
+                height: parent.height - 8
+                radius: 8
+                anchors.centerIn: parent
+                color: "#D0D0D0" // Slightly darker gray for depth
+                border.color: "#CCCCCC"
+                border.width: 1
+                opacity: 0.8
+            }
+        }
+        icon.source: "images/step-back.png" // Path to the Step Back icon
+    }
 
+    // Step Forward Button
+    Button {
+        width: 40 // Set width for the button
+        background: Rectangle {
+            width: parent.width
+            height: parent.height
+            radius: 10
+            color: "#F0F0F0" // Light gray background color
+            border.color: "#CCCCCC" // Slightly darker border for contrast
+            border.width: 1
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
+                GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
+            }
+            Rectangle { // Inner shadow effect
+                anchors.fill: parent
+                radius: 10
+                color: "transparent"
+                border.color: "#CCCCCC"
+                border.width: 1
+                opacity: 0.5
+            }
+            Rectangle { // Bottom shadow for depth
+                width: parent.width - 8
+                height: parent.height - 8
+                radius: 8
+                anchors.centerIn: parent
+                color: "#D0D0D0" // Slightly darker gray for depth
+                border.color: "#CCCCCC"
+                border.width: 1
+                opacity: 0.8
+            }
+        }
+        icon.source: "images/step-forward.png" // Path to the Step Forward icon
+    }
 
-           // Step Back Button
-           Button {
+    // Pause/Play Button
+    Button {
+        width: 40 // Set width for the button
+        background: Rectangle {
+            width: parent.width
+            height: parent.height
+            radius: 10
+            color: "#F0F0F0" // Light gray background color
+            border.color: "#CCCCCC" // Slightly darker border for contrast
+            border.width: 1
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
+                GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
+            }
+            Rectangle { // Inner shadow effect
+                anchors.fill: parent
+                radius: 10
+                color: "transparent"
+                border.color: "#CCCCCC"
+                border.width: 1
+                opacity: 0.5
+            }
+            Rectangle { // Bottom shadow for depth
+                width: parent.width - 8
+                height: parent.height - 8
+                radius: 8
+                anchors.centerIn: parent
+                color: "#D0D0D0" // Slightly darker gray for depth
+                border.color: "#CCCCCC"
+                border.width: 1
+                opacity: 0.8
+            }
+        }
+        icon.source: "images/pause.png" // Path to the Pause/Play icon
+    }
 
-               icon.source: "images/step-back.png" // Path to the Step Back icon
-               width: 40 // Set width for the button
-           }
+    // Stop Button
+    Button {
+        width: 40 // Set width for the button
+        background: Rectangle {
+            width: parent.width
+            height: parent.height
+            radius: 10
+            color: "#F0F0F0" // Light gray background color
+            border.color: "#CCCCCC" // Slightly darker border for contrast
+            border.width: 1
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
+                GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
+            }
+            Rectangle { // Inner shadow effect
+                anchors.fill: parent
+                radius: 10
+                color: "transparent"
+                border.color: "#CCCCCC"
+                border.width: 1
+                opacity: 0.5
+            }
+            Rectangle { // Bottom shadow for depth
+                width: parent.width - 8
+                height: parent.height - 8
+                radius: 8
+                anchors.centerIn: parent
+                color: "#D0D0D0" // Slightly darker gray for depth
+                border.color: "#CCCCCC"
+                border.width: 1
+                opacity: 0.8
+            }
+        }
+        icon.source: "images/stop.png" // Path to the Stop icon
+    }
+}
 
-           // Step Forward Button
-           Button {
-
-               icon.source: "images/step-forward.png" // Path to the Step Forward icon
-               width: 40 // Set width for the button
-           }
-
-           // Pause/Play Button
-           Button {
-               icon.source: "images/pause.png" // Path to the Pause/Play icon
-               width: 40 // Set width for the button
-           }
-
-           // Stop Button
-           Button {
-               icon.source: "images/stop.png" // Path to the Stop icon
-               width: 40 // Set width for the button
-           }
-       }
 
        Rectangle {
-        id: rectangle1
-        x: 1581
-        y: 463
-        width: 339
-        height: 50
-        color: "transparent"
+    id: rectangle1
+    x: 1300
+    y: 463
+    width: 356
+    height: 50
+    color: "transparent"
+
+    Row {
+        anchors.fill: parent // Fill the rectangle with buttons
+        spacing: 10 // Space between the buttons
 
         // New Volume Button
         Button {
-            x: 225
-            y: 1
-            width: 40
-              icon.source: "images/high-volume.png" // Replace with your volume icon path
+            width: 40 // Set width for the button
+            background: Rectangle {
+                width: parent.width
+                height: parent.height
+                radius: 10
+                color: "#F0F0F0" // Light gray background color
+                border.color: "#CCCCCC" // Slightly darker border for contrast
+                border.width: 1
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
+                    GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
+                }
+                Rectangle { // Inner shadow effect
+                    anchors.fill: parent
+                    radius: 10
+                    color: "transparent"
+                    border.color: "#CCCCCC"
+                    border.width: 1
+                    opacity: 0.5
+                }
+                Rectangle { // Bottom shadow for depth
+                    width: parent.width - 8
+                    height: parent.height - 8
+                    radius: 8
+                    anchors.centerIn: parent
+                    color: "#D0D0D0" // Slightly darker gray for depth
+                    border.color: "#CCCCCC"
+                    border.width: 1
+                    opacity: 0.8
+                }
+            }
+            icon.source: "images/high-volume.png" // Replace with your volume icon path
+        }
 
-          }
-
+        // Full Screen Button
         Button {
-            x: 270
-            y: 1
-            spacing: 10
-            width: 40
-              icon.source: "images/full-screen.png" // Replace with your volume icon path
-
-          }
+            width: 40 // Set width for the button
+            background: Rectangle {
+                width: parent.width
+                height: parent.height
+                radius: 10
+                color: "#F0F0F0" // Light gray background color
+                border.color: "#CCCCCC" // Slightly darker border for contrast
+                border.width: 1
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
+                    GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
+                }
+                Rectangle { // Inner shadow effect
+                    anchors.fill: parent
+                    radius: 10
+                    color: "transparent"
+                    border.color: "#CCCCCC"
+                    border.width: 1
+                    opacity: 0.5
+                }
+                Rectangle { // Bottom shadow for depth
+                    width: parent.width - 8
+                    height: parent.height - 8
+                    radius: 8
+                    anchors.centerIn: parent
+                    color: "#D0D0D0" // Slightly darker gray for depth
+                    border.color: "#CCCCCC"
+                    border.width: 1
+                    opacity: 0.8
+                }
+            }
+            icon.source: "images/full-screen.png" // Replace with your full-screen icon path
+        }
     }
+}
+
 
 
     // Tool Bar
@@ -314,7 +642,7 @@ Item {
         }
 
         Button {
-            text: "Speed"
+            text: " Speed"
             icon.source: "images/download-speed.png" // Path to the Speed icon
         }
 
@@ -404,36 +732,36 @@ Item {
 
     Rectangle {
         id: rectangle2
-        x: -110
+        x: 0
         y: 58
-        width: 2858
+        width: 1920
         height: 2
         color: "#120f0f"
     }
 
     Rectangle {
         id: rectangle3
-        x: -83
+        x: 0
         y: 167
-        width: 845
+        width: 775
         height: 2
         color: "#100e0e"
     }
 
     Rectangle {
         id: rectangle155
-        x: -46
+        x: 0
         y: 507
-        width: 2858
+        width: 1920
         height: 2
         color: "#111010"
     }
 
     Rectangle {
         id: rectangle4
-        x: -39
+        x: 0
         y: 85
-        width: 800
+        width: 775
         height: 2
         color: "#0d0c0c"
     }
@@ -451,7 +779,7 @@ Item {
         id: rectangle7
         x: 775
         y: 455
-        width: 1200
+        width: 1145
         height: 2
         color: "#040404"
     }
@@ -468,9 +796,9 @@ Item {
 
     Rectangle {
         id: rectangle9
-        x: -7
+        x: 0
         y: 563
-        width: 2858
+        width: 1920
         height: 2
         color: "#0d0b0b"
     }
@@ -479,7 +807,7 @@ Item {
         id: rectangle10
         x: 777
         y: 141
-        width: 1200
+        width: 1145
         height: 2
         color: "#0c0c0c"
     }
