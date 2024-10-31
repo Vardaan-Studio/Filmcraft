@@ -129,9 +129,16 @@ Item {
     }
 }
 
-
-     Menu {
+    Menu {
     title: "Tools"
+    
+    MenuItem {
+        text: "Show Properties                    Alt+E"
+        Shortcut {
+            sequence: "Alt+E"
+            onActivated: console.log("Show Properties Triggered") // Replace with your function
+        }
+    }
 
     Menu {
         title: "Video"
@@ -196,6 +203,7 @@ Item {
 
 
 
+
             Menu {
     title: "View"
 
@@ -235,47 +243,45 @@ Item {
         }
     }
 
-
-
     Button {
-        text: "Export"
-        x: 1380
-        y: 5
-        width: 130
-        height: 52
-        spacing: 10
-        font.pixelSize: 18
-        font.bold: true
-        contentItem: Text {
-            text: "Export"
-            color: "white"  // Text color
-            font.pixelSize: 18
-            font.bold: true
-            anchors.centerIn: parent
-        }
-        background: Rectangle {
-            width: parent.width
-            height: parent.height
-            radius: 10
+    x: 1420
+    y: 10
+    width: 90 // Reduced width
+    height: 35 // Reduced height
+    spacing: 10
+    font.pixelSize: 14 // Adjusted font size to fit the smaller button
+    font.bold: true
+
+    contentItem: Item {
+        anchors.fill: parent // Fill the button
+        Rectangle {
+            anchors.fill: parent
+            radius: 8 // Rounded corners
             color: "#FF6A00" // Base orange color
             border.color: "#222222" // Slightly darker border
             border.width: 2
+
+            // Background gradient
             gradient: Gradient {
                 GradientStop { position: 0.0; color: "#FFA040" } // Light orange for gloss effect
                 GradientStop { position: 1.0; color: "#FF4A00" } // Darker orange at the bottom
             }
-            Rectangle { // Inner shadow effect
+
+            // Inner shadow effect
+            Rectangle {
                 anchors.fill: parent
-                radius: 10
+                radius: 8 // Adjusted radius for the button
                 color: "transparent"
                 border.color: "#222222"
                 border.width: 1
                 opacity: 0.5
             }
-            Rectangle { // Bottom shadow for depth
-                width: parent.width - 8
-                height: parent.height - 8
-                radius: 8
+
+            // Bottom shadow for depth
+            Rectangle {
+                width: parent.width - 6 // Adjusted for smaller button
+                height: parent.height - 6 // Adjusted for smaller button
+                radius: 6 // Adjusted radius for the button
                 anchors.centerIn: parent
                 color: "#FF6A00"
                 border.color: "#222222"
@@ -287,82 +293,91 @@ Item {
                 opacity: 0.8
             }
         }
+
+        // Text centered in the button
+        Text {
+            text: "Export"
+            color: "white" // Text color
+            font.pixelSize: 14 // Adjusted font size for smaller button
+            font.bold: true
+            anchors.centerIn: parent // Center the text in the button
+        }
     }
-
-
-
-
-
-
+}
 
     // Horizontal feature bar
-    Row {
-        id: featureBar
-        y: 28
-        anchors.top: logo.bottom
-        anchors.leftMargin: 55
-        anchors.rightMargin: -14 // Position below the header row
-        anchors.topMargin: 20 // Add margin to separate from the header row
-        anchors.left: parent.left
-        anchors.right: parent.right
-        height: 200 // Set height for the feature bar
-        spacing: 30 // Adjust spacing between icons for better readability
-        padding: 10 // Extra padding around icons
+            Row {
+            id: featureBar
+            y: -14
+            anchors.top: logo.bottom
+            anchors.leftMargin: 8
+            anchors.rightMargin: 33 // Position below the header row
+            anchors.topMargin: 20 // Add margin to separate from the header row
+            anchors.left: parent.left
+            anchors.right: parent.right
+            height: 200 // Set height for the feature bar
+            spacing: 30 // Adjust spacing between icons for better readability
+            padding: 10 // Extra padding around icons
 
-        // Feature icons
-        Repeater {
-            model: [
-                { name: "Media", icon: "images/soundtrack.png" },
-                { name: " Text", icon: "images/text.png" },
-                { name: "Transition", icon: "images/exchange.png" },
-                { name: "Effects", icon: "images/effects.png" },
-                { name: "Filters", icon: "images/magic-wand.png" },
-                { name: "Colour Grade", icon: "images/color-palette.png"}
-            ]
-
-
-
-            delegate: Rectangle {
-                width: 80 // Width of each box
-                height: 70  // Height of each box
-                color: "#e0e0e0"  // Background color of the box
-                radius: 8  // Optional: rounded corners
-                border.color: "#a0a0a0"
-                border.width: 1
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.margins: 5  // Space between boxes
-
-                Column {
-                    anchors.centerIn: parent
-                    spacing: 5
+            // Feature icons
+            Repeater {
+                model: [
+                    { name: "Media", icon: "images/soundtrack.png" },
+                    { name: " Text", icon: "images/text.png" },
+                    { name: "Transition", icon: "images/exchange.png" },
+                    { name: "Effects", icon: "images/effects.png" },
+                    { name: "Filters", icon: "images/magic-wand.png" },
+                    { name: "Colour Grade", icon: "images/color-palette.png"}
+                ]
 
 
-                    Image {
-                        source: modelData.icon
-                        width: 30  // Icon width
-                        height: 30  // Icon height
-                        fillMode: Image.PreserveAspectFit
-                        anchors.horizontalCenter: parent.horizontalCenter // Center the icon horizontally
-                        anchors.left: parent.left  // Align to the left of the parent
-                        anchors.leftMargin: modelData.name === "Colour Grade" ? modelData.offset : 0 // Apply offset if it's Colour Grade
-                    }
+
+                delegate: Rectangle {
+                    width: 70 // Width of each box
+                    height: 60  // Height of each box
+                    color: "#e0e0e0"  // Background color of the box
+                    radius: 8  // Optional: rounded corners
+                    border.color: "#a0a0a0"
+                    border.width: 1
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.margins: 5  // Space between boxes
+
+                    Column {
+                        anchors.centerIn: parent
+                        spacing: 5
 
 
-                    Text {
-                        text: modelData.name
-                        font.pixelSize: 12  // Font size for all items
-                        horizontalAlignment: Text.AlignHCenter
-                        color: "#333333"  // Text color
+                        Image {
+                            source: modelData.icon
+                            width: 25  // Icon width
+                            height: 25  // Icon height
+                            fillMode: Image.PreserveAspectFit
+                            anchors.horizontalCenter: parent.horizontalCenter // Center the icon horizontally
+                            anchors.left: parent.left  // Align to the left of the parent
+                            anchors.leftMargin: modelData.name === "Colour Grade" ? modelData.offset : 0 // Apply offset if it's Colour Grade
+                        }
+
+
+                        Text {
+                            text: modelData.name
+                            font.pixelSize: 10  // Font size for all items
+                            horizontalAlignment: Text.AlignHCenter
+                            color: "#333333"  // Text color
+                        }
                     }
                 }
             }
         }
-    }
+
+
+
+
+
 
     Row {
     id: editingBar
     anchors.top: featureBar.bottom // Position it below the feature bar
-    anchors.topMargin: 235
+    anchors.topMargin: 232
     anchors.horizontalCenterOffset: 283 // Margin for spacing
     anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
     spacing: 10 // Space between the buttons
@@ -523,7 +538,11 @@ Item {
     color: "transparent"
 
     Row {
-        anchors.fill: parent // Fill the rectangle with buttons
+        anchors.fill: parent
+        anchors.leftMargin: 50
+        anchors.rightMargin: -50
+        anchors.topMargin: -46
+        anchors.bottomMargin: 46 // Fill the rectangle with buttons
         spacing: 10 // Space between the buttons
 
         // New Volume Button
@@ -607,7 +626,7 @@ Item {
         id: toolBar
         anchors.top: featureBar.bottom
         anchors.leftMargin: 0 // Position it below the feature bar
-        anchors.topMargin: 287
+        anchors.topMargin: 272.5
         anchors.horizontalCenterOffset: 0 // Increase margin for more space
         anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
         anchors.left: parent.left
@@ -711,20 +730,32 @@ Item {
     Rectangle {
         id: rectangle
         x: 163
-        y: 186
-        width: 600
-        height: 298
+        y: 120
+        width: 614
+        height: 335
         color: "#ffffff"
-        border.width: 2
+        border.width: 1
+        border.color: "#808080"
+    }
+
+    Rectangle {
+        id: rectanglefeature
+        x: 0
+        y: 51
+        width: 1920
+        height: 1
+        color: "#808080"
+
     }
 
     Rectangle {
             id: rectangle5
             x: 760
             y: 59
-            width: 2
+            width: 1
             height: 110
-            color: "#0e0d0d"
+            color: "#808080"
+            visible: false
         }
 
 
@@ -735,8 +766,9 @@ Item {
         x: 0
         y: 58
         width: 1920
-        height: 2
-        color: "#120f0f"
+        height: 1
+        color: "#808080"
+        visible: false
     }
 
     Rectangle {
@@ -744,8 +776,9 @@ Item {
         x: 0
         y: 167
         width: 775
-        height: 2
-        color: "#100e0e"
+        height: 1
+        color: "#808080"
+        visible: false
     }
 
     Rectangle {
@@ -753,8 +786,9 @@ Item {
         x: 0
         y: 507
         width: 1920
-        height: 2
-        color: "#111010"
+        height: 1
+        color: "#808080"
+        visible: false
     }
 
     Rectangle {
@@ -762,58 +796,51 @@ Item {
         x: 0
         y: 85
         width: 775
-        height: 2
-        color: "#0d0c0c"
+        height: 1
+        color: "#808080"
+        visible: false
     }
 
     Rectangle {
         id: rectangle6
-        x: 775
-        y: 59
-        width: 2
-        height: 450
-        color: "#111010"
+        x: 776
+        y: 51
+        width: 1
+        height: 100
+        color: "#808080"
+
     }
 
     Rectangle {
         id: rectangle7
-        x: 775
-        y: 455
+        x: 776
+        y: 454.5
         width: 1145
-        height: 2
-        color: "#040404"
+        height: 1
+        color: "#808080"
+
     }
 
     Rectangle {
         id: rectangle8
-        x: 8
-        y: 192
-        width: 149
-        height: 292
+        x: 0
+        y: 120
+        width: 165
+        height: 335
         color: "#ffffff"
-        border.width: 2
+        border.width: 1
+        border.color: "#808080"
     }
 
     Rectangle {
         id: rectangle9
         x: 0
-        y: 563
+        y: 494
         width: 1920
-        height: 2
-        color: "#0d0b0b"
+        height: 0.5
+        color: "#808080"
+
     }
 
-    Rectangle {
-        id: rectangle10
-        x: 777
-        y: 141
-        width: 1145
-        height: 2
-        color: "#0c0c0c"
-    }
-
-
-
-
-    // Main content area
+ // Main content area
 }
