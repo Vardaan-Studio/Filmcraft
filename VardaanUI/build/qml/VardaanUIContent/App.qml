@@ -29,53 +29,54 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
 
             Menu {
-                title: "File"
+    title: "File"
 
-                MenuItem {
-                    text: "New Project\t                     Ctrl+N"
-                    Shortcut {
-                        sequence: "Ctrl+N"
-                        onActivated: console.log("New Project Triggered") // Replace with your function
-                    }
-                }
+    MenuItem {
+        text: "New Project\t                     Ctrl+N"
+        Shortcut {
+            sequence: "Ctrl+N"
+            onActivated: console.log("New Project Triggered") // Replace with your function
+        }
+    }
 
-                MenuItem {
-                    text: "Import Media\t                      Ctrl+I"
-                    Shortcut {
-                        sequence: "Ctrl+I"
-                        onActivated: console.log("Import Media Triggered") // Replace with your function
-                    }
-                }
+    MenuItem {
+        text: "Import Media\t                      Ctrl+I"
+        Shortcut {
+            sequence: "Ctrl+I"
+            onActivated: console.log("Import Media Triggered") // Replace with your function
+        }
+    }
 
-                MenuItem {
-                    text: "Save Project\t                     Ctrl+S"
-                    Shortcut {
-                        sequence: "Ctrl+S"
-                        onActivated: console.log("Save Project Triggered") // Replace with your function
-                    }
-                }
+    MenuItem {
+        text: "Save Project\t                     Ctrl+S"
+        Shortcut {
+            sequence: "Ctrl+S"
+            onActivated: console.log("Save Project Triggered") // Replace with your function
+        }
+    }
 
-                MenuItem {
-                    text: "Save Project As           Ctrl+Shift+S"
-                    Shortcut {
-                        sequence: "Ctrl+Shift+S"
-                        onActivated: console.log("Save Project As Triggered") // Replace with your function
-                    }
-                }
+    MenuItem {
+        text: "Save Project As           Ctrl+Shift+S"
+        Shortcut {
+            sequence: "Ctrl+Shift+S"
+            onActivated: console.log("Save Project As Triggered") // Replace with your function
+        }
+    }
 
-                MenuItem {
-                    text: "Project Settings" // No shortcut for this item
-                }
+    MenuItem {
+        text: "Project Settings" // No shortcut for this item
+    }
 
-                MenuItem {
-                    text: "Exit\t                    Alt+F4"
-                    onTriggered: Qt.quit()
-                    Shortcut {
-                        sequence: "Alt+F4"
-                        onActivated: Qt.quit()
-                    }
-                }
-            }
+    MenuItem {
+        text: "Exit\t                    Alt+F4"
+        onTriggered: Qt.quit()
+        Shortcut {
+            sequence: "Alt+F4"
+            onActivated: Qt.quit()
+        }
+    }
+}
+
 
             Menu {
                      title: "Edit"
@@ -134,6 +135,7 @@ Item {
     
     MenuItem {
         text: "Show Properties                    Alt+E"
+        onTriggered: propertiesDialog.open()
         Shortcut {
             sequence: "Alt+E"
             onActivated: console.log("Show Properties Triggered") // Replace with your function
@@ -200,6 +202,38 @@ Item {
         text: "Speed Control" // No shortcut for this item
     }
 }
+    Dialog {
+        id: propertiesDialog
+        title: "Properties"
+        modal: true
+        standardButtons: Dialog.Ok | Dialog.Cancel
+
+        Column {
+            width: 300
+            spacing: 10
+
+            ComboBox {
+                id: optionsSelector
+                model: ["Transform", "Compositing", "Chroma Key"]
+                width: parent.width // Make ComboBox full width of the dialog
+            }
+
+            Loader {
+                id: contentLoader
+                width: parent.width
+                height: 200 // Set a specific height for content area
+
+                sourceComponent: optionsSelector.currentIndex === 2 ? chromaKeyComponent : null
+                // Add additional components for "Transform" and "Compositing" if needed
+            }
+        }
+
+        Component {
+            id: chromaKeyComponent
+            Chromakey { } // Loads the `Chromakey.qml` component
+        }
+    }
+
 
 
 
@@ -243,135 +277,92 @@ Item {
         }
     }
 
-    Button {
+
+  Button {
     x: 1420
     y: 10
-    width: 90 // Reduced width
-    height: 35 // Reduced height
-    spacing: 10
-    font.pixelSize: 14 // Adjusted font size to fit the smaller button
+    width: 80
+    height: 32
+    font.pixelSize: 14
     font.bold: true
 
-    contentItem: Item {
-        anchors.fill: parent // Fill the button
-        Rectangle {
-            anchors.fill: parent
-            radius: 8 // Rounded corners
-            color: "#FF6A00" // Base orange color
-            border.color: "#222222" // Slightly darker border
-            border.width: 2
+    contentItem: Text {
+        text: "Export"
+        color: "white"
+        font.pixelSize: 14
+        font.bold: true
+        anchors.centerIn: parent // Centering text within the button
+    }
 
-            // Background gradient
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#FFA040" } // Light orange for gloss effect
-                GradientStop { position: 1.0; color: "#FF4A00" } // Darker orange at the bottom
-            }
-
-            // Inner shadow effect
-            Rectangle {
-                anchors.fill: parent
-                radius: 8 // Adjusted radius for the button
-                color: "transparent"
-                border.color: "#222222"
-                border.width: 1
-                opacity: 0.5
-            }
-
-            // Bottom shadow for depth
-            Rectangle {
-                width: parent.width - 6 // Adjusted for smaller button
-                height: parent.height - 6 // Adjusted for smaller button
-                radius: 6 // Adjusted radius for the button
-                anchors.centerIn: parent
-                color: "#FF6A00"
-                border.color: "#222222"
-                border.width: 2
-                gradient: Gradient {
-                    GradientStop { position: 0.0; color: "#FF6A00" }
-                    GradientStop { position: 1.0; color: "#D65000" }
-                }
-                opacity: 0.8
-            }
-        }
-
-        // Text centered in the button
-        Text {
-            text: "Export"
-            color: "white" // Text color
-            font.pixelSize: 14 // Adjusted font size for smaller button
-            font.bold: true
-            anchors.centerIn: parent // Center the text in the button
-        }
+    background: Rectangle {
+        width: parent.width
+        height: parent.height
+        radius: 4
+        color: "#1E1E1E" // Dark background color
+        border.color: "#FFA500" // Orange border
+        border.width: 2 // Increased border width
     }
 }
 
     // Horizontal feature bar
-            Row {
-            id: featureBar
-            y: -14
-            anchors.top: logo.bottom
-            anchors.leftMargin: 8
-            anchors.rightMargin: 33 // Position below the header row
-            anchors.topMargin: 20 // Add margin to separate from the header row
-            anchors.left: parent.left
-            anchors.right: parent.right
-            height: 200 // Set height for the feature bar
-            spacing: 30 // Adjust spacing between icons for better readability
-            padding: 10 // Extra padding around icons
+           Row {
+    id: featureBar
+    y: -14
+    anchors.top: logo.bottom
+    anchors.leftMargin: 8
+    anchors.rightMargin: 33 // Position below the header row
+    anchors.topMargin: 20 // Add margin to separate from the header row
+    anchors.left: parent.left
+    anchors.right: parent.right
+    height: 200 // Set height for the feature bar
+    spacing: 30 // Adjust spacing between icons for better readability
+    padding: 10 // Extra padding around icons
 
-            // Feature icons
-            Repeater {
-                model: [
-                    { name: "Media", icon: "images/soundtrack.png" },
-                    { name: " Text", icon: "images/text.png" },
-                    { name: "Transition", icon: "images/exchange.png" },
-                    { name: "Effects", icon: "images/effects.png" },
-                    { name: "Filters", icon: "images/magic-wand.png" },
-                    { name: "Colour Grade", icon: "images/color-palette.png"}
-                ]
+    // Feature icons
+    Repeater {
+        model: [
+            { name: "Media", icon: "images/soundtrack.png" },
+            { name: "Text", icon: "images/text.png" },
+            { name: "Transition", icon: "images/exchange.png" },
+            { name: "Effects", icon: "images/effects.png" },
+            { name: "Filters", icon: "images/magic-wand.png" },
+            { name: "Colour Grade", icon: "images/color-palette.png" }
+        ]
 
+        delegate: Rectangle {
+            width: 70 // Width of each box
+            height: 60  // Height of each box
+            color: "#333333"  // Changed background color to dark
+            radius: 8  // Optional: rounded corners
+            border.color: "#a0a0a0"
+            border.width: 1
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.margins: 5  // Space between boxes
 
+            Column {
+                anchors.centerIn: parent
+                spacing: 5
 
-                delegate: Rectangle {
-                    width: 70 // Width of each box
-                    height: 60  // Height of each box
-                    color: "#e0e0e0"  // Background color of the box
-                    radius: 8  // Optional: rounded corners
-                    border.color: "#a0a0a0"
-                    border.width: 1
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.margins: 5  // Space between boxes
+                Image {
+                    source: modelData.icon
+                    width: 25  // Icon width
+                    height: 25  // Icon height
+                    fillMode: Image.PreserveAspectFit
+                    anchors.horizontalCenter: parent.horizontalCenter // Center the icon horizontally
+                    anchors.left: parent.left  // Align to the left of the parent
+                    anchors.leftMargin: modelData.name === "Colour Grade" ? modelData.offset : 0 // Apply offset if it's Colour Grade
+                }
 
-                    Column {
-                        anchors.centerIn: parent
-                        spacing: 5
-
-
-                        Image {
-                            source: modelData.icon
-                            width: 25  // Icon width
-                            height: 25  // Icon height
-                            fillMode: Image.PreserveAspectFit
-                            anchors.horizontalCenter: parent.horizontalCenter // Center the icon horizontally
-                            anchors.left: parent.left  // Align to the left of the parent
-                            anchors.leftMargin: modelData.name === "Colour Grade" ? modelData.offset : 0 // Apply offset if it's Colour Grade
-                        }
-
-
-                        Text {
-                            text: modelData.name
-                            font.pixelSize: 10  // Font size for all items
-                            horizontalAlignment: Text.AlignHCenter
-                            color: "#333333"  // Text color
-                        }
-                    }
+                Text {
+                    text: modelData.name
+                    font.pixelSize: 10  // Font size for all items
+                    horizontalAlignment: Text.AlignHCenter
+                    color: "#FFFFFF"  // Change text color for better contrast
                 }
             }
         }
-
-
-
-
+    }
+}
 
 
     Row {

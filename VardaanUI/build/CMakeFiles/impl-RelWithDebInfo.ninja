@@ -344,7 +344,7 @@ build VardaanUIContent/all_qmllint_module$:RelWithDebInfo: phony VardaanUIConten
 #############################################
 # Utility command for VardaanUIContent_tooling
 
-build VardaanUIContent/VardaanUIContent_tooling$:RelWithDebInfo: phony qml/VardaanUIContent/Screen01.ui.qml qml/VardaanUIContent/Chromakey.qml qml/VardaanUIContent/App.qml qml/VardaanUIContent/images/color-palette.png qml/VardaanUIContent/images/pause.png qml/VardaanUIContent/images/magic-wand.png qml/VardaanUIContent/images/step-forward.png qml/VardaanUIContent/images/effects.png qml/VardaanUIContent/images/full-screen.png qml/VardaanUIContent/images/text.png qml/VardaanUIContent/images/download-speed.png qml/VardaanUIContent/images/exchange.png qml/VardaanUIContent/images/delete.png qml/VardaanUIContent/images/crop.png qml/VardaanUIContent/images/forward.png qml/VardaanUIContent/images/stop.png qml/VardaanUIContent/images/vardaan.png qml/VardaanUIContent/images/high-volume.png qml/VardaanUIContent/images/undo.png qml/VardaanUIContent/images/step-back.png qml/VardaanUIContent/images/soundtrack.png
+build VardaanUIContent/VardaanUIContent_tooling$:RelWithDebInfo: phony qml/VardaanUIContent/Screen01.ui.qml qml/VardaanUIContent/Chromakey.qml qml/VardaanUIContent/App.qml qml/VardaanUIContent/images/crop.png qml/VardaanUIContent/images/download-speed.png qml/VardaanUIContent/images/vardaan.png qml/VardaanUIContent/images/stop.png qml/VardaanUIContent/images/effects.png qml/VardaanUIContent/images/text.png qml/VardaanUIContent/images/color-palette.png qml/VardaanUIContent/images/high-volume.png qml/VardaanUIContent/images/forward.png qml/VardaanUIContent/images/delete.png qml/VardaanUIContent/images/undo.png qml/VardaanUIContent/images/soundtrack.png qml/VardaanUIContent/images/step-back.png qml/VardaanUIContent/images/pause.png qml/VardaanUIContent/images/step-forward.png qml/VardaanUIContent/images/magic-wand.png qml/VardaanUIContent/images/exchange.png qml/VardaanUIContent/images/full-screen.png
 
 # =============================================================================
 # Object build statements for OBJECT_LIBRARY target VardaanUIContent_resources_2
@@ -475,7 +475,7 @@ build VardaanUIContent/.rcc/qmlcache/VardaanUIContent_App_qml.cpp | ${cmake_ninj
 #############################################
 # Custom command for VardaanUIContent\.qt\rcc\qrc_VardaanUIContent_raw_qml_0.cpp
 
-build VardaanUIContent/.qt/rcc/qrc_VardaanUIContent_raw_qml_0.cpp | ${cmake_ninja_workdir}VardaanUIContent/.qt/rcc/qrc_VardaanUIContent_raw_qml_0.cpp: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/Screen01.ui.qml E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/Chromakey.qml E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/App.qml E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/color-palette.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/pause.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/magic-wand.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/step-forward.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/effects.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/full-screen.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/text.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/download-speed.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/exchange.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/delete.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/crop.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/forward.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/stop.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/vardaan.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/high-volume.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/undo.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/step-back.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/soundtrack.png VardaanUIContent/.qt/rcc/VardaanUIContent_raw_qml_0.qrc C$:/Qt/6.7.3/mingw_64/bin/rcc.exe || VardaanUIContent/VardaanUIContent_autogen$:RelWithDebInfo VardaanUIContent/VardaanUIContent_tooling$:RelWithDebInfo
+build VardaanUIContent/.qt/rcc/qrc_VardaanUIContent_raw_qml_0.cpp | ${cmake_ninja_workdir}VardaanUIContent/.qt/rcc/qrc_VardaanUIContent_raw_qml_0.cpp: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/Screen01.ui.qml E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/Chromakey.qml E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/App.qml E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/crop.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/download-speed.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/vardaan.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/stop.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/effects.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/text.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/color-palette.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/high-volume.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/forward.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/delete.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/undo.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/soundtrack.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/step-back.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/pause.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/step-forward.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/magic-wand.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/exchange.png E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/full-screen.png VardaanUIContent/.qt/rcc/VardaanUIContent_raw_qml_0.qrc C$:/Qt/6.7.3/mingw_64/bin/rcc.exe || VardaanUIContent/VardaanUIContent_autogen$:RelWithDebInfo VardaanUIContent/VardaanUIContent_tooling$:RelWithDebInfo
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\build\VardaanUIContent && C:\Qt\6.7.3\mingw_64\bin\rcc.exe --output E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent/.qt/rcc/qrc_VardaanUIContent_raw_qml_0.cpp --name VardaanUIContent_raw_qml_0 E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent/.qt/rcc/VardaanUIContent_raw_qml_0.qrc --no-zstd"
   DESC = Running rcc for resource VardaanUIContent_raw_qml_0
   restat = 1
@@ -567,65 +567,11 @@ build qml/VardaanUIContent/App.qml | ${cmake_ninja_workdir}qml/VardaanUIContent/
 
 
 #############################################
-# Custom command for qml\VardaanUIContent\images\color-palette.png
+# Custom command for qml\VardaanUIContent\images\crop.png
 
-build qml/VardaanUIContent/images/color-palette.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/color-palette.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/color-palette.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/color-palette.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/color-palette.png"
-  DESC = Copying images/color-palette.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/color-palette.png
-  restat = 1
-
-
-#############################################
-# Custom command for qml\VardaanUIContent\images\pause.png
-
-build qml/VardaanUIContent/images/pause.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/pause.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/pause.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/pause.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/pause.png"
-  DESC = Copying images/pause.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/pause.png
-  restat = 1
-
-
-#############################################
-# Custom command for qml\VardaanUIContent\images\magic-wand.png
-
-build qml/VardaanUIContent/images/magic-wand.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/magic-wand.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/magic-wand.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/magic-wand.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/magic-wand.png"
-  DESC = Copying images/magic-wand.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/magic-wand.png
-  restat = 1
-
-
-#############################################
-# Custom command for qml\VardaanUIContent\images\step-forward.png
-
-build qml/VardaanUIContent/images/step-forward.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/step-forward.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/step-forward.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/step-forward.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/step-forward.png"
-  DESC = Copying images/step-forward.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/step-forward.png
-  restat = 1
-
-
-#############################################
-# Custom command for qml\VardaanUIContent\images\effects.png
-
-build qml/VardaanUIContent/images/effects.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/effects.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/effects.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/effects.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/effects.png"
-  DESC = Copying images/effects.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/effects.png
-  restat = 1
-
-
-#############################################
-# Custom command for qml\VardaanUIContent\images\full-screen.png
-
-build qml/VardaanUIContent/images/full-screen.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/full-screen.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/full-screen.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/full-screen.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/full-screen.png"
-  DESC = Copying images/full-screen.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/full-screen.png
-  restat = 1
-
-
-#############################################
-# Custom command for qml\VardaanUIContent\images\text.png
-
-build qml/VardaanUIContent/images/text.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/text.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/text.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/text.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/text.png"
-  DESC = Copying images/text.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/text.png
+build qml/VardaanUIContent/images/crop.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/crop.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/crop.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/crop.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/crop.png"
+  DESC = Copying images/crop.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/crop.png
   restat = 1
 
 
@@ -639,38 +585,11 @@ build qml/VardaanUIContent/images/download-speed.png | ${cmake_ninja_workdir}qml
 
 
 #############################################
-# Custom command for qml\VardaanUIContent\images\exchange.png
+# Custom command for qml\VardaanUIContent\images\vardaan.png
 
-build qml/VardaanUIContent/images/exchange.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/exchange.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/exchange.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/exchange.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/exchange.png"
-  DESC = Copying images/exchange.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/exchange.png
-  restat = 1
-
-
-#############################################
-# Custom command for qml\VardaanUIContent\images\delete.png
-
-build qml/VardaanUIContent/images/delete.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/delete.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/delete.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/delete.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/delete.png"
-  DESC = Copying images/delete.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/delete.png
-  restat = 1
-
-
-#############################################
-# Custom command for qml\VardaanUIContent\images\crop.png
-
-build qml/VardaanUIContent/images/crop.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/crop.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/crop.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/crop.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/crop.png"
-  DESC = Copying images/crop.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/crop.png
-  restat = 1
-
-
-#############################################
-# Custom command for qml\VardaanUIContent\images\forward.png
-
-build qml/VardaanUIContent/images/forward.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/forward.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/forward.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/forward.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/forward.png"
-  DESC = Copying images/forward.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/forward.png
+build qml/VardaanUIContent/images/vardaan.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/vardaan.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/vardaan.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/vardaan.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/vardaan.png"
+  DESC = Copying images/vardaan.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/vardaan.png
   restat = 1
 
 
@@ -684,11 +603,29 @@ build qml/VardaanUIContent/images/stop.png | ${cmake_ninja_workdir}qml/VardaanUI
 
 
 #############################################
-# Custom command for qml\VardaanUIContent\images\vardaan.png
+# Custom command for qml\VardaanUIContent\images\effects.png
 
-build qml/VardaanUIContent/images/vardaan.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/vardaan.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/vardaan.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/vardaan.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/vardaan.png"
-  DESC = Copying images/vardaan.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/vardaan.png
+build qml/VardaanUIContent/images/effects.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/effects.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/effects.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/effects.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/effects.png"
+  DESC = Copying images/effects.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/effects.png
+  restat = 1
+
+
+#############################################
+# Custom command for qml\VardaanUIContent\images\text.png
+
+build qml/VardaanUIContent/images/text.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/text.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/text.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/text.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/text.png"
+  DESC = Copying images/text.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/text.png
+  restat = 1
+
+
+#############################################
+# Custom command for qml\VardaanUIContent\images\color-palette.png
+
+build qml/VardaanUIContent/images/color-palette.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/color-palette.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/color-palette.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/color-palette.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/color-palette.png"
+  DESC = Copying images/color-palette.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/color-palette.png
   restat = 1
 
 
@@ -702,11 +639,38 @@ build qml/VardaanUIContent/images/high-volume.png | ${cmake_ninja_workdir}qml/Va
 
 
 #############################################
+# Custom command for qml\VardaanUIContent\images\forward.png
+
+build qml/VardaanUIContent/images/forward.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/forward.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/forward.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/forward.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/forward.png"
+  DESC = Copying images/forward.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/forward.png
+  restat = 1
+
+
+#############################################
+# Custom command for qml\VardaanUIContent\images\delete.png
+
+build qml/VardaanUIContent/images/delete.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/delete.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/delete.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/delete.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/delete.png"
+  DESC = Copying images/delete.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/delete.png
+  restat = 1
+
+
+#############################################
 # Custom command for qml\VardaanUIContent\images\undo.png
 
 build qml/VardaanUIContent/images/undo.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/undo.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/undo.png
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/undo.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/undo.png"
   DESC = Copying images/undo.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/undo.png
+  restat = 1
+
+
+#############################################
+# Custom command for qml\VardaanUIContent\images\soundtrack.png
+
+build qml/VardaanUIContent/images/soundtrack.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/soundtrack.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/soundtrack.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/soundtrack.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/soundtrack.png"
+  DESC = Copying images/soundtrack.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/soundtrack.png
   restat = 1
 
 
@@ -720,11 +684,47 @@ build qml/VardaanUIContent/images/step-back.png | ${cmake_ninja_workdir}qml/Vard
 
 
 #############################################
-# Custom command for qml\VardaanUIContent\images\soundtrack.png
+# Custom command for qml\VardaanUIContent\images\pause.png
 
-build qml/VardaanUIContent/images/soundtrack.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/soundtrack.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/soundtrack.png
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/soundtrack.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/soundtrack.png"
-  DESC = Copying images/soundtrack.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/soundtrack.png
+build qml/VardaanUIContent/images/pause.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/pause.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/pause.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/pause.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/pause.png"
+  DESC = Copying images/pause.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/pause.png
+  restat = 1
+
+
+#############################################
+# Custom command for qml\VardaanUIContent\images\step-forward.png
+
+build qml/VardaanUIContent/images/step-forward.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/step-forward.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/step-forward.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/step-forward.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/step-forward.png"
+  DESC = Copying images/step-forward.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/step-forward.png
+  restat = 1
+
+
+#############################################
+# Custom command for qml\VardaanUIContent\images\magic-wand.png
+
+build qml/VardaanUIContent/images/magic-wand.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/magic-wand.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/magic-wand.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/magic-wand.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/magic-wand.png"
+  DESC = Copying images/magic-wand.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/magic-wand.png
+  restat = 1
+
+
+#############################################
+# Custom command for qml\VardaanUIContent\images\exchange.png
+
+build qml/VardaanUIContent/images/exchange.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/exchange.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/exchange.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/exchange.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/exchange.png"
+  DESC = Copying images/exchange.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/exchange.png
+  restat = 1
+
+
+#############################################
+# Custom command for qml\VardaanUIContent\images\full-screen.png
+
+build qml/VardaanUIContent/images/full-screen.png | ${cmake_ninja_workdir}qml/VardaanUIContent/images/full-screen.png: CUSTOM_COMMAND E$:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/full-screen.png
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D E:\Mission-Vardaan-Studio\VardaanUI\VardaanUIContent && "C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/full-screen.png E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/full-screen.png"
+  DESC = Copying images/full-screen.png to E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUIContent/images/full-screen.png
   restat = 1
 
 
