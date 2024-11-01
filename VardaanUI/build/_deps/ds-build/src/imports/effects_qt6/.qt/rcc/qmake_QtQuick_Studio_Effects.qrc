@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QtQuick/Studio/Effects">
+    <file alias="qmldir">E:/Mission-Vardaan-Studio/VardaanUI/build/qml/QtQuick/Studio/Effects/qmldir</file>
+  </qresource>
+</RCC>
+

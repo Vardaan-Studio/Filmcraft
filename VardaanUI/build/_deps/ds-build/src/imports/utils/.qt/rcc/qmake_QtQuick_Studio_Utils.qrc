@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/QtQuick/Studio/Utils">
+    <file alias="qmldir">E:/Mission-Vardaan-Studio/VardaanUI/build/qml/QtQuick/Studio/Utils/qmldir</file>
+  </qresource>
+</RCC>
+

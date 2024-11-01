@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/VardaanUI">
+    <file alias="qmldir">E:/Mission-Vardaan-Studio/VardaanUI/build/qml/VardaanUI/qmldir</file>
+  </qresource>
+</RCC>
+

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/CMakeFiles/ds-populate-Debug"
+		},
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/CMakeFiles/ds-populate-(CONFIG).rule"
+		},
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/CMakeFiles/(CONFIG)/ds-populate-complete.rule"
+		},
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-build.rule"
+		},
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-configure.rule"
+		},
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-download.rule"
+		},
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-install.rule"
+		},
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-mkdir.rule"
+		},
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-patch.rule"
+		},
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-test.rule"
+		},
+		{
+			"file" : "E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ds-populate"
+		],
+		"name" : "ds-populate"
+	}
+}

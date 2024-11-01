@@ -1,0 +1,10 @@
+module VardaanUI
+linktarget VardaanUIplugin
+optional plugin VardaanUIplugin
+classname VardaanUIPlugin
+typeinfo VardaanUI.qmltypes
+prefer :/qt/qml/VardaanUI/
+EventListSimulator 1.0 EventListSimulator.qml
+EventListModel 1.0 EventListModel.qml
+singleton Constants 1.0 Constants.qml
+

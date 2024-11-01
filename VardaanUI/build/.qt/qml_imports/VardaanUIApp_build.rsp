@@ -1,0 +1,11 @@
+-rootPath
+E:/Mission-Vardaan-Studio/VardaanUI
+-cmake-output
+-output-file
+E:/Mission-Vardaan-Studio/VardaanUI/build/.qt/qml_imports/VardaanUIApp_build.cmake
+-importPath
+E:/Mission-Vardaan-Studio/VardaanUI/build/qml
+-importPath
+C:/Qt/6.7.3/mingw_64/qml
+-qrcFiles
+E:/Mission-Vardaan-Studio/VardaanUI/build/.qt/rcc/configuration.qrc

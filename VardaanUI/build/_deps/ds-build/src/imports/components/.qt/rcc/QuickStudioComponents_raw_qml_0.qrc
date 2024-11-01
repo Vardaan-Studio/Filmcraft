@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QtQuick/Studio/Components/">
+    <file alias="ArcArrow.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/ArcArrow.qml</file>
+    <file alias="ArcItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/ArcItem.qml</file>
+    <file alias="BorderItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/BorderItem.qml</file>
+    <file alias="EllipseItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/EllipseItem.qml</file>
+    <file alias="FlipableItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/FlipableItem.qml</file>
+    <file alias="GroupItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/GroupItem.qml</file>
+    <file alias="PieItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/PieItem.qml</file>
+    <file alias="RectangleItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/RectangleItem.qml</file>
+    <file alias="RegularPolygonItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/RegularPolygonItem.qml</file>
+    <file alias="StarItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/StarItem.qml</file>
+    <file alias="StraightArrow.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/StraightArrow.qml</file>
+    <file alias="SvgPathItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/SvgPathItem.qml</file>
+    <file alias="TextItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/TextItem.qml</file>
+    <file alias="TriangleItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/components/TriangleItem.qml</file>
+  </qresource>
+</RCC>
+

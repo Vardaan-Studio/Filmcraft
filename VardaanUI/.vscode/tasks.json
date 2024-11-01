@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Chromakey QML",
+            "type": "shell",
+            "command": "qmlscene E:\\Mission-Vardaan-Studio\\VardaanUI\\VardaanUIContent\\Chromakey.qml",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

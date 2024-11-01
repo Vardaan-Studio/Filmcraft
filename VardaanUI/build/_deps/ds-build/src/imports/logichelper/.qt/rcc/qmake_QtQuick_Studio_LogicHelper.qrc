@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QtQuick/Studio/LogicHelper">
+    <file alias="qmldir">E:/Mission-Vardaan-Studio/VardaanUI/build/qml/QtQuick/Studio/LogicHelper/qmldir</file>
+  </qresource>
+</RCC>
+

@@ -1,0 +1,14 @@
+--bare
+-I
+E:/Mission-Vardaan-Studio/VardaanUI/build/qml
+-I
+E:/Mission-Vardaan-Studio/VardaanUI/build/qml
+-I
+C:/Qt/6.7.3/mingw_64/qml
+--resource
+E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUI/.qt/rcc/qmake_VardaanUI.qrc
+--resource
+E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUI/.qt/rcc/VardaanUI_raw_qml_0.qrc
+E:/Mission-Vardaan-Studio/VardaanUI/VardaanUI/EventListSimulator.qml
+E:/Mission-Vardaan-Studio/VardaanUI/VardaanUI/EventListModel.qml
+E:/Mission-Vardaan-Studio/VardaanUI/VardaanUI/Constants.qml

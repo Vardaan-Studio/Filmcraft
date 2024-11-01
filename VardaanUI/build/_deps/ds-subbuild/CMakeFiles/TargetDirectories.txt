@@ -1,0 +1,3 @@
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/CMakeFiles/ds-populate.dir
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/CMakeFiles/edit_cache.dir
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/CMakeFiles/rebuild_cache.dir

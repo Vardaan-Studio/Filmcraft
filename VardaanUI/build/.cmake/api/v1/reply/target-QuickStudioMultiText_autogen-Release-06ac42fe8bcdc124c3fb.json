@@ -1,0 +1,76 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"build/_deps/ds-src/src/imports/multitext/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "QuickStudioMultiText_tooling::@a7b8d61f767e497853c2"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "QuickStudioMultiText_autogen::@a7b8d61f767e497853c2",
+	"isGeneratorProvided" : true,
+	"name" : "QuickStudioMultiText_autogen",
+	"paths" : 
+	{
+		"build" : "_deps/ds-build/src/imports/multitext",
+		"source" : "build/_deps/ds-src/src/imports/multitext"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/_deps/ds-build/src/imports/multitext/CMakeFiles/QuickStudioMultiText_autogen-Release",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/_deps/ds-build/src/imports/multitext/CMakeFiles/QuickStudioMultiText_autogen-(CONFIG).rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/_deps/ds-build/src/imports/multitext/QuickStudioMultiText_autogen/timestamp.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

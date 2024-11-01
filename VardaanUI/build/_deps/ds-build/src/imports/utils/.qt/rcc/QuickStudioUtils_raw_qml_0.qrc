@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/QtQuick/Studio/Utils/">
+    <file alias="JsonListModel.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/utils/JsonListModel.qml</file>
+    <file alias="JsonBackend.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/utils/JsonBackend.qml</file>
+    <file alias="ChildListModel.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/utils/ChildListModel.qml</file>
+  </qresource>
+</RCC>
+

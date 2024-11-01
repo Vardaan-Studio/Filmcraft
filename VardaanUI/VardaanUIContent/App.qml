@@ -134,6 +134,7 @@ Item {
     
     MenuItem {
         text: "Show Properties                    Alt+E"
+        onTriggered: propertiesDialog.open()
         Shortcut {
             sequence: "Alt+E"
             onActivated: console.log("Show Properties Triggered") // Replace with your function
@@ -200,6 +201,38 @@ Item {
         text: "Speed Control" // No shortcut for this item
     }
 }
+    Dialog {
+        id: propertiesDialog
+        title: "Properties"
+        modal: true
+        standardButtons: Dialog.Ok | Dialog.Cancel
+
+        Column {
+            width: 300
+            spacing: 10
+
+            ComboBox {
+                id: optionsSelector
+                model: ["Transform", "Compositing", "Chroma Key"]
+                width: parent.width // Make ComboBox full width of the dialog
+            }
+
+            Loader {
+                id: contentLoader
+                width: parent.width
+                height: 200 // Set a specific height for content area
+
+                sourceComponent: optionsSelector.currentIndex === 2 ? chromaKeyComponent : null
+                // Add additional components for "Transform" and "Compositing" if needed
+            }
+        }
+
+        Component {
+            id: chromaKeyComponent
+            Chromakey { } // Loads the `Chromakey.qml` component
+        }
+    }
+
 
 
 

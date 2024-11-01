@@ -1,0 +1,36 @@
+module QtQuick.Studio.Components
+linktarget QuickStudioComponentsplugin
+optional plugin QuickStudioComponentsplugin
+classname QtQuick_Studio_ComponentsPlugin
+designersupported
+typeinfo QuickStudioComponents.qmltypes
+prefer :/qt-project.org/imports/QtQuick/Studio/Components/
+ArcArrow 6.0 ArcArrow.qml
+ArcArrow 1.0 ArcArrow.qml
+ArcItem 6.0 ArcItem.qml
+ArcItem 1.0 ArcItem.qml
+BorderItem 6.0 BorderItem.qml
+BorderItem 1.0 BorderItem.qml
+EllipseItem 6.0 EllipseItem.qml
+EllipseItem 1.0 EllipseItem.qml
+FlipableItem 6.0 FlipableItem.qml
+FlipableItem 1.0 FlipableItem.qml
+GroupItem 6.0 GroupItem.qml
+GroupItem 1.0 GroupItem.qml
+PieItem 6.0 PieItem.qml
+PieItem 1.0 PieItem.qml
+RectangleItem 6.0 RectangleItem.qml
+RectangleItem 1.0 RectangleItem.qml
+RegularPolygonItem 6.0 RegularPolygonItem.qml
+RegularPolygonItem 1.0 RegularPolygonItem.qml
+StarItem 6.0 StarItem.qml
+StarItem 1.0 StarItem.qml
+StraightArrow 6.0 StraightArrow.qml
+StraightArrow 1.0 StraightArrow.qml
+SvgPathItem 6.0 SvgPathItem.qml
+SvgPathItem 1.0 SvgPathItem.qml
+TextItem 6.0 TextItem.qml
+TextItem 1.0 TextItem.qml
+TriangleItem 6.0 TriangleItem.qml
+TriangleItem 1.0 TriangleItem.qml
+

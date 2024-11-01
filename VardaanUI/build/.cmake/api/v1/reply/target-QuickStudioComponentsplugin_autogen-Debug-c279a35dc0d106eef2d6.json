@@ -1,0 +1,69 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"build/_deps/ds-src/src/imports/components/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "QuickStudioComponentsplugin_autogen::@b8ea75ca72e9d0096cda",
+	"isGeneratorProvided" : true,
+	"name" : "QuickStudioComponentsplugin_autogen",
+	"paths" : 
+	{
+		"build" : "_deps/ds-build/src/imports/components",
+		"source" : "build/_deps/ds-src/src/imports/components"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/_deps/ds-build/src/imports/components/CMakeFiles/QuickStudioComponentsplugin_autogen-Debug",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/_deps/ds-build/src/imports/components/CMakeFiles/QuickStudioComponentsplugin_autogen-(CONFIG).rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/_deps/ds-build/src/imports/components/QuickStudioComponentsplugin_autogen/timestamp.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

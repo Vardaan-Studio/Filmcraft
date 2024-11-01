@@ -1,0 +1,14 @@
+# Target labels
+ ds-populate
+# Source files and their labels
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/CMakeFiles/ds-populate-Debug
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/CMakeFiles/ds-populate-(CONFIG).rule
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/CMakeFiles/(CONFIG)/ds-populate-complete.rule
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-build.rule
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-configure.rule
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-download.rule
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-install.rule
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-mkdir.rule
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-patch.rule
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-test.rule
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/(CONFIG)/ds-populate-update.rule

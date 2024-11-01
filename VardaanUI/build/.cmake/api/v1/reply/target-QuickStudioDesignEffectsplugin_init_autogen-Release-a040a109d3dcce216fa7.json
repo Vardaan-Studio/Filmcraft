@@ -1,0 +1,69 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"build/_deps/ds-src/src/imports/designeffects/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "QuickStudioDesignEffectsplugin_init_autogen::@1ccadc516e22f7953e6b",
+	"isGeneratorProvided" : true,
+	"name" : "QuickStudioDesignEffectsplugin_init_autogen",
+	"paths" : 
+	{
+		"build" : "_deps/ds-build/src/imports/designeffects",
+		"source" : "build/_deps/ds-src/src/imports/designeffects"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/_deps/ds-build/src/imports/designeffects/CMakeFiles/QuickStudioDesignEffectsplugin_init_autogen-Release",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/_deps/ds-build/src/imports/designeffects/CMakeFiles/QuickStudioDesignEffectsplugin_init_autogen-(CONFIG).rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/_deps/ds-build/src/imports/designeffects/QuickStudioDesignEffectsplugin_init_autogen/timestamp.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

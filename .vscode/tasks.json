@@ -2,12 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run QML",
+            "label": "Run Chromakey QML",
             "type": "shell",
-            "command": "qmlscene",
-            "args": [
-                "E:\\Mission-Vardaan-Studio\\VardaanUI\\VardaanUIContent\\App.qml"
-            ],
+            "command": "qmlscene E:\\Mission-Vardaan-Studio\\VardaanUI\\VardaanUIContent\\App.qml",
             "group": {
                 "kind": "build",
                 "isDefault": true

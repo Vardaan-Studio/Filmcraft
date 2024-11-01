@@ -1,0 +1,16 @@
+--bare
+-I
+E:/Mission-Vardaan-Studio/VardaanUI/build/qml
+-I
+E:/Mission-Vardaan-Studio/VardaanUI/build/qml
+-I
+C:/Qt/6.7.3/mingw_64/qml
+--resource
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-build/src/imports/utils/.qt/rcc/qmake_QtQuick_Studio_Utils.qrc
+--resource
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-build/src/imports/utils/.qt/rcc/QuickStudioUtils_raw_qml_0.qrc
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/utils/JsonListModel.qml
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/utils/JsonBackend.qml
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/utils/ChildListModel.qml
+--json
+E:/Mission-Vardaan-Studio/VardaanUI/build/QuickStudioUtils_qmllint.json

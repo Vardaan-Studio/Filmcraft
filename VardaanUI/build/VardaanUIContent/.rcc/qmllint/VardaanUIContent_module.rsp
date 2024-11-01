@@ -1,0 +1,12 @@
+-I
+E:/Mission-Vardaan-Studio/VardaanUI/build/qml
+-I
+E:/Mission-Vardaan-Studio/VardaanUI/build/qml
+-I
+C:/Qt/6.7.3/mingw_64/qml
+--resource
+E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent/.qt/rcc/qmake_VardaanUIContent.qrc
+--resource
+E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent/.qt/rcc/VardaanUIContent_raw_qml_0.qrc
+--module
+VardaanUIContent

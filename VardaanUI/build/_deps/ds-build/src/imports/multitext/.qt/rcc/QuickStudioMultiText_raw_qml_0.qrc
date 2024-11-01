@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QtQuick/Studio/MultiText/">
+    <file alias="MultiTextElement.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/multitext/MultiTextElement.qml</file>
+    <file alias="MultiTextItem.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/multitext/MultiTextItem.qml</file>
+    <file alias="MultiTextException.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/multitext/MultiTextException.qml</file>
+  </qresource>
+</RCC>
+

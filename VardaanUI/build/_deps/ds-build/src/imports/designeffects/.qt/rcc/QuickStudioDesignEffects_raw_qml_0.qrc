@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QtQuick/Studio/DesignEffects/">
+    <file alias="DesignBackgroundBlurPrivate.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/designeffects/DesignBackgroundBlurPrivate.qml</file>
+    <file alias="DesignDropShadow.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/designeffects/DesignDropShadow.qml</file>
+    <file alias="DesignDropShadowPrivate.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/designeffects/DesignDropShadowPrivate.qml</file>
+    <file alias="DesignEffect.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/designeffects/DesignEffect.qml</file>
+    <file alias="DesignEffectPrivate.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/designeffects/DesignEffectPrivate.qml</file>
+    <file alias="DesignInnerShadow.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/designeffects/DesignInnerShadow.qml</file>
+    <file alias="DesignInnerShadowPrivate.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/designeffects/DesignInnerShadowPrivate.qml</file>
+    <file alias="DesignLayerBlurPrivate.qml">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-src/src/imports/designeffects/DesignLayerBlurPrivate.qml</file>
+  </qresource>
+</RCC>
+

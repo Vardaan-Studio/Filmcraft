@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/QtQuick/Studio/Utils">E:/Mission-Vardaan-Studio/VardaanUI/build/qml/QtQuick/Studio/Utils</file>
+
+  </qresource>
+</RCC>

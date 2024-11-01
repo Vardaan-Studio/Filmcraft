@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QtQuick/Studio/EventSystem">
+    <file alias="qmldir">E:/Mission-Vardaan-Studio/VardaanUI/build/qml/QtQuick/Studio/EventSystem/qmldir</file>
+  </qresource>
+</RCC>
+

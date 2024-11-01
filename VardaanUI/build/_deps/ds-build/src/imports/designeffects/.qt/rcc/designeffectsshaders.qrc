@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QtQuick/Studio/DesignEffects">
+    <file alias="shaders/dropShadow.frag.qsb">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-build/src/imports/designeffects/.qsb/shaders/dropShadow.frag.qsb</file>
+    <file alias="shaders/dropShadowClip.frag.qsb">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-build/src/imports/designeffects/.qsb/shaders/dropShadowClip.frag.qsb</file>
+    <file alias="shaders/gaussianBlur.frag.qsb">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-build/src/imports/designeffects/.qsb/shaders/gaussianBlur.frag.qsb</file>
+    <file alias="shaders/innerShadow.frag.qsb">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-build/src/imports/designeffects/.qsb/shaders/innerShadow.frag.qsb</file>
+    <file alias="shaders/innerShadowClip.frag.qsb">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-build/src/imports/designeffects/.qsb/shaders/innerShadowClip.frag.qsb</file>
+    <file alias="shaders/opacityMask.frag.qsb">E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-build/src/imports/designeffects/.qsb/shaders/opacityMask.frag.qsb</file>
+  </qresource>
+</RCC>
+

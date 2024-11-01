@@ -1,0 +1,7 @@
+--resource
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-build/src/imports/utils/.qt/rcc/qmake_QtQuick_Studio_Utils.qrc
+--resource
+E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-build/src/imports/utils/.qt/rcc/QuickStudioUtils_raw_qml_0.qrc
+/QtQuick/Studio/Utils/JsonListModel.qml
+/QtQuick/Studio/Utils/JsonBackend.qml
+/QtQuick/Studio/Utils/ChildListModel.qml
