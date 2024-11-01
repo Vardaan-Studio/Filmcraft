@@ -8,48 +8,80 @@ Item {
     width: 400
     height: 300
 
+    // Main background color (chroma key green)
+    Rectangle {
+        id: chromaKeyBackground
+        color: "#00FF00"
+        anchors.fill: parent
+    }
+
+    // Central checkbox for main window
+    CheckBox {
+        id: mainCheckBox
+        text: "Enable Feature"
+        anchors.centerIn: parent
+        background: Rectangle {
+            color: "transparent"
+            border.color: "black"
+            border.width: 1
+            radius: 4
+        }
+        indicator: Rectangle {
+            width: 20
+            height: 20
+            radius: 2
+            color: mainCheckBox.checked ? "#00FF00" : "white"
+            border.color: "black"
+            border.width: 1
+        }
+    }
+
+    // Button to open chroma key settings popup
     Button {
         text: "Open Chroma Key Settings"
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottomMargin: 20
         onClicked: chromaKeyPopup.open()
     }
 
-    // Custom Chroma Key Settings Dialog
+    // Chroma Key Settings Popup
     Popup {
         id: chromaKeyPopup
         width: 300
         height: 300
         modal: true
         focus: true
+        closePolicy: Popup.CloseOnEscape
 
         ColumnLayout {
             anchors.fill: parent
-            anchors.margins: 10 // Use margins instead of padding
+            anchors.margins: 10
             spacing: 10
 
-            // Chroma Key Checkbox
+            // Checkbox for enabling/disabling chroma key in settings
             RowLayout {
                 spacing: 5
                 CheckBox {
-                    id: chromaKeyCheckBox
+                    id: chromaKeySettingsCheckBox
                     text: "Enable Chroma Key"
                 }
                 Label {
                     text: "Chroma Key"
+                    Layout.alignment: Qt.AlignLeft
                 }
             }
 
-            // Color Picker
+            // Color picker button and display rectangle
+            Button {
+                text: "Select Color"
+                onClicked: colorDialog.open()
+            }
             ColorDialog {
                 id: colorDialog
                 title: "Select Color"
                 onAccepted: selectedColor.color = colorDialog.color
             }
-
-            Button {
-                text: "Select Color"
-                onClicked: colorDialog.open()
-            }
-
             Rectangle {
                 id: selectedColor
                 width: 50
@@ -57,13 +89,13 @@ Item {
                 color: "transparent"
                 border.color: "black"
                 border.width: 1
+                Layout.alignment: Qt.AlignHCenter
             }
 
-            // Offset Slider
+            // Offset slider with label for displaying the current value
             Label {
                 text: "Offset:"
             }
-
             RowLayout {
                 spacing: 10
                 Slider {
@@ -73,14 +105,13 @@ Item {
                     stepSize: 1
                     onValueChanged: offsetLabel.text = value.toFixed(0)
                 }
-
                 Label {
                     id: offsetLabel
                     text: "0"
                 }
             }
 
-            // Close Button
+            // Close button for the popup
             Button {
                 text: "OK"
                 Layout.alignment: Qt.AlignRight

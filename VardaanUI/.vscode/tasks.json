@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run QML",
+            "type": "shell",
+            "command": "qmlscene",
+            "args": [
+                "D:\\Vardaan Studio\\Mission-Vardaan-Studio\\VardaanUI\\VardaanUIContent\\App.qml"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
