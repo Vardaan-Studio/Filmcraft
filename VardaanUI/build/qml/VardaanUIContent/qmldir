@@ -4,7 +4,8 @@ optional plugin VardaanUIContentplugin
 classname VardaanUIContentPlugin
 typeinfo VardaanUIContent.qmltypes
 prefer :/qt/qml/VardaanUIContent/
-Screen01 1.0 Screen01.ui.qml
-Chromakey 1.0 Chromakey.qml
 App 1.0 App.qml
+Chromakey 1.0 Chromakey.qml
+Customspeed 1.0 Customspeed.qml
+Screen01 1.0 Screen01.ui.qml
 

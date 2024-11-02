@@ -2,6 +2,6 @@
 E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUI/.qt/rcc/qmake_VardaanUI.qrc
 --resource
 E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUI/.qt/rcc/VardaanUI_raw_qml_0.qrc
+/qt/qml/VardaanUI/Constants.qml
 /qt/qml/VardaanUI/EventListSimulator.qml
 /qt/qml/VardaanUI/EventListModel.qml
-/qt/qml/VardaanUI/Constants.qml

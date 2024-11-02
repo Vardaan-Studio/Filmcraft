@@ -6,6 +6,11 @@ Item {
     width: 1920
     height: 1080
 
+    Rectangle {
+                anchors.fill: parent
+                color: "#1A1A1A" // Set your desired dark color here
+            }
+
     // Create a horizontal layout for the logo and menu bar
 
     Row {
@@ -27,54 +32,155 @@ Item {
         // Menu Bar
         MenuBar {
             anchors.verticalCenter: parent.verticalCenter
+                    background: Color.black // Dark background for the menu bar
 
             Menu {
     title: "File"
+   
 
     MenuItem {
-        text: "New Project\t                     Ctrl+N"
-        Shortcut {
-            sequence: "Ctrl+N"
-            onActivated: console.log("New Project Triggered") // Replace with your function
+    Item {
+        width: parent.width
+        height: parent.height
+
+        // Dark background for the menu item
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        // Text with white color
+        Text {
+            text: "New Project\t                     Ctrl+N"
+            anchors.centerIn: parent
+            color: "white" // Set text color to white
         }
     }
 
-    MenuItem {
-        text: "Import Media\t                      Ctrl+I"
-        Shortcut {
-            sequence: "Ctrl+I"
-            onActivated: console.log("Import Media Triggered") // Replace with your function
-        }
+    Shortcut {
+        sequence: "Ctrl+N"
+        onActivated: console.log("New Project Triggered") // Replace with your function
     }
+}
+
 
     MenuItem {
-        text: "Save Project\t                     Ctrl+S"
-        Shortcut {
-            sequence: "Ctrl+S"
-            onActivated: console.log("Save Project Triggered") // Replace with your function
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        Text {
+            text: "Import Media\t                      Ctrl+I"
+            anchors.centerIn: parent
+            color: "white" // Set text color to white
         }
     }
+    Shortcut {
+        sequence: "Ctrl+I"
+        onActivated: console.log("Import Media Triggered") // Replace with your function
+    }
+}
 
-    MenuItem {
-        text: "Save Project As           Ctrl+Shift+S"
-        Shortcut {
-            sequence: "Ctrl+Shift+S"
-            onActivated: console.log("Save Project As Triggered") // Replace with your function
+MenuItem {
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        Text {
+            text: "Save Project\t                     Ctrl+S"
+            anchors.centerIn: parent
+            color: "white" // Set text color to white
         }
     }
-
-    MenuItem {
-        text: "Project Settings" // No shortcut for this item
+    Shortcut {
+        sequence: "Ctrl+S"
+        onActivated: console.log("Save Project Triggered") // Replace with your function
     }
+}
 
-    MenuItem {
-        text: "Exit\t                    Alt+F4"
-        onTriggered: Qt.quit()
-        Shortcut {
-            sequence: "Alt+F4"
-            onActivated: Qt.quit()
+MenuItem {
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        Text {
+            text: "Save Project As           Ctrl+Shift+S"
+            anchors.centerIn: parent
+            color: "white" // Set text color to white
         }
     }
+    Shortcut {
+        sequence: "Ctrl+Shift+S"
+        onActivated: console.log("Save Project As Triggered") // Replace with your function
+    }
+}
+
+MenuItem {
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        // Container for padding
+        Item {
+            anchors.left: parent.left // Align the container to the left
+            anchors.verticalCenter: parent.verticalCenter // Center vertically within the item
+            width: parent.width // Match the parent width
+
+            Text {
+                text: "Project Settings" // No shortcut for this item
+                color: "white" // Set text color to white
+                anchors.left: parent.left // Align text to the left
+                anchors.verticalCenter: parent.verticalCenter // Center vertically within the container
+                leftPadding: 10 // Use padding instead of margin
+            }
+        }
+    }
+}
+
+
+MenuItem {
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        Text {
+            text: "Exit\t                    Alt+F4"
+            anchors.centerIn: parent
+            color: "white" // Set text color to white
+        }
+    }
+    onTriggered: Qt.quit()
+    Shortcut {
+        sequence: "Alt+F4"
+        onActivated: Qt.quit()
+    }
+}
+
 }
 
 
@@ -82,52 +188,155 @@ Item {
                      title: "Edit"
 
                          MenuItem {
-                           text: "Undo\t                      Ctrl+Z"
-                                    Shortcut {
-                                            sequence: "Ctrl+Z"
-                                            onActivated: console.log("Undo Triggered") // Replace with your function
-                                                }
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        Text {
+            text: "Undo\t                      Ctrl+Z" // Text for Undo
+            color: "white" // Set text color to white
+            anchors.left: parent.left // Align text to the left
+            anchors.verticalCenter: parent.verticalCenter // Center vertically within the container
+        }
+
+        Shortcut {
+            sequence: "Ctrl+Z"
+            onActivated: console.log("Undo Triggered") // Replace with your function
+        }
     }
 
-    MenuItem {
-        text: "Redo\t                      Ctrl+Y"
+}
+
+MenuItem {
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        Text {
+            text: "Redo\t                      Ctrl+Y" // Text for Redo
+            color: "white" // Set text color to white
+            anchors.left: parent.left // Align text to the left
+            anchors.verticalCenter: parent.verticalCenter // Center vertically within the container
+        }
+
         Shortcut {
             sequence: "Ctrl+Y"
             onActivated: console.log("Redo Triggered") // Replace with your function
         }
     }
 
-    MenuItem {
-        text: "Cut\t                     Ctrl+X"
+}
+
+MenuItem {
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        Text {
+            text: "Cut\t                     Ctrl+X" // Text for Cut
+            color: "white" // Set text color to white
+            anchors.left: parent.left // Align text to the left
+            anchors.verticalCenter: parent.verticalCenter // Center vertically within the container
+        }
+
         Shortcut {
             sequence: "Ctrl+X"
             onActivated: console.log("Cut Triggered") // Replace with your function
         }
     }
 
-    MenuItem {
-        text: "Copy\t                     Ctrl+C"
+}
+
+MenuItem {
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        Text {
+            text: "Copy\t                     Ctrl+C" // Text for Copy
+            color: "white" // Set text color to white
+            anchors.left: parent.left // Align text to the left
+            anchors.verticalCenter: parent.verticalCenter // Center vertically within the container
+        }
+
         Shortcut {
             sequence: "Ctrl+C"
             onActivated: console.log("Copy Triggered") // Replace with your function
         }
     }
 
-    MenuItem {
-        text: "Paste\t                     Ctrl+V"
+}
+
+MenuItem {
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        Text {
+            text: "Paste\t                     Ctrl+V" // Text for Paste
+            color: "white" // Set text color to white
+            anchors.left: parent.left // Align text to the left
+            anchors.verticalCenter: parent.verticalCenter // Center vertically within the container
+        }
+
         Shortcut {
             sequence: "Ctrl+V"
             onActivated: console.log("Paste Triggered") // Replace with your function
         }
     }
 
-    MenuItem {
-        text: "Delete\t                     Delete"
+}
+
+MenuItem {
+    Item {
+        width: parent.width
+        height: parent.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: "#222222" // Dark background color for each item
+        }
+
+        Text {
+            text: "Delete\t                     Delete" // Text for Delete
+            color: "white" // Set text color to white
+            anchors.left: parent.left // Align text to the left
+            anchors.verticalCenter: parent.verticalCenter // Center vertically within the container
+        }
+
         Shortcut {
             sequence: "Delete"
             onActivated: console.log("Delete Triggered") // Replace with your function
         }
     }
+
+}
+
 }
 
     Menu {
@@ -138,7 +347,11 @@ Item {
         onTriggered: propertiesDialog.open()
         Shortcut {
             sequence: "Alt+E"
-            onActivated: console.log("Show Properties Triggered") // Replace with your function
+            onActivated:
+            {
+                propertiesDialog.open()  // Ensure dialog opens here
+
+            }
         }
     }
 
@@ -200,8 +413,70 @@ Item {
 
     MenuItem {
         text: "Speed Control" // No shortcut for this item
+        onTriggered: speedControlDialog.open()
     }
 }
+
+
+    Dialog {
+    id: speedControlDialog
+    title: "Custom Speed Control"
+    modal: true
+    width: 500   // Set your desired width
+    height: 500  // Set your desired height
+    x: (width - 250) / 2 // Centering the dialog horizontally
+    y: (height - 250) / 2 // Centering the dialog vertically
+
+    // Load the content from Customspeed.qml
+    Loader {
+        id: loader
+        source: "Customspeed.qml"
+        anchors.fill: parent // Fill the dialog
+    }
+
+    // Add buttons under the Loader
+    Row {
+        spacing: 20
+        x: 150
+        y: 250
+        anchors.horizontalCenter: parent.horizontalCenter // Center the buttons
+
+        Button {
+            text: "OK"
+            width: 80
+            background: Rectangle {
+                color: "#ffa500"
+                radius: 4
+            }
+            onClicked: {
+                // Add your OK action here
+                speedControlDialog.close(); // Optional: Close dialog on OK
+            }
+        }
+
+        Button {
+            width: 80
+            height: 32
+            background: Rectangle {
+                color: "#1E1E1E"
+                border.color: "#ffa500"
+                radius: 4
+            }
+            contentItem: Text {
+                text: "CANCEL"
+                color: "white"
+                font.pixelSize: 14
+                anchors.centerIn: parent
+            }
+            onClicked: {
+                speedControlDialog.close() // Close the dialog on cancel
+            }
+        }
+    }
+}
+    
+
+
     Dialog {
         id: propertiesDialog
         title: "Properties"
@@ -292,20 +567,22 @@ Item {
         font.pixelSize: 14
         font.bold: true
         anchors.centerIn: parent // Centering text within the button
+        verticalAlignment: Text.AlignVCenter // Center text vertically
+        horizontalAlignment: Text.AlignHCenter // Center text horizontally
     }
 
     background: Rectangle {
         width: parent.width
         height: parent.height
-        radius: 4
-        color: "#1E1E1E" // Dark background color
-        border.color: "#FFA500" // Orange border
-        border.width: 2 // Increased border width
+        radius: 15 // Rounded corners
+        color: "#FF4500" // Solid orange color for the button
     }
 }
 
+
+
     // Horizontal feature bar
-           Row {
+          Row {
     id: featureBar
     y: -14
     anchors.top: logo.bottom
@@ -331,13 +608,20 @@ Item {
 
         delegate: Rectangle {
             width: 70 // Width of each box
-            height: 60  // Height of each box
-            color: "#333333"  // Changed background color to dark
-            radius: 8  // Optional: rounded corners
-            border.color: "#a0a0a0"
-            border.width: 1
+            height: 60 // Height of each box
+            color: "transparent" // Keep the rectangle invisible
+            radius: 8 // Optional: rounded corners
             anchors.verticalCenter: parent.verticalCenter
-            anchors.margins: 5  // Space between boxes
+            anchors.margins: 5 // Space between boxes
+
+            MouseArea {
+                anchors.fill: parent // Make the MouseArea cover the entire rectangle
+                cursorShape: Qt.PointingHandCursor // Change cursor to hand on hover
+                onClicked: {
+                    // Add your click action here (for now, just log the name)
+                    console.log(modelData.name + " clicked");
+                }
+            }
 
             Column {
                 anchors.centerIn: parent
@@ -345,19 +629,19 @@ Item {
 
                 Image {
                     source: modelData.icon
-                    width: 25  // Icon width
-                    height: 25  // Icon height
+                    width: 25 // Icon width
+                    height: 25 // Icon height
                     fillMode: Image.PreserveAspectFit
                     anchors.horizontalCenter: parent.horizontalCenter // Center the icon horizontally
-                    anchors.left: parent.left  // Align to the left of the parent
+                    anchors.left: parent.left // Align to the left of the parent
                     anchors.leftMargin: modelData.name === "Colour Grade" ? modelData.offset : 0 // Apply offset if it's Colour Grade
                 }
 
                 Text {
                     text: modelData.name
-                    font.pixelSize: 10  // Font size for all items
+                    font.pixelSize: 10 // Font size for all items
                     horizontalAlignment: Text.AlignHCenter
-                    color: "#FFFFFF"  // Change text color for better contrast
+                    color: "#FFFFFF" // Change text color for better contrast
                 }
             }
         }
@@ -365,10 +649,12 @@ Item {
 }
 
 
+
+
     Row {
     id: editingBar
     anchors.top: featureBar.bottom // Position it below the feature bar
-    anchors.topMargin: 232
+    anchors.topMargin: 238
     anchors.horizontalCenterOffset: 283 // Margin for spacing
     anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
     spacing: 10 // Space between the buttons
@@ -377,153 +663,67 @@ Item {
     // Step Back Button
     Button {
         width: 40 // Set width for the button
-        background: Rectangle {
-            width: parent.width
-            height: parent.height
-            radius: 10
-            color: "#F0F0F0" // Light gray background color
-            border.color: "#CCCCCC" // Slightly darker border for contrast
-            border.width: 1
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
-                GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
-            }
-            Rectangle { // Inner shadow effect
-                anchors.fill: parent
-                radius: 10
-                color: "transparent"
-                border.color: "#CCCCCC"
-                border.width: 1
-                opacity: 0.5
-            }
-            Rectangle { // Bottom shadow for depth
-                width: parent.width - 8
-                height: parent.height - 8
-                radius: 8
-                anchors.centerIn: parent
-                color: "#D0D0D0" // Slightly darker gray for depth
-                border.color: "#CCCCCC"
-                border.width: 1
-                opacity: 0.8
-            }
-        }
         icon.source: "images/step-back.png" // Path to the Step Back icon
+        icon.color: "white" // Set icon color to white
+        icon.width: 16
+        icon.height: 16
+
+        // Make the background transparent
+        background: Rectangle {
+            color: "transparent" // Set to transparent to hide the rectangle
+        }
     }
 
     // Step Forward Button
     Button {
         width: 40 // Set width for the button
-        background: Rectangle {
-            width: parent.width
-            height: parent.height
-            radius: 10
-            color: "#F0F0F0" // Light gray background color
-            border.color: "#CCCCCC" // Slightly darker border for contrast
-            border.width: 1
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
-                GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
-            }
-            Rectangle { // Inner shadow effect
-                anchors.fill: parent
-                radius: 10
-                color: "transparent"
-                border.color: "#CCCCCC"
-                border.width: 1
-                opacity: 0.5
-            }
-            Rectangle { // Bottom shadow for depth
-                width: parent.width - 8
-                height: parent.height - 8
-                radius: 8
-                anchors.centerIn: parent
-                color: "#D0D0D0" // Slightly darker gray for depth
-                border.color: "#CCCCCC"
-                border.width: 1
-                opacity: 0.8
-            }
-        }
         icon.source: "images/step-forward.png" // Path to the Step Forward icon
+        icon.color: "white" // Set icon color to white
+        icon.width: 16
+        icon.height: 16
+
+        // Make the background transparent
+        background: Rectangle {
+            color: "transparent" // Set to transparent to hide the rectangle
+        }
     }
 
     // Pause/Play Button
     Button {
         width: 40 // Set width for the button
-        background: Rectangle {
-            width: parent.width
-            height: parent.height
-            radius: 10
-            color: "#F0F0F0" // Light gray background color
-            border.color: "#CCCCCC" // Slightly darker border for contrast
-            border.width: 1
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
-                GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
-            }
-            Rectangle { // Inner shadow effect
-                anchors.fill: parent
-                radius: 10
-                color: "transparent"
-                border.color: "#CCCCCC"
-                border.width: 1
-                opacity: 0.5
-            }
-            Rectangle { // Bottom shadow for depth
-                width: parent.width - 8
-                height: parent.height - 8
-                radius: 8
-                anchors.centerIn: parent
-                color: "#D0D0D0" // Slightly darker gray for depth
-                border.color: "#CCCCCC"
-                border.width: 1
-                opacity: 0.8
-            }
-        }
         icon.source: "images/pause.png" // Path to the Pause/Play icon
+        icon.color: "white" // Set icon color to white
+        icon.width: 16
+        icon.height: 16
+
+        // Make the background transparent
+        background: Rectangle {
+            color: "transparent" // Set to transparent to hide the rectangle
+        }
     }
 
     // Stop Button
     Button {
         width: 40 // Set width for the button
-        background: Rectangle {
-            width: parent.width
-            height: parent.height
-            radius: 10
-            color: "#F0F0F0" // Light gray background color
-            border.color: "#CCCCCC" // Slightly darker border for contrast
-            border.width: 1
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
-                GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
-            }
-            Rectangle { // Inner shadow effect
-                anchors.fill: parent
-                radius: 10
-                color: "transparent"
-                border.color: "#CCCCCC"
-                border.width: 1
-                opacity: 0.5
-            }
-            Rectangle { // Bottom shadow for depth
-                width: parent.width - 8
-                height: parent.height - 8
-                radius: 8
-                anchors.centerIn: parent
-                color: "#D0D0D0" // Slightly darker gray for depth
-                border.color: "#CCCCCC"
-                border.width: 1
-                opacity: 0.8
-            }
-        }
         icon.source: "images/stop.png" // Path to the Stop icon
+        icon.color: "white" // Set icon color to white
+        icon.width: 16
+        icon.height: 16
+
+        // Make the background transparent
+        background: Rectangle {
+            color: "transparent" // Set to transparent to hide the rectangle
+        }
     }
 }
+
+
 
 
        Rectangle {
     id: rectangle1
     x: 1300
-    y: 463
+    y: 470
     width: 356
     height: 50
     color: "transparent"
@@ -537,151 +737,262 @@ Item {
         spacing: 10 // Space between the buttons
 
         // New Volume Button
-        Button {
-            width: 40 // Set width for the button
-            background: Rectangle {
-                width: parent.width
-                height: parent.height
-                radius: 10
-                color: "#F0F0F0" // Light gray background color
-                border.color: "#CCCCCC" // Slightly darker border for contrast
-                border.width: 1
-                gradient: Gradient {
-                    GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
-                    GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
-                }
-                Rectangle { // Inner shadow effect
-                    anchors.fill: parent
-                    radius: 10
-                    color: "transparent"
-                    border.color: "#CCCCCC"
-                    border.width: 1
-                    opacity: 0.5
-                }
-                Rectangle { // Bottom shadow for depth
-                    width: parent.width - 8
-                    height: parent.height - 8
-                    radius: 8
-                    anchors.centerIn: parent
-                    color: "#D0D0D0" // Slightly darker gray for depth
-                    border.color: "#CCCCCC"
-                    border.width: 1
-                    opacity: 0.8
-                }
-            }
-            icon.source: "images/high-volume.png" // Replace with your volume icon path
+       Button {
+    width: 40 // Set width for the button
+    icon.source: "images/high-volume.png" // Replace with your volume icon path
+    icon.color: "white" // Set icon color to white
+    icon.width: 16
+    icon.height: 16
+
+    // Make the background transparent
+    background: Rectangle {
+        color: "transparent" // Set to transparent to hide the rectangle
+    }
+
+    // Optional: If you want a hover effect or active state, you can define styles here
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            // Add your click action here
         }
+        onPressed: {
+            // Optional: Change icon color or size on press for effect
+            icon.color = "lightgray"; // Change color on press
+        }
+        onReleased: {
+            icon.color = "white"; // Revert color on release
+        }
+    }
+}
+
 
         // Full Screen Button
         Button {
-            width: 40 // Set width for the button
-            background: Rectangle {
-                width: parent.width
-                height: parent.height
-                radius: 10
-                color: "#F0F0F0" // Light gray background color
-                border.color: "#CCCCCC" // Slightly darker border for contrast
-                border.width: 1
-                gradient: Gradient {
-                    GradientStop { position: 0.0; color: "#E0E0E0" } // Light gray at the top
-                    GradientStop { position: 1.0; color: "#B0B0B0" } // Darker gray at the bottom
-                }
-                Rectangle { // Inner shadow effect
-                    anchors.fill: parent
-                    radius: 10
-                    color: "transparent"
-                    border.color: "#CCCCCC"
-                    border.width: 1
-                    opacity: 0.5
-                }
-                Rectangle { // Bottom shadow for depth
-                    width: parent.width - 8
-                    height: parent.height - 8
-                    radius: 8
-                    anchors.centerIn: parent
-                    color: "#D0D0D0" // Slightly darker gray for depth
-                    border.color: "#CCCCCC"
-                    border.width: 1
-                    opacity: 0.8
-                }
+    width: 30 // Set width for the button
+    icon.source: "images/full-screen.png" // Replace with your full-screen icon path
+    icon.color: "white" // Set icon color to white
+    icon.width: 16
+    icon.height: 16
+
+    // Make the background transparent
+    background: Rectangle {
+        color: "transparent" // Set to transparent to hide the rectangle
+    }
+
+    // Optional: If you want a hover effect or active state, you can define styles here
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            // Add your click action here
+        }
+        onPressed: {
+            // Optional: Change icon color or size on press for effect
+            icon.color = "lightgray"; // Change color on press
+        }
+        onReleased: {
+            icon.color = "white"; // Revert color on release
+        }
+    }
+}
+
+    }
+}
+
+
+    // Tool Bar
+    Row {
+    id: toolBar
+    anchors.top: featureBar.bottom
+    anchors.leftMargin: 0 // Position it below the feature bar
+    anchors.topMargin: 272.5
+    anchors.horizontalCenterOffset: 0 // Increase margin for more space
+    anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
+    anchors.left: parent.left
+    anchors.right: parent.right
+    spacing: 20 // Space between the tool buttons
+    height: 50 // Set height for the toolbar
+
+    // Tool buttons with dark background and only icons
+    Button {
+        width: 35 // Set width for the button
+        icon.source: "images/undo.png" // Path to the Undo icon
+        icon.color: "white" // Set icon color to white
+        icon.width: 22
+        icon.height: 22
+
+        // Make the background transparent
+        background: Rectangle {
+            color: "transparent" // Set to transparent to hide the rectangle
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                // Add your click action here
             }
-            icon.source: "images/full-screen.png" // Replace with your full-screen icon path
+            onPressed: {
+                icon.color = "lightgray"; // Change color on press
+            }
+            onReleased: {
+                icon.color = "white"; // Revert color on release
+            }
+        }
+    }
+
+    Button {
+        width: 35 // Set width for the button
+        icon.source: "images/forward.png" // Path to the Redo icon
+        icon.color: "white" // Set icon color to white
+        icon.width: 22
+        icon.height: 22
+
+        // Make the background transparent
+        background: Rectangle {
+            color: "transparent" // Set to transparent to hide the rectangle
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                // Add your click action here
+            }
+            onPressed: {
+                icon.color = "lightgray"; // Change color on press
+            }
+            onReleased: {
+                icon.color = "white"; // Revert color on release
+            }
+        }
+    }
+
+    Button {
+        width: 35 // Set width for the button
+        icon.source: "images/delete.png" // Path to the Delete icon
+        icon.color: "white" // Set icon color to white
+        icon.width: 22
+        icon.height: 22
+
+        // Make the background transparent
+        background: Rectangle {
+            color: "transparent" // Set to transparent to hide the rectangle
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                // Add your click action here
+            }
+            onPressed: {
+                icon.color = "lightgray"; // Change color on press
+            }
+            onReleased: {
+                icon.color = "white"; // Revert color on release
+            }
+        }
+    }
+
+    Button {
+        width: 35 // Set width for the button
+        icon.source: "images/crop.png" // Path to the Crop icon
+        icon.color: "white" // Set icon color to white
+        icon.width: 22
+        icon.height: 22
+
+        // Make the background transparent
+        background: Rectangle {
+            color: "transparent" // Set to transparent to hide the rectangle
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                // Add your click action here
+            }
+            onPressed: {
+                icon.color = "lightgray"; // Change color on press
+            }
+            onReleased: {
+                icon.color = "white"; // Revert color on release
+            }
+        }
+    }
+
+    Button {
+        width: 35 // Set width for the button
+        icon.source: "images/text.png" // Path to the Text icon
+        icon.color: "white" // Set icon color to white
+        icon.width: 22
+        icon.height: 22
+
+        // Make the background transparent
+        background: Rectangle {
+            color: "transparent" // Set to transparent to hide the rectangle
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                // Add your click action here
+            }
+            onPressed: {
+                icon.color = "lightgray"; // Change color on press
+            }
+            onReleased: {
+                icon.color = "white"; // Revert color on release
+            }
+        }
+    }
+
+    Button {
+        width: 35 // Set width for the button
+        icon.source: "images/download-speed.png" // Path to the Speed icon
+        icon.color: "white" // Set icon color to white
+        icon.width: 22
+        icon.height: 22
+
+        // Make the background transparent
+        background: Rectangle {
+            color: "transparent" // Set to transparent to hide the rectangle
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                // Add your click action here
+            }
+            onPressed: {
+                icon.color = "lightgray"; // Change color on press
+            }
+            onReleased: {
+                icon.color = "white"; // Revert color on release
+            }
         }
     }
 }
 
 
 
-    // Tool Bar
-    Row {
-        id: toolBar
-        anchors.top: featureBar.bottom
-        anchors.leftMargin: 0 // Position it below the feature bar
-        anchors.topMargin: 272.5
-        anchors.horizontalCenterOffset: 0 // Increase margin for more space
-        anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
-        anchors.left: parent.left
-        anchors.right: parent.right
-        spacing: 20 // Space between the tool buttons
-        height: 50 // Set height for the toolbar
-
-        // Tool buttons with icons
-        Button {
-            text: "Undo"
-            icon.source: "images/undo.png" // Path to the Undo icon
-        }
-
-        Button {
-            text: "Redo"
-            icon.source: "images/forward.png" // Path to the Redo icon
-        }
-
-        Button {
-            text: "Delete"
-            icon.source: "images/delete.png" // Path to the Delete icon
-        }
-
-        Button {
-            text: "Crop"
-            icon.source: "images/crop.png" // Path to the Crop icon
-        }
-
-        Button {
-            text: "Text"
-            icon.source: "images/text.png" // Path to the Text icon
-        }
-
-        Button {
-            text: " Speed"
-            icon.source: "images/download-speed.png" // Path to the Speed icon
-        }
-
-
-        Rectangle {
-            width: 700 // Adjust width as needed to create space for future tools
-            height: toolBar.height
-            color: "transparent" // Make it invisible
-        }
-
 
         Text {
             text: "Timeline Size Adjust:"
+            color: "white"
+            x: 1150
+            y: 465
             font.pixelSize: 12
-            verticalAlignment: Text.AlignVCenter // Center vertically
-            anchors.verticalCenter: parent.verticalCenter // Center it with respect to the toolbar
+            verticalAlignment: Text.AlignVCenter
         }
 
         Rectangle {
-            width: 30 // Width of the circle
-            height: 30 // Height of the circle
+            width: 20 // Width of the circle
+            height: 20 // Height of the circle
             color: "#e0e0e0" // Background color
             radius: 15 // Makes it circular
-            anchors.verticalCenter: parent.verticalCenter // Center it vertically
-
+            x: 1280
+            y: 465
             Text {
                 text: "-"
                 anchors.centerIn: parent // Center text in the circle
-                font.pixelSize: 18 // Font size for better visibility
+                font.pixelSize: 15 // Font size for better visibility
             }
         }
 
@@ -695,23 +1006,24 @@ Item {
             from: 0 // Minimum value
             to: 100 // Maximum value
             stepSize: 1 // Increment step size
-            anchors.verticalCenter: parent.verticalCenter // Center vertically
+            x: 1310
+            y: 465
         }
 
         // Circle for the plus sign
         Rectangle {
-            width: 30 // Width of the circle
-            height: 30 // Height of the circle
+            width: 20 // Width of the circle
+            height: 20 // Height of the circle
             color: "#e0e0e0" // Background color
             radius: 15 // Makes it circular
-            anchors.verticalCenter: parent.verticalCenter // Center it vertically
-
+            x: 1470
+            y: 465
             Text {
                 text: "+"
                 anchors.centerIn: parent // Center text in the circle
-                font.pixelSize: 18 // Font size for better visibility
+                font.pixelSize: 15 // Font size for better visibility
             }
-        }
+
 
 
 
@@ -724,7 +1036,7 @@ Item {
         y: 120
         width: 614
         height: 335
-        color: "#ffffff"
+        color: "#1A1A1A" // Dark Charcoal Orange
         border.width: 1
         border.color: "#808080"
     }
@@ -818,7 +1130,7 @@ Item {
         y: 120
         width: 165
         height: 335
-        color: "#ffffff"
+        color: "#1A1A1A" // Dark Charcoal Orange
         border.width: 1
         border.color: "#808080"
     }
@@ -831,6 +1143,16 @@ Item {
         height: 0.5
         color: "#808080"
 
+    }
+
+    Rectangle
+    {
+        id: rectangleeditbar
+        x: 776
+        y: 420
+        width: 1145
+        height: 1
+        color: "#808080"
     }
 
  // Main content area

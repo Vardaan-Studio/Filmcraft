@@ -9,8 +9,9 @@ C:/Qt/6.7.3/mingw_64/qml
 E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent/.qt/rcc/qmake_VardaanUIContent.qrc
 --resource
 E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent/.qt/rcc/VardaanUIContent_raw_qml_0.qrc
-E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/Screen01.ui.qml
-E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/Chromakey.qml
 E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/App.qml
+E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/Chromakey.qml
+E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/Customspeed.qml
+E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/Screen01.ui.qml
 --json
 E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent_qmllint.json

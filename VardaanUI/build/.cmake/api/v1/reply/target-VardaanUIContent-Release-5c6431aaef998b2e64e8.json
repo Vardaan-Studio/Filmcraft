@@ -1,0 +1,965 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "VardaanUIContent/Release/libVardaanUIContent.a"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"_qt_internal_add_library",
+			"qt6_add_library",
+			"qt_add_library",
+			"add_dependencies",
+			"qt6_target_qml_sources",
+			"qt6_add_qml_module",
+			"target_link_libraries",
+			"target_include_directories",
+			"_qt_internal_qml_type_registration",
+			"target_sources",
+			"qt6_extract_metatypes",
+			"set_source_files_properties",
+			"__qt_propagate_generated_resource",
+			"_qt_internal_process_resource",
+			"qt6_add_resources",
+			"_qt_internal_target_enable_qmlcachegen",
+			"_qt_internal_expose_deferred_files_to_ide",
+			"qt6_finalize_target"
+		],
+		"files" : 
+		[
+			"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"VardaanUIContent/CMakeLists.txt",
+			"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"C:/Qt/6.7.3/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:749:EVAL"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 2692,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 2570,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2667,
+				"parent" : 3
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 647,
+				"parent" : 5
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 2768,
+				"parent" : 6
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 392,
+				"parent" : 5
+			},
+			{
+				"command" : 9,
+				"file" : 2,
+				"line" : 541,
+				"parent" : 5
+			},
+			{
+				"command" : 8,
+				"file" : 2,
+				"line" : 3124,
+				"parent" : 9
+			},
+			{
+				"command" : 11,
+				"file" : 2,
+				"line" : 2924,
+				"parent" : 9
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 1421,
+				"parent" : 11
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 3090,
+				"parent" : 9
+			},
+			{
+				"command" : 12,
+				"file" : 2,
+				"line" : 3114,
+				"parent" : 9
+			},
+			{
+				"command" : 15,
+				"file" : 2,
+				"line" : 590,
+				"parent" : 5
+			},
+			{
+				"command" : 14,
+				"file" : 0,
+				"line" : 337,
+				"parent" : 15
+			},
+			{
+				"command" : 13,
+				"file" : 0,
+				"line" : 2396,
+				"parent" : 16
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 2010,
+				"parent" : 17
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2535,
+				"parent" : 6
+			},
+			{
+				"command" : 16,
+				"file" : 2,
+				"line" : 2656,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 1248,
+				"parent" : 20
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2704,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2535,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2704,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2535,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2704,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2535,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2704,
+				"parent" : 6
+			},
+			{
+				"command" : 15,
+				"file" : 2,
+				"line" : 2788,
+				"parent" : 6
+			},
+			{
+				"command" : 14,
+				"file" : 0,
+				"line" : 337,
+				"parent" : 29
+			},
+			{
+				"command" : 13,
+				"file" : 0,
+				"line" : 2396,
+				"parent" : 30
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 2010,
+				"parent" : 31
+			},
+			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 18,
+				"file" : 3,
+				"line" : 1,
+				"parent" : 33
+			},
+			{
+				"command" : 17,
+				"file" : 0,
+				"line" : 774,
+				"parent" : 34
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 2123,
+				"parent" : 35
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 8,
+					"define" : "MINGW_HAS_SECURE_API=1"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_NO_DEBUG"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_QMLBUILTINS_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_QMLINTEGRATION_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_QML_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "UNICODE"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "WIN32"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "WIN64"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "_ENABLE_EXTENDED_ALIGNED_STORAGE"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "_UNICODE"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "_WIN64"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent"
+				},
+				{
+					"path" : "E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent"
+				},
+				{
+					"backtrace" : 0,
+					"path" : "E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent/VardaanUIContent_autogen/include_Release"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQml/6.7.3"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQml/6.7.3/QtQml"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtCore/6.7.3"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtCore/6.7.3/QtCore"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtCore"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/mkspecs/win32-g++"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQmlBuiltins/6.7.3"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQmlBuiltins/6.7.3/QtQmlBuiltins"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQmlBuiltins"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQml"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQmlIntegration"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtNetwork"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0,
+				3,
+				5,
+				6,
+				8,
+				10,
+				12,
+				13
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wa,-mbig-obj"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 8,
+					"define" : "MINGW_HAS_SECURE_API=1"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_NO_DEBUG"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_QMLBUILTINS_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_QMLINTEGRATION_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_QML_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "UNICODE"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "WIN32"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "WIN64"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "_ENABLE_EXTENDED_ALIGNED_STORAGE"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "_UNICODE"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "_WIN64"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent"
+				},
+				{
+					"path" : "E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent"
+				},
+				{
+					"backtrace" : 0,
+					"path" : "E:/Mission-Vardaan-Studio/VardaanUI/build/VardaanUIContent/VardaanUIContent_autogen/include_Release"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQml/6.7.3"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQml/6.7.3/QtQml"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtCore/6.7.3"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtCore/6.7.3/QtCore"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtCore"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/mkspecs/win32-g++"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQmlBuiltins/6.7.3"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQmlBuiltins/6.7.3/QtQmlBuiltins"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQmlBuiltins"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQml"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtQmlIntegration"
+				},
+				{
+					"backtrace" : 10,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.7.3/mingw_64/include/QtNetwork"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				2
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 7,
+			"id" : "VardaanUIContent_tooling::@6aa2387db1de625549a6"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "VardaanUIContent_autogen::@6aa2387db1de625549a6"
+		}
+	],
+	"id" : "VardaanUIContent::@6aa2387db1de625549a6",
+	"name" : "VardaanUIContent",
+	"nameOnDisk" : "libVardaanUIContent.a",
+	"paths" : 
+	{
+		"build" : "VardaanUIContent",
+		"source" : "VardaanUIContent"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files\\Generated",
+			"sourceIndexes" : 
+			[
+				0,
+				35
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				1,
+				4,
+				7,
+				9,
+				11,
+				14,
+				15,
+				16,
+				47,
+				48,
+				49,
+				50
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				2,
+				3,
+				5,
+				6,
+				8,
+				10,
+				12,
+				13
+			]
+		},
+		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/VardaanUIContent_autogen/mocs_compilation_Release.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 12,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/meta_types/qt6vardaanuicontent_metatypes.json.gen",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 13,
+			"compileGroupIndex" : 1,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/vardaanuicontent_qmltyperegistrations.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 18,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.qt/rcc/qrc_qmake_VardaanUIContent.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 19,
+			"path" : "VardaanUIContent/App.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 21,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.rcc/qmlcache/VardaanUIContent_qmlcache_loader.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 22,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.rcc/qmlcache/VardaanUIContent_App_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 23,
+			"path" : "VardaanUIContent/Chromakey.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 24,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.rcc/qmlcache/VardaanUIContent_Chromakey_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 25,
+			"path" : "VardaanUIContent/Customspeed.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 26,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.rcc/qmlcache/VardaanUIContent_Customspeed_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 27,
+			"path" : "VardaanUIContent/Screen01.ui.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 28,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.rcc/qmlcache/VardaanUIContent_Screen01.ui_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 32,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.qt/rcc/qrc_VardaanUIContent_raw_qml_0.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 36,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.qt/rcc/qmake_VardaanUIContent.qrc",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 36,
+			"isGenerated" : true,
+			"path" : "build/qml/VardaanUIContent/qmldir",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 36,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.qt/rcc/VardaanUIContent_raw_qml_0.qrc",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/magic-wand.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/stop.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/exchange.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/soundtrack.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/download-speed.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/undo.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/color-palette.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/step-forward.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/vardaan.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/step-back.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/high-volume.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/text.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/crop.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/effects.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/full-screen.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/forward.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/delete.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 36,
+			"path" : "VardaanUIContent/images/pause.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/VardaanUIContent_autogen/timestamp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/meta_types/qt6vardaanuicontent_metatypes.json.gen.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/vardaanuicontent_qmltyperegistrations.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.qt/rcc/qrc_qmake_VardaanUIContent.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.rcc/qmlcache/VardaanUIContent_qmlcache_loader.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.rcc/qmlcache/VardaanUIContent_App_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.rcc/qmlcache/VardaanUIContent_Chromakey_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.rcc/qmlcache/VardaanUIContent_Customspeed_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.rcc/qmlcache/VardaanUIContent_Screen01.ui_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/.qt/rcc/qrc_VardaanUIContent_raw_qml_0.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/VardaanUIContent_autogen/timestamp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/VardaanUIContent/meta_types/VardaanUIContent_json_file_list.txt.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 8,
+			"path" : "C:/Qt/6.7.3/mingw_64/metatypes/qt6qml_relwithdebinfo_metatypes.json",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 8,
+			"path" : "C:/Qt/6.7.3/mingw_64/metatypes/qt6core_relwithdebinfo_metatypes.json",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 8,
+			"path" : "C:/Qt/6.7.3/mingw_64/metatypes/qt6qmlbuiltins_relwithdebinfo_metatypes.json",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 8,
+			"path" : "C:/Qt/6.7.3/mingw_64/metatypes/qt6network_relwithdebinfo_metatypes.json",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

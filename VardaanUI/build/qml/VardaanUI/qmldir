@@ -4,7 +4,7 @@ optional plugin VardaanUIplugin
 classname VardaanUIPlugin
 typeinfo VardaanUI.qmltypes
 prefer :/qt/qml/VardaanUI/
+singleton Constants 1.0 Constants.qml
 EventListSimulator 1.0 EventListSimulator.qml
 EventListModel 1.0 EventListModel.qml
-singleton Constants 1.0 Constants.qml
 

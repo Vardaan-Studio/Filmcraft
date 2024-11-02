@@ -2,9 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run Chromakey QML",
+            "label": "Run Customspeed QML",
             "type": "shell",
-            "command": "qmlscene E:\\Mission-Vardaan-Studio\\VardaanUI\\VardaanUIContent\\App.qml",
+            "command": "qmlscene E:\\Mission-Vardaan-Studio\\VardaanUI\\VardaanUIContent\\Customspeed.qml",
             "group": {
                 "kind": "build",
                 "isDefault": true
