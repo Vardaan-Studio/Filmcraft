@@ -6,10 +6,10 @@
 #include <QGuiApplication>
 #include "qqmlextensionplugin.h"
 
-Q_IMPORT_QML_PLUGIN(VardaanUIContentPlugin)
 Q_IMPORT_QML_PLUGIN(VardaanUIPlugin)
+Q_IMPORT_QML_PLUGIN(VardaanUIContentPlugin)
 
-const char mainQmlFile[] = "qrc:/qt/qml/VardaanUIContent/App.qml";
+const char mainQmlFile[] = "qrc:/qt/qml/VardaanUIContent/Customspeed.qml";
 
 #ifdef BUILD_QDS_COMPONENTS
 
