@@ -1,18 +1,13 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
-ApplicationWindow {
-    visible: true
-    width: 500
-    height: 600
-    title: "Adjust Audio Settings"
-
+Item {
     Dialog {
         id: audioDialog
         title: "Audio Adjustments"
         modal: true
-        width: parent.width * 0.8
-        height: parent.height * 0.9
+        width: 400  // Adjusted to fit better for a dialog
+        height: 500 // Adjusted to fit better for a dialog
 
         contentItem: Column {
             spacing: 20
@@ -113,7 +108,7 @@ ApplicationWindow {
                         stepSize: 1
                         width: 150
                         enabled: denoiseCheckBox.checked
-                        onValueChanged: denoiseStrengthValue.text = denoiseSlider.value === 0 ? "Weak" :denoiseSlider.value === 1 ? "Mid" : "Strong"
+                        onValueChanged: denoiseStrengthValue.text = denoiseSlider.value === 0 ? "Weak" : denoiseSlider.value === 1 ? "Mid" : "Strong"
                     }
                     Text {
                         id: denoiseStrengthValue
