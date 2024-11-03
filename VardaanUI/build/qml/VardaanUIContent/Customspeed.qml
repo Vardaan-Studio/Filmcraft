@@ -84,37 +84,6 @@ import QtQuick.Controls 2.15
                 }
             }
             // OK and Cancel Buttons
-            Row {
-                spacing: 20
-                Button {
-                    text: "OK"
-                    width: 80
-                    background: Rectangle {
-                        color: "#ffa500"
-                        radius: 4
-                    }
-                    onClicked: {
-                        // Add your OK action here
-                    }
-                }
-                Button {
-                    width: 80
-                    height: 32
-                    background: Rectangle {
-                        color: "#1E1E1E"
-                        border.color: "#ffa500"
-                        radius: 4
-                    }
-                    contentItem: Text {
-                        text: "CANCEL"
-                        color: "white"
-                        font.pixelSize: 14
-                        anchors.centerIn: parent
-                    }
-                    onClicked: {
-                        // Add your Cancel action here
-                    }
-                }
-            }
+
         }
     }

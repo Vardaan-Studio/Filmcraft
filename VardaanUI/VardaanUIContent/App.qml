@@ -380,7 +380,13 @@ MenuItem {
         
         MenuItem {
             text: "Adjust Audio" // No shortcut for this item
+            onClicked: {
+            audioAdjustDialog.open() // Open the dialog when clicked
+            }
         }
+
+
+
 
         MenuItem {
             text: "Detach Audio\t              Ctrl+Alt+D"
@@ -416,6 +422,17 @@ MenuItem {
         onTriggered: speedControlDialog.open()
     }
 }
+
+Dialog {
+    id: audioAdjustDialog
+    modal: true
+   
+
+    contentItem: Loader {
+        source: "AudioAdjust.qml" // Load the AudioAdjust.qml file
+    }
+}
+
 
 
     Dialog {

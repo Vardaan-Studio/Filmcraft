@@ -2,7 +2,6 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Item {
-    Dialog {
         id: audioDialog
         title: "Audio Adjustments"
         modal: true
@@ -149,7 +148,7 @@ Item {
         }
 
         standardButtons: Dialog.Ok | Dialog.Cancel
-    }
+    
 
     Component.onCompleted: {
         audioDialog.open()

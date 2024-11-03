@@ -5,7 +5,8 @@ classname VardaanUIContentPlugin
 typeinfo VardaanUIContent.qmltypes
 prefer :/qt/qml/VardaanUIContent/
 App 1.0 App.qml
+AudioAdjust 1.0 AudioAdjust.qml
+Screen01 1.0 Screen01.ui.qml
 Chromakey 1.0 Chromakey.qml
 Customspeed 1.0 Customspeed.qml
-Screen01 1.0 Screen01.ui.qml
 
