@@ -4,7 +4,7 @@
 import QmlProject
 
 Project {
-    mainFile: "VardaanUIContent/App.qml"
+    mainFile: "VardaanUIContent/Colorpletrs.qml"
     mainUiFile: "VardaanUIContent/Screen01.ui.qml"
     targetDirectory: "/opt/VardaanUI"
     enableCMakeGeneration: true
