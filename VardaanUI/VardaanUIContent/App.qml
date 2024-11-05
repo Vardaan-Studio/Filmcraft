@@ -38,81 +38,94 @@ Rectangle {
         spacing: 1.5
 
         Button {
-            width: 45
-            height: 35
-            background: Rectangle {
-                color: "#212121"
-                radius: 5
-            }
-
-            
-            Image {
-                source: minimizeIcon
-                anchors.centerIn: parent
-                width: minimizeIconWidth  
-                height: minimizeIconHeight 
-                fillMode: Image.PreserveAspectFit 
-            }
-
-            onClicked: {
-                
-                mainWindow.showMinimized();
-            }
-        }
-
-       Button {
     width: 45
     height: 35
     background: Rectangle {
-        color: "#212121"
+        id: buttonBackground
+        color: "#1F1F1F"
         radius: 5
+        property color hoverColor: "#FF4500"  
+
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onEntered: {
+                buttonBackground.color = buttonBackground.hoverColor; 
+            }
+            onExited: {
+                buttonBackground.color = "#1F1F1F";  
+            }
+        }
     }
 
-    
     Image {
-        id: maximizeIconImage  
-        source: "images/maximise-white.png" 
+        source: minimizeIcon
         anchors.centerIn: parent
-        width: 16  
-        height: 16 
-        fillMode: Image.PreserveAspectFit
+        width: minimizeIconWidth  
+        height: minimizeIconHeight 
+        fillMode: Image.PreserveAspectFit 
     }
 
     onClicked: {
-        console.log("Button clicked. Current visibility:", mainWindow.visibility);
-        console.log("Current state:", mainWindow.isMaximized ? "Maximized" : "Normal");
-
-        if (mainWindow.isMaximized) {
-            console.log("Restoring window to normal size.");
-            mainWindow.showNormal(); 
-            mainWindow.width = 1600; 
-            mainWindow.height = 900;  
-            maximizeIconImage.source = "images/maximise-white.png"; 
-        } else {
-            console.log("Maximizing the window.");
-            mainWindow.showMaximized(); 
-            maximizeIconImage.source = "images/maximised-white.png"; 
-        }
-
-        
-        console.log("Current icon source:", maximizeIconImage.source);
-    }
-
-    
-    Component.onCompleted: {
-        console.log("Initial icon source:", maximizeIconImage.source);
+        mainWindow.showMinimized();
     }
 }
 
+//for maximise button
 
+    Button {
+        width: 45
+        height: 35
+        background: Rectangle {
+            id: maximizeButtonBackground
+            color: "#1F1F1F"
+            radius: 5
+            property color hoverColor: "#FF4500"
 
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+
+                onEntered: {
+                    maximizeButtonBackground.color = maximizeButtonBackground.hoverColor;
+                }
+                onExited: {
+                    maximizeButtonBackground.color = "#1F1F1F";
+                }
+            }
+        }
+
+        Image {
+            id: maximizeIconImage  
+            source: "images/maximise-white.png" 
+            anchors.centerIn: parent
+            width: 16  
+            height: 16 
+            fillMode: Image.PreserveAspectFit
+        }
+
+        onClicked: {
+            // Check if the window is currently maximized
+            if (mainWindow.visibility === Window.Maximized) {
+                mainWindow.showNormal(); // Restore the window to normal size
+                mainWindow.width = 900; // Set your desired width for normal state
+                mainWindow.height = 450;  // Set your desired height for normal state
+                maximizeIconImage.source = "images/maximised-white.png"; // Set to maximize icon
+            } else {
+                mainWindow.showMaximized(); 
+                maximizeIconImage.source = "images/maximise-white.png"; 
+            }
+        }
+    }
+       //close button
 
         Button {
             width: 45
             height: 35
             background: Rectangle {
                 color: "#FF4500"
-                radius: 5
+                radius: 4
             }
 
             
@@ -134,12 +147,6 @@ Rectangle {
 
 
     
-
-
-            
-
-    
-
     Row {
         anchors.top: parent.top
         anchors.left: parent.left
@@ -160,11 +167,14 @@ Rectangle {
         MenuBar {
             anchors.verticalCenter: parent.verticalCenter
                     background: Color.black 
+         
+
+
 
     Menu {
-    title: "File"
-    
-   
+    id: fileMenu
+    title: qsTr("File")
+
 
     MenuItem {
     Item {
@@ -221,7 +231,7 @@ MenuItem {
 
         Rectangle {
             anchors.fill: parent
-            color: "#222222" 
+            color: "#212121" 
         }
 
         Text {
@@ -567,34 +577,40 @@ Dialog {
     id: speedControlDialog
     title: "Custom Speed Control"
     modal: true
-    width: 500   
-    height: 500  
-    x: (width - 250) / 2 
-    y: (height - 250) / 2 
+    width: 776
+    height: 405
 
-    
+    x: -150 
+    y: 35 
+
+    // Set the background color directly on the Dialog
+    background: Rectangle {
+        color: "#1F1F1F" // Background color
+        radius: 4 // Optional: for rounded corners
+    }
+
     Loader {
         id: loader
         source: "Customspeed.qml"
         anchors.fill: parent 
     }
 
-    
     Row {
         spacing: 20
-        x: 150
-        y: 250
-        anchors.horizontalCenter: parent.horizontalCenter 
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        anchors.topMargin: 250 // Adjust this value as needed
+        anchors.leftMargin: 20  // Set left margin to position buttons
 
         Button {
             text: "OK"
             width: 80
+            height: 32 // Set a fixed height
             background: Rectangle {
                 color: "#ffa500"
                 radius: 4
             }
             onClicked: {
-                
                 speedControlDialog.close(); 
             }
         }
@@ -619,6 +635,9 @@ Dialog {
         }
     }
 }
+
+
+
     
 
 
@@ -729,7 +748,7 @@ Dialog {
     
           Row {
     id: featureBar
-    y: -14
+    y: -10
     anchors.top: logo.bottom
     anchors.leftMargin: 8
     anchors.rightMargin: 33 
@@ -740,11 +759,10 @@ Dialog {
     spacing: 30 
     padding: 10 
 
-    
     Repeater {
         model: [
             { name: "Media", icon: "images/soundtrack.png" },
-            { name: "Text", icon: "images/text.png" },
+            { name: "Text", icon: "images/text.png"},
             { name: "Transition", icon: "images/exchange.png" },
             { name: "Effects", icon: "images/effects.png" },
             { name: "Filters", icon: "images/magic-wand.png" },
@@ -759,13 +777,17 @@ Dialog {
             anchors.verticalCenter: parent.verticalCenter
             anchors.margins: 5 
 
+            property color normalColor: "#FFFFFF"
+            property color hoverColor: "#FF4500" 
+            property color currentColor: normalColor 
+
             MouseArea {
                 anchors.fill: parent 
                 cursorShape: Qt.PointingHandCursor 
-                onClicked: {
-                    
-                    console.log(modelData.name + " clicked");
-                }
+                hoverEnabled: true 
+
+                onEntered: currentColor = hoverColor;
+                onExited: currentColor = normalColor;
             }
 
             Column {
@@ -785,8 +807,10 @@ Dialog {
                 Text {
                     text: modelData.name
                     font.pixelSize: 10 
+                    width: 50  
+                    height: 21  
                     horizontalAlignment: Text.AlignHCenter
-                    color: "#FFFFFF" 
+                    color: currentColor 
                 }
             }
         }
@@ -795,74 +819,95 @@ Dialog {
 
 
 
-
     Row {
     id: editingBar
     anchors.top: featureBar.bottom 
-    anchors.topMargin: 238
+    anchors.topMargin: 234.5
     anchors.horizontalCenterOffset: 283 
     anchors.horizontalCenter: parent.horizontalCenter 
     spacing: 10 
     height: 50 
 
     
+    property color normalColor: "transparent"
+    property color hoverColor: "#FF4500"
+
     Button {
-        width: 40 
+        width: 30
         icon.source: "images/step-back.png" 
-        icon.color: "white" 
         icon.width: 16
+        icon.color: "white" 
         icon.height: 16
 
-        
         background: Rectangle {
-            color: "transparent" 
+            color: editingBar.normalColor 
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = editingBar.hoverColor
+                onExited: parent.color = editingBar.normalColor
+            }
         }
     }
 
-    
     Button {
-        width: 40 
+        width: 30
         icon.source: "images/step-forward.png" 
         icon.color: "white" 
         icon.width: 16
         icon.height: 16
 
-        
         background: Rectangle {
-            color: "transparent" 
+            color: editingBar.normalColor
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = editingBar.hoverColor
+                onExited: parent.color = editingBar.normalColor
+            }
         }
     }
 
-    
     Button {
-        width: 40 
+        width: 30
         icon.source: "images/pause.png" 
         icon.color: "white" 
         icon.width: 16
         icon.height: 16
 
-        
         background: Rectangle {
-            color: "transparent" 
+            color: editingBar.normalColor
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = editingBar.hoverColor
+                onExited: parent.color = editingBar.normalColor
+            }
         }
     }
 
-    
     Button {
-        width: 40 
+        width: 30
         icon.source: "images/stop.png" 
         icon.color: "white" 
         icon.width: 16
         icon.height: 16
 
-        
         background: Rectangle {
-            color: "transparent" 
+            color: editingBar.normalColor
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = editingBar.hoverColor
+                onExited: parent.color = editingBar.normalColor
+            }
         }
     }
 }
-
-
 
 
        Rectangle {
@@ -881,35 +926,54 @@ Dialog {
         anchors.bottomMargin: 46 
         spacing: 10 
 
+         Button {
+    width: 30 
+    icon.source: "images/camera.png" 
+    icon.color: "white" 
+    icon.width: 16
+    icon.height: 16
+
+
+    background: Rectangle {
+        color: "transparent"  
+        property color hoverColor: "#FF4500"  
+
+    
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: parent.color = parent.hoverColor  
+            onExited: parent.color = "transparent"  
+            onPressed: icon.color = "lightgray"  
+            onReleased: icon.color = "white"  
+        }
+    }
+}
+
         
        Button {
-    width: 40 
+    width: 30 
     icon.source: "images/high-volume.png" 
     icon.color: "white" 
     icon.width: 16
     icon.height: 16
 
-    
+
     background: Rectangle {
-        color: "transparent" 
-    }
+        color: "transparent"  
+        property color hoverColor: "#FF4500"  
 
     
-    MouseArea {
-        anchors.fill: parent
-        onClicked: {
-            
-        }
-        onPressed: {
-            
-            icon.color = "lightgray"; 
-        }
-        onReleased: {
-            icon.color = "white"; 
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: parent.color = parent.hoverColor  
+            onExited: parent.color = "transparent"  
+            onPressed: icon.color = "lightgray"  
+            onReleased: icon.color = "white"  
         }
     }
 }
-
 
         
         Button {
@@ -919,37 +983,29 @@ Dialog {
     icon.width: 16
     icon.height: 16
 
-    
     background: Rectangle {
-        color: "transparent" 
-    }
+        color: "transparent"  
+        property color hoverColor: "#FF4500"  
 
-    
-    MouseArea {
-        anchors.fill: parent
-        onClicked: {
-            
-        }
-        onPressed: {
-            
-            icon.color = "lightgray"; 
-        }
-        onReleased: {
-            icon.color = "white"; 
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: parent.color = parent.hoverColor  
+            onExited: parent.color = "transparent"  
+            onPressed: icon.color = "lightgray"  
+            onReleased: icon.color = "white"  
         }
     }
 }
-
     }
-}
-
+       }
 
     
     Row {
     id: toolBar
     anchors.top: featureBar.bottom
     anchors.leftMargin: 0 
-    anchors.topMargin: 272.5
+    anchors.topMargin: 269
     anchors.horizontalCenterOffset: 0 
     anchors.horizontalCenter: parent.horizontalCenter 
     anchors.left: parent.left
@@ -965,21 +1021,17 @@ Dialog {
         icon.width: 22
         icon.height: 22
 
-        
         background: Rectangle {
             color: "transparent" 
-        }
+            property color hoverColor: "#FF4500"
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = parent.hoverColor
+                onExited: parent.color = "transparent"
+                onPressed: icon.color = "lightgray"
+                onReleased: icon.color = "white"
             }
         }
     }
@@ -991,21 +1043,17 @@ Dialog {
         icon.width: 22
         icon.height: 22
 
-        
         background: Rectangle {
-            color: "transparent" 
-        }
+            color: "transparent"
+            property color hoverColor: "#FF4500"
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = parent.hoverColor
+                onExited: parent.color = "transparent"
+                onPressed: icon.color = "lightgray"
+                onReleased: icon.color = "white"
             }
         }
     }
@@ -1017,21 +1065,17 @@ Dialog {
         icon.width: 22
         icon.height: 22
 
-        
         background: Rectangle {
-            color: "transparent" 
-        }
+            color: "transparent"
+            property color hoverColor: "#FF4500"
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = parent.hoverColor
+                onExited: parent.color = "transparent"
+                onPressed: icon.color = "lightgray"
+                onReleased: icon.color = "white"
             }
         }
     }
@@ -1046,20 +1090,18 @@ Dialog {
         
         background: Rectangle {
             color: "transparent" 
-        }
+            property color hoverColor: "#FF4500"
+        
 
         MouseArea {
             anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
-            }
+            hoverEnabled: true
+            onEntered: parent.color=parent.hoverColor
+            onExited: parent.color="transparent"
+            onPressed: icon.color="lightgray"
+            onReleased: icon.color="white"
         }
+    }
     }
 
     Button {
@@ -1071,21 +1113,19 @@ Dialog {
 
         
         background: Rectangle {
-            color: "transparent" 
-        }
+            color: "transparent"
+            property color hoverColor: "#FF4500" 
+        
 
         MouseArea {
             anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
-            }
+            hoverEnabled: true
+            onEntered: parent.color=parent.hoverColor
+            onExited: parent.color= "transparent"
+            onPressed: icon.color= "lightgray"
+            onReleased: icon.color= "white"
         }
+    }
     }
 
     Button {
@@ -1098,24 +1138,22 @@ Dialog {
         
         background: Rectangle {
             color: "transparent" 
-        }
+            property color hoverColor: "#FF4500"
+
+        
 
         MouseArea {
             anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
-            }
+            hoverEnabled: true
+            onEntered: parent.color = parent.hoverColor
+            onExited: parent.color = "transparent"
+            onPressed: icon.color = "lightgray"
+            onReleased: icon.color = "white"
+            
         }
     }
+    }
 }
-
-
 
 
         Text {
@@ -1127,53 +1165,94 @@ Dialog {
             verticalAlignment: Text.AlignVCenter
         }
 
-        Rectangle {
-            width: 20 
-            height: 20 
-            color: "#e0e0e0" 
-            radius: 15 
-            x: 1280
-            y: 465
-            Text {
-                text: "-"
-                anchors.centerIn: parent 
-                font.pixelSize: 15 
-            }
+       property int incrementValue: 7
+
+Rectangle {
+    width: 30
+    height: 25 
+    color: "#1F1F1F"         
+    border.color: "#FF4500"  
+    border.width: 1           
+    radius: 15 
+    x: 1275
+    y: 465
+
+    MouseArea {
+        anchors.fill: parent 
+        cursorShape: Qt.PointingHandCursor 
+        hoverEnabled: true  
+
+        onClicked: {
+            timelineSizeSlider.value = Math.max(timelineSizeSlider.value - incrementValue, timelineSizeSlider.from);
         }
 
-        
-
-
-        
-        Slider {
-            id: timelineSizeSlider
-            width: 150 
-            from: 0 
-            to: 100 
-            stepSize: 1 
-            x: 1310
-            y: 465
+        onEntered: {
+            parent.color = "#FF4500"; 
         }
-
-        
-        Rectangle {
-            width: 20 
-            height: 20 
-            color: "#e0e0e0" 
-            radius: 15 
-            x: 1470
-            y: 465
-            Text {
-                text: "+"
-                anchors.centerIn: parent 
-                font.pixelSize: 15 
-            }
-
-
-
-
-
+        onExited: {
+            parent.color = "#1F1F1F"; 
+        }
     }
+
+    Text {
+        text: "-"
+        anchors.centerIn: parent 
+        font.pixelSize: 15 
+        color: "white" 
+        font.bold: true        
+    }
+}
+
+Slider {
+    id: timelineSizeSlider
+    width: 150 
+    from: 0 
+    to: 100 
+    stepSize: 1 
+    x: 1310
+    y: 465
+}
+
+Rectangle {
+    width: 30
+    height: 25 
+    color: "#1F1F1F"
+    border.color: "#FF4500"  
+    border.width: 1 
+    radius: 15 
+    x: 1470
+    y: 465
+
+    MouseArea {
+        anchors.fill: parent 
+        cursorShape: Qt.PointingHandCursor 
+        hoverEnabled: true  
+
+        onClicked: {
+            timelineSizeSlider.value = Math.min(timelineSizeSlider.value + incrementValue, timelineSizeSlider.to);
+        }
+
+        onEntered: {
+            parent.color = "#FF4500"; 
+        }
+        onExited: {
+            parent.color = "#1F1F1F"; 
+        }
+    }
+
+    Text {
+        text: "+"
+        anchors.centerIn: parent 
+        font.pixelSize: 15 
+        color: "white" 
+        font.bold: true 
+        verticalAlignment: Text.AlignVCenter 
+        horizontalAlignment: Text.AlignHCenter 
+    }
+}
+
+
+
 
     Rectangle {
         id: rectangle
@@ -1290,6 +1369,22 @@ Dialog {
 
     }
 
+    Rectangle 
+    {
+    id: leftAlignment
+    x: 0
+    y: 52
+    width: 1
+    height: mainWindow.height - y
+    border.color: "#808080"
+
+    onHeightChanged: {
+        height = mainWindow.height - y;
+    }
+}
+
+
+
     Rectangle
     {
         id: rectangleeditbar
@@ -1300,5 +1395,51 @@ Dialog {
         color: "#808080"
     }
 
- 
+    Rectangle 
+    {
+    id: previewwindowright
+    x: mainWindow.width - 1  
+    y: 51
+    width: 1  
+    height: mainWindow.height - y  
+    border.color: "#808080"
+    }
+
+
+    Rectangle 
+    {
+    id: rectangletimeline
+    x: 0
+    y: 500
+    width: mainWindow.width 
+    height: mainWindow.height - y  
+    color: "#1F1F1F"
+    border.width: 1
+    border.color: "#808080"
+    }
+
+
+
+    Rectangle
+    {
+        id: rectangletrackcontrol
+        x: 0
+        y: 500
+        width: 200
+        height: 1
+        border.color: "#808080"
+        border.width: 1
+    }
+
+
+    Rectangle
+    {
+        id: trackcontrolvertical
+        x: 200
+        y: 500
+        width: 1
+        height: 579
+        border.color: "#808080"
+    }
+
 }

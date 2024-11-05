@@ -3,6 +3,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Window 2.15
 
 
+
 Window {
     id: mainWindow
     visible: true
@@ -14,7 +15,7 @@ Window {
     Rectangle
      {
         anchors.fill: parent
-        color: "#1A1A1A" 
+        color: "#1F1F1F" 
     }
 
     property string closeIcon: "images/close-white.png"
@@ -30,7 +31,7 @@ Rectangle {
     anchors.top: parent.top
     width: parent.width
     height: 40
-    color: "#212121"
+    color: "#1F1F1F"
 
     Row {
         anchors.right: parent.right
@@ -160,8 +161,9 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
                     background: Color.black 
 
-            Menu {
+    Menu {
     title: "File"
+    
    
 
     MenuItem {
@@ -1179,7 +1181,7 @@ Dialog {
         y: 120
         width: 614
         height: 335
-        color: "#1A1A1A" 
+        color: "#1F1F1F"
         border.width: 1
         border.color: "#808080"
     }
@@ -1273,7 +1275,7 @@ Dialog {
         y: 120
         width: 165
         height: 335
-        color: "#1A1A1A" 
+        color: "#1F1F1F"
         border.width: 1
         border.color: "#808080"
     }
