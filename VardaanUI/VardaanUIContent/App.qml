@@ -1,22 +1,30 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Window 2.15
-
+import QtQuick.Window 2.15 
 
 
 Window {
     id: mainWindow
     visible: true
-    width: 1920
-    height: 1080
     flags: Qt.FramelessWindowHint 
     visibility: Window.Maximized 
+    onVisibilityChanged: {
+        if (visibility === Window.Maximized) {
+            mainWindow.width = Screen.width
+            mainWindow.height = Screen.height
+        } else {
+            mainWindow.width = 1920
+            mainWindow.height = 1080
+        }
+    }
 
     Rectangle
      {
         anchors.fill: parent
         color: "#1F1F1F" 
     }
+
+
 
     property string closeIcon: "images/close-white.png"
     property string minimizeIcon: "images/minimize-white.png"
@@ -167,7 +175,6 @@ Rectangle {
         MenuBar {
             anchors.verticalCenter: parent.verticalCenter
                     background: Color.black 
-         
 
 
 
@@ -175,329 +182,460 @@ Rectangle {
     id: fileMenu
     title: qsTr("File")
 
-
     MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        
-        Text {
-            text: "New Project\t                     Ctrl+N"
-            anchors.centerIn: parent
-            color: "white" 
-        }
-    }
-
-    Shortcut {
-        sequence: "Ctrl+N"
-        onActivated: console.log("New Project Triggered") 
-    }
-}
-
-
-    MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Import Media\t                      Ctrl+I"
-            anchors.centerIn: parent
-            color: "white" 
-        }
-    }
-    Shortcut {
-        sequence: "Ctrl+I"
-        onActivated: console.log("Import Media Triggered") 
-    }
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#212121" 
-        }
-
-        Text {
-            text: "Save Project\t                     Ctrl+S"
-            anchors.centerIn: parent
-            color: "white" 
-        }
-    }
-    Shortcut {
-        sequence: "Ctrl+S"
-        onActivated: console.log("Save Project Triggered") 
-    }
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Save Project As           Ctrl+Shift+S"
-            anchors.centerIn: parent
-            color: "white" 
-        }
-    }
-    Shortcut {
-        sequence: "Ctrl+Shift+S"
-        onActivated: console.log("Save Project As Triggered") 
-    }
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        
         Item {
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-            width: parent.width 
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
 
             Text {
-                text: "Project Settings" 
-                color: "white" 
-                anchors.left: parent.left 
-                anchors.verticalCenter: parent.verticalCenter 
-                leftPadding: 10 
+                text: "New Project"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+N"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+        }
+
+        Shortcut {
+            sequence: "Ctrl+N"
+            onActivated: console.log("New Project Triggered")
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Import Media"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+I"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+        }
+
+        Shortcut {
+            sequence: "Ctrl+I"
+            onActivated: console.log("Import Media Triggered")
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#212121"
+            }
+
+            Text {
+                text: "Save Project"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+S"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+        }
+
+        Shortcut {
+            sequence: "Ctrl+S"
+            onActivated: console.log("Save Project Triggered")
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Save Project As"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+Shift+S"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+        }
+
+        Shortcut {
+            sequence: "Ctrl+Shift+S"
+            onActivated: console.log("Save Project As Triggered")
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Item {
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                width: parent.width
+
+                Text {
+                    text: "Project Settings"
+                    color: "white"
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
+                    leftPadding: parent.width * 0.05 // 5% of the menu width
+                }
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Exit"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Alt+F4"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+        }
+
+        onTriggered: Qt.quit()
+
+        Shortcut {
+            sequence: "Alt+F4"
+            onActivated: Qt.quit()
+        }
+    }
+}
+
+
+            Menu {
+    title: qsTr("Edit")
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Undo"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+Z"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Ctrl+Z"
+                onActivated: console.log("Undo Triggered")
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Redo"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+Y"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Ctrl+Y"
+                onActivated: console.log("Redo Triggered")
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Cut"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+X"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Ctrl+X"
+                onActivated: console.log("Cut Triggered")
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Copy"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+C"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Ctrl+C"
+                onActivated: console.log("Copy Triggered")
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Paste"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+V"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Ctrl+V"
+                onActivated: console.log("Paste Triggered")
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Delete"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Delete"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Delete"
+                onActivated: console.log("Delete Triggered")
             }
         }
     }
 }
 
 
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
 
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Exit\t                    Alt+F4"
-            anchors.centerIn: parent
-            color: "white" 
-        }
-    }
-    onTriggered: Qt.quit()
-    Shortcut {
-        sequence: "Alt+F4"
-        onActivated: Qt.quit()
-    }
-}
-
-}
-
-
-            Menu {
-                     title: "Edit"
-
-                         MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Undo\t                      Ctrl+Z" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Ctrl+Z"
-            onActivated: console.log("Undo Triggered") 
-        }
-    }
-
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Redo\t                      Ctrl+Y" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Ctrl+Y"
-            onActivated: console.log("Redo Triggered") 
-        }
-    }
-
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Cut\t                     Ctrl+X" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Ctrl+X"
-            onActivated: console.log("Cut Triggered") 
-        }
-    }
-
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Copy\t                     Ctrl+C" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Ctrl+C"
-            onActivated: console.log("Copy Triggered") 
-        }
-    }
-
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Paste\t                     Ctrl+V" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Ctrl+V"
-            onActivated: console.log("Paste Triggered") 
-        }
-    }
-
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Delete\t                     Delete" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Delete"
-            onActivated: console.log("Delete Triggered") 
-        }
-    }
-
-}
-
-}
 
     Menu {
     title: "Tools"
     
     MenuItem {
-        text: "Show Properties                    Alt+E"
-        onTriggered: propertiesDialog.open()
-        Shortcut {
-            sequence: "Alt+E"
-            onActivated:
-            {
-                propertiesDialog.open()  
 
+        Item
+
+        {
+            width: parent.width
+            height: parent.height
+
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "#222222"
+            }
+            Text
+            {
+                text: "Show Properties"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width *0.05
+                MouseArea
+                {
+                    anchors.fill: parent
+                    onClicked: propertiesDialog.open()
+                }
+            }
+
+            Text
+            {
+                text: "Alt+E"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05
+            }
+            Shortcut
+            {
+                sequence: "Alt+E"
+                onActivated:propertiesDialog.open()
             }
         }
-    }
+       
+        }
+    
 
     Menu {
+        id: video
         title: "Video"
         
         MenuItem {
-            text: "Crop & Zoom\t                     Alt+C"
+            text: "Crop & Zoom"
             Shortcut {
                 sequence: "Alt+C"
                 onActivated: console.log("Crop & Zoom Triggered") 
@@ -505,13 +643,16 @@ MenuItem {
         }
 
         MenuItem {
-            text: "Crop to Fit\t                     Ctrl+F"
+            text: "Crop to Fit"
             Shortcut {
                 sequence: "Ctrl+F"
                 onActivated: console.log("Crop to Fit Triggered") 
             }
         }
     }
+
+   
+    
 
     Menu {
         title: "Audio"
@@ -523,11 +664,8 @@ MenuItem {
             }
         }
 
-
-
-
         MenuItem {
-            text: "Detach Audio\t              Ctrl+Alt+D"
+            text: "Detach Audio"
             Shortcut {
                 sequence: "Ctrl+Alt+D"
                 onActivated: console.log("Detach Audio Triggered") 
@@ -535,7 +673,7 @@ MenuItem {
         }
 
         MenuItem {
-            text: "Mute\t           Ctrl+Shift+M"
+            text: "Mute"
             Shortcut {
                 sequence: "Ctrl+Shift+M"
                 onActivated: console.log("Mute Triggered") 
@@ -547,7 +685,7 @@ MenuItem {
         title: "Color Correction"
         
         MenuItem {
-            text: "Correction Palette                Alt+M"
+            text: "Correction Palette"
             Shortcut {
                 sequence: "Alt+M"
                 onActivated: console.log("Correction Palette Triggered") 
@@ -636,45 +774,47 @@ Dialog {
     }
 }
 
-
-
-    
-
-
     Dialog {
-        id: propertiesDialog
-        title: "Properties"
-        modal: true
-        standardButtons: Dialog.Ok | Dialog.Cancel
+    id: propertiesDialog
+    width: 776
+    height: 403
+    x: -200
+    y: 36
+    title: "Properties"
+    modal: true
+    standardButtons: Dialog.Ok | Dialog.Cancel
 
-        Column {
-            width: 300
-            spacing: 10
+    // Set background color
+    Rectangle {
+        anchors.fill: parent
+        color: "#1F1F1F"
+        radius: 5  // Optional: rounded corners
+    }
 
-            ComboBox {
-                id: optionsSelector
-                model: ["Transform", "Compositing", "Chroma Key"]
-                width: parent.width 
-            }
+    Column {
+        width: 300
+        spacing: 10
 
-            Loader {
-                id: contentLoader
-                width: parent.width
-                height: 200 
-
-                sourceComponent: optionsSelector.currentIndex === 2 ? chromaKeyComponent : null
-                
-            }
+        ComboBox {
+            id: optionsSelector
+            model: ["Transform", "Compositing", "Chroma Key"]
+            width: parent.width 
         }
 
-        Component {
-            id: chromaKeyComponent
-            Chromakey { } 
+        Loader {
+            id: contentLoader
+            width: parent.width
+            height: 200 
+
+            sourceComponent: optionsSelector.currentIndex === 2 ? chromaKeyComponent : null
         }
     }
 
-
-
+    Component {
+        id: chromaKeyComponent
+        Chromakey { } 
+    }
+}
 
 
             Menu {
@@ -715,6 +855,8 @@ Dialog {
             }
         }
     }
+
+
 
 
   Button {
@@ -1264,6 +1406,18 @@ Rectangle {
         border.width: 1
         border.color: "#808080"
     }
+
+    Rectangle {
+    id: previewwindow
+    x: 776  
+    y: 51
+    width: parent.width * 0.8  
+    height: 369
+    color: "#1F1F1F"
+    border.width: 1
+    border.color: "#808080"
+}
+
 
     Rectangle {
         id: rectanglefeature

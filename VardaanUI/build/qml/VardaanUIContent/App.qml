@@ -1,22 +1,30 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Window 2.15
-
+import QtQuick.Window 2.15 
 
 
 Window {
     id: mainWindow
     visible: true
-    width: 1920
-    height: 1080
     flags: Qt.FramelessWindowHint 
     visibility: Window.Maximized 
+    onVisibilityChanged: {
+        if (visibility === Window.Maximized) {
+            mainWindow.width = Screen.width
+            mainWindow.height = Screen.height
+        } else {
+            mainWindow.width = 1920
+            mainWindow.height = 1080
+        }
+    }
 
     Rectangle
      {
         anchors.fill: parent
         color: "#1F1F1F" 
     }
+
+
 
     property string closeIcon: "images/close-white.png"
     property string minimizeIcon: "images/minimize-white.png"
@@ -38,81 +46,94 @@ Rectangle {
         spacing: 1.5
 
         Button {
-            width: 45
-            height: 35
-            background: Rectangle {
-                color: "#212121"
-                radius: 5
-            }
-
-            
-            Image {
-                source: minimizeIcon
-                anchors.centerIn: parent
-                width: minimizeIconWidth  
-                height: minimizeIconHeight 
-                fillMode: Image.PreserveAspectFit 
-            }
-
-            onClicked: {
-                
-                mainWindow.showMinimized();
-            }
-        }
-
-       Button {
     width: 45
     height: 35
     background: Rectangle {
-        color: "#212121"
+        id: buttonBackground
+        color: "#1F1F1F"
         radius: 5
+        property color hoverColor: "#FF4500"  
+
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onEntered: {
+                buttonBackground.color = buttonBackground.hoverColor; 
+            }
+            onExited: {
+                buttonBackground.color = "#1F1F1F";  
+            }
+        }
     }
 
-    
     Image {
-        id: maximizeIconImage  
-        source: "images/maximise-white.png" 
+        source: minimizeIcon
         anchors.centerIn: parent
-        width: 16  
-        height: 16 
-        fillMode: Image.PreserveAspectFit
+        width: minimizeIconWidth  
+        height: minimizeIconHeight 
+        fillMode: Image.PreserveAspectFit 
     }
 
     onClicked: {
-        console.log("Button clicked. Current visibility:", mainWindow.visibility);
-        console.log("Current state:", mainWindow.isMaximized ? "Maximized" : "Normal");
-
-        if (mainWindow.isMaximized) {
-            console.log("Restoring window to normal size.");
-            mainWindow.showNormal(); 
-            mainWindow.width = 1600; 
-            mainWindow.height = 900;  
-            maximizeIconImage.source = "images/maximise-white.png"; 
-        } else {
-            console.log("Maximizing the window.");
-            mainWindow.showMaximized(); 
-            maximizeIconImage.source = "images/maximised-white.png"; 
-        }
-
-        
-        console.log("Current icon source:", maximizeIconImage.source);
-    }
-
-    
-    Component.onCompleted: {
-        console.log("Initial icon source:", maximizeIconImage.source);
+        mainWindow.showMinimized();
     }
 }
 
+//for maximise button
 
+    Button {
+        width: 45
+        height: 35
+        background: Rectangle {
+            id: maximizeButtonBackground
+            color: "#1F1F1F"
+            radius: 5
+            property color hoverColor: "#FF4500"
 
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+
+                onEntered: {
+                    maximizeButtonBackground.color = maximizeButtonBackground.hoverColor;
+                }
+                onExited: {
+                    maximizeButtonBackground.color = "#1F1F1F";
+                }
+            }
+        }
+
+        Image {
+            id: maximizeIconImage  
+            source: "images/maximise-white.png" 
+            anchors.centerIn: parent
+            width: 16  
+            height: 16 
+            fillMode: Image.PreserveAspectFit
+        }
+
+        onClicked: {
+            // Check if the window is currently maximized
+            if (mainWindow.visibility === Window.Maximized) {
+                mainWindow.showNormal(); // Restore the window to normal size
+                mainWindow.width = 900; // Set your desired width for normal state
+                mainWindow.height = 450;  // Set your desired height for normal state
+                maximizeIconImage.source = "images/maximised-white.png"; // Set to maximize icon
+            } else {
+                mainWindow.showMaximized(); 
+                maximizeIconImage.source = "images/maximise-white.png"; 
+            }
+        }
+    }
+       //close button
 
         Button {
             width: 45
             height: 35
             background: Rectangle {
                 color: "#FF4500"
-                radius: 5
+                radius: 4
             }
 
             
@@ -134,12 +155,6 @@ Rectangle {
 
 
     
-
-
-            
-
-    
-
     Row {
         anchors.top: parent.top
         anchors.left: parent.left
@@ -161,333 +176,466 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
                     background: Color.black 
 
+
+
     Menu {
-    title: "File"
-    
-   
+    id: fileMenu
+    title: qsTr("File")
 
     MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        
-        Text {
-            text: "New Project\t                     Ctrl+N"
-            anchors.centerIn: parent
-            color: "white" 
-        }
-    }
-
-    Shortcut {
-        sequence: "Ctrl+N"
-        onActivated: console.log("New Project Triggered") 
-    }
-}
-
-
-    MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Import Media\t                      Ctrl+I"
-            anchors.centerIn: parent
-            color: "white" 
-        }
-    }
-    Shortcut {
-        sequence: "Ctrl+I"
-        onActivated: console.log("Import Media Triggered") 
-    }
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Save Project\t                     Ctrl+S"
-            anchors.centerIn: parent
-            color: "white" 
-        }
-    }
-    Shortcut {
-        sequence: "Ctrl+S"
-        onActivated: console.log("Save Project Triggered") 
-    }
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Save Project As           Ctrl+Shift+S"
-            anchors.centerIn: parent
-            color: "white" 
-        }
-    }
-    Shortcut {
-        sequence: "Ctrl+Shift+S"
-        onActivated: console.log("Save Project As Triggered") 
-    }
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        
         Item {
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-            width: parent.width 
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
 
             Text {
-                text: "Project Settings" 
-                color: "white" 
-                anchors.left: parent.left 
-                anchors.verticalCenter: parent.verticalCenter 
-                leftPadding: 10 
+                text: "New Project"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+N"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+        }
+
+        Shortcut {
+            sequence: "Ctrl+N"
+            onActivated: console.log("New Project Triggered")
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Import Media"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+I"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+        }
+
+        Shortcut {
+            sequence: "Ctrl+I"
+            onActivated: console.log("Import Media Triggered")
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#212121"
+            }
+
+            Text {
+                text: "Save Project"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+S"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+        }
+
+        Shortcut {
+            sequence: "Ctrl+S"
+            onActivated: console.log("Save Project Triggered")
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Save Project As"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+Shift+S"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+        }
+
+        Shortcut {
+            sequence: "Ctrl+Shift+S"
+            onActivated: console.log("Save Project As Triggered")
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Item {
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                width: parent.width
+
+                Text {
+                    text: "Project Settings"
+                    color: "white"
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
+                    leftPadding: parent.width * 0.05 // 5% of the menu width
+                }
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Exit"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Alt+F4"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+        }
+
+        onTriggered: Qt.quit()
+
+        Shortcut {
+            sequence: "Alt+F4"
+            onActivated: Qt.quit()
+        }
+    }
+}
+
+
+            Menu {
+    title: qsTr("Edit")
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Undo"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+Z"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Ctrl+Z"
+                onActivated: console.log("Undo Triggered")
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Redo"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+Y"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Ctrl+Y"
+                onActivated: console.log("Redo Triggered")
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Cut"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+X"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Ctrl+X"
+                onActivated: console.log("Cut Triggered")
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Copy"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+C"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Ctrl+C"
+                onActivated: console.log("Copy Triggered")
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Paste"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Ctrl+V"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Ctrl+V"
+                onActivated: console.log("Paste Triggered")
+            }
+        }
+    }
+
+    MenuItem {
+        Item {
+            width: parent.width
+            height: parent.height
+
+            Rectangle {
+                anchors.fill: parent
+                color: "#222222"
+            }
+
+            Text {
+                text: "Delete"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Text {
+                text: "Delete"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05 // 5% of the menu width
+            }
+
+            Shortcut {
+                sequence: "Delete"
+                onActivated: console.log("Delete Triggered")
             }
         }
     }
 }
 
 
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
 
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Exit\t                    Alt+F4"
-            anchors.centerIn: parent
-            color: "white" 
-        }
-    }
-    onTriggered: Qt.quit()
-    Shortcut {
-        sequence: "Alt+F4"
-        onActivated: Qt.quit()
-    }
-}
-
-}
-
-
-            Menu {
-                     title: "Edit"
-
-                         MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Undo\t                      Ctrl+Z" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Ctrl+Z"
-            onActivated: console.log("Undo Triggered") 
-        }
-    }
-
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Redo\t                      Ctrl+Y" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Ctrl+Y"
-            onActivated: console.log("Redo Triggered") 
-        }
-    }
-
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Cut\t                     Ctrl+X" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Ctrl+X"
-            onActivated: console.log("Cut Triggered") 
-        }
-    }
-
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Copy\t                     Ctrl+C" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Ctrl+C"
-            onActivated: console.log("Copy Triggered") 
-        }
-    }
-
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Paste\t                     Ctrl+V" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Ctrl+V"
-            onActivated: console.log("Paste Triggered") 
-        }
-    }
-
-}
-
-MenuItem {
-    Item {
-        width: parent.width
-        height: parent.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#222222" 
-        }
-
-        Text {
-            text: "Delete\t                     Delete" 
-            color: "white" 
-            anchors.left: parent.left 
-            anchors.verticalCenter: parent.verticalCenter 
-        }
-
-        Shortcut {
-            sequence: "Delete"
-            onActivated: console.log("Delete Triggered") 
-        }
-    }
-
-}
-
-}
 
     Menu {
     title: "Tools"
     
     MenuItem {
-        text: "Show Properties                    Alt+E"
-        onTriggered: propertiesDialog.open()
-        Shortcut {
-            sequence: "Alt+E"
-            onActivated:
-            {
-                propertiesDialog.open()  
 
+        Item
+
+        {
+            width: parent.width
+            height: parent.height
+
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "#222222"
+            }
+            Text
+            {
+                text: "Show Properties"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width *0.05
+                MouseArea
+                {
+                    anchors.fill: parent
+                    onClicked: propertiesDialog.open()
+                }
+            }
+
+            Text
+            {
+                text: "Alt+E"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05
+            }
+            Shortcut
+            {
+                sequence: "Alt+E"
+                onActivated:propertiesDialog.open()
             }
         }
-    }
+       
+        }
+    
 
     Menu {
+        id: video
         title: "Video"
         
         MenuItem {
-            text: "Crop & Zoom\t                     Alt+C"
+            text: "Crop & Zoom"
             Shortcut {
                 sequence: "Alt+C"
                 onActivated: console.log("Crop & Zoom Triggered") 
@@ -495,13 +643,16 @@ MenuItem {
         }
 
         MenuItem {
-            text: "Crop to Fit\t                     Ctrl+F"
+            text: "Crop to Fit"
             Shortcut {
                 sequence: "Ctrl+F"
                 onActivated: console.log("Crop to Fit Triggered") 
             }
         }
     }
+
+   
+    
 
     Menu {
         title: "Audio"
@@ -513,11 +664,8 @@ MenuItem {
             }
         }
 
-
-
-
         MenuItem {
-            text: "Detach Audio\t              Ctrl+Alt+D"
+            text: "Detach Audio"
             Shortcut {
                 sequence: "Ctrl+Alt+D"
                 onActivated: console.log("Detach Audio Triggered") 
@@ -525,7 +673,7 @@ MenuItem {
         }
 
         MenuItem {
-            text: "Mute\t           Ctrl+Shift+M"
+            text: "Mute"
             Shortcut {
                 sequence: "Ctrl+Shift+M"
                 onActivated: console.log("Mute Triggered") 
@@ -537,7 +685,7 @@ MenuItem {
         title: "Color Correction"
         
         MenuItem {
-            text: "Correction Palette                Alt+M"
+            text: "Correction Palette"
             Shortcut {
                 sequence: "Alt+M"
                 onActivated: console.log("Correction Palette Triggered") 
@@ -567,34 +715,40 @@ Dialog {
     id: speedControlDialog
     title: "Custom Speed Control"
     modal: true
-    width: 500   
-    height: 500  
-    x: (width - 250) / 2 
-    y: (height - 250) / 2 
+    width: 776
+    height: 405
 
-    
+    x: -150 
+    y: 35 
+
+    // Set the background color directly on the Dialog
+    background: Rectangle {
+        color: "#1F1F1F" // Background color
+        radius: 4 // Optional: for rounded corners
+    }
+
     Loader {
         id: loader
         source: "Customspeed.qml"
         anchors.fill: parent 
     }
 
-    
     Row {
         spacing: 20
-        x: 150
-        y: 250
-        anchors.horizontalCenter: parent.horizontalCenter 
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        anchors.topMargin: 250 // Adjust this value as needed
+        anchors.leftMargin: 20  // Set left margin to position buttons
 
         Button {
             text: "OK"
             width: 80
+            height: 32 // Set a fixed height
             background: Rectangle {
                 color: "#ffa500"
                 radius: 4
             }
             onClicked: {
-                
                 speedControlDialog.close(); 
             }
         }
@@ -619,43 +773,48 @@ Dialog {
         }
     }
 }
-    
-
 
     Dialog {
-        id: propertiesDialog
-        title: "Properties"
-        modal: true
-        standardButtons: Dialog.Ok | Dialog.Cancel
+    id: propertiesDialog
+    width: 776
+    height: 403
+    x: -200
+    y: 36
+    title: "Properties"
+    modal: true
+    standardButtons: Dialog.Ok | Dialog.Cancel
 
-        Column {
-            width: 300
-            spacing: 10
+    // Set background color
+    Rectangle {
+        anchors.fill: parent
+        color: "#1F1F1F"
+        radius: 5  // Optional: rounded corners
+    }
 
-            ComboBox {
-                id: optionsSelector
-                model: ["Transform", "Compositing", "Chroma Key"]
-                width: parent.width 
-            }
+    Column {
+        width: 300
+        spacing: 10
 
-            Loader {
-                id: contentLoader
-                width: parent.width
-                height: 200 
-
-                sourceComponent: optionsSelector.currentIndex === 2 ? chromaKeyComponent : null
-                
-            }
+        ComboBox {
+            id: optionsSelector
+            model: ["Transform", "Compositing", "Chroma Key"]
+            width: parent.width 
         }
 
-        Component {
-            id: chromaKeyComponent
-            Chromakey { } 
+        Loader {
+            id: contentLoader
+            width: parent.width
+            height: 200 
+
+            sourceComponent: optionsSelector.currentIndex === 2 ? chromaKeyComponent : null
         }
     }
 
-
-
+    Component {
+        id: chromaKeyComponent
+        Chromakey { } 
+    }
+}
 
 
             Menu {
@@ -698,6 +857,8 @@ Dialog {
     }
 
 
+
+
   Button {
     x: 1300
     y: 10
@@ -729,7 +890,7 @@ Dialog {
     
           Row {
     id: featureBar
-    y: -14
+    y: -10
     anchors.top: logo.bottom
     anchors.leftMargin: 8
     anchors.rightMargin: 33 
@@ -740,11 +901,10 @@ Dialog {
     spacing: 30 
     padding: 10 
 
-    
     Repeater {
         model: [
             { name: "Media", icon: "images/soundtrack.png" },
-            { name: "Text", icon: "images/text.png" },
+            { name: "Text", icon: "images/text.png"},
             { name: "Transition", icon: "images/exchange.png" },
             { name: "Effects", icon: "images/effects.png" },
             { name: "Filters", icon: "images/magic-wand.png" },
@@ -759,13 +919,17 @@ Dialog {
             anchors.verticalCenter: parent.verticalCenter
             anchors.margins: 5 
 
+            property color normalColor: "#FFFFFF"
+            property color hoverColor: "#FF4500" 
+            property color currentColor: normalColor 
+
             MouseArea {
                 anchors.fill: parent 
                 cursorShape: Qt.PointingHandCursor 
-                onClicked: {
-                    
-                    console.log(modelData.name + " clicked");
-                }
+                hoverEnabled: true 
+
+                onEntered: currentColor = hoverColor;
+                onExited: currentColor = normalColor;
             }
 
             Column {
@@ -785,8 +949,10 @@ Dialog {
                 Text {
                     text: modelData.name
                     font.pixelSize: 10 
+                    width: 50  
+                    height: 21  
                     horizontalAlignment: Text.AlignHCenter
-                    color: "#FFFFFF" 
+                    color: currentColor 
                 }
             }
         }
@@ -795,74 +961,95 @@ Dialog {
 
 
 
-
     Row {
     id: editingBar
     anchors.top: featureBar.bottom 
-    anchors.topMargin: 238
+    anchors.topMargin: 234.5
     anchors.horizontalCenterOffset: 283 
     anchors.horizontalCenter: parent.horizontalCenter 
     spacing: 10 
     height: 50 
 
     
+    property color normalColor: "transparent"
+    property color hoverColor: "#FF4500"
+
     Button {
-        width: 40 
+        width: 30
         icon.source: "images/step-back.png" 
-        icon.color: "white" 
         icon.width: 16
+        icon.color: "white" 
         icon.height: 16
 
-        
         background: Rectangle {
-            color: "transparent" 
+            color: editingBar.normalColor 
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = editingBar.hoverColor
+                onExited: parent.color = editingBar.normalColor
+            }
         }
     }
 
-    
     Button {
-        width: 40 
+        width: 30
         icon.source: "images/step-forward.png" 
         icon.color: "white" 
         icon.width: 16
         icon.height: 16
 
-        
         background: Rectangle {
-            color: "transparent" 
+            color: editingBar.normalColor
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = editingBar.hoverColor
+                onExited: parent.color = editingBar.normalColor
+            }
         }
     }
 
-    
     Button {
-        width: 40 
+        width: 30
         icon.source: "images/pause.png" 
         icon.color: "white" 
         icon.width: 16
         icon.height: 16
 
-        
         background: Rectangle {
-            color: "transparent" 
+            color: editingBar.normalColor
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = editingBar.hoverColor
+                onExited: parent.color = editingBar.normalColor
+            }
         }
     }
 
-    
     Button {
-        width: 40 
+        width: 30
         icon.source: "images/stop.png" 
         icon.color: "white" 
         icon.width: 16
         icon.height: 16
 
-        
         background: Rectangle {
-            color: "transparent" 
+            color: editingBar.normalColor
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = editingBar.hoverColor
+                onExited: parent.color = editingBar.normalColor
+            }
         }
     }
 }
-
-
 
 
        Rectangle {
@@ -881,35 +1068,54 @@ Dialog {
         anchors.bottomMargin: 46 
         spacing: 10 
 
+         Button {
+    width: 30 
+    icon.source: "images/camera.png" 
+    icon.color: "white" 
+    icon.width: 16
+    icon.height: 16
+
+
+    background: Rectangle {
+        color: "transparent"  
+        property color hoverColor: "#FF4500"  
+
+    
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: parent.color = parent.hoverColor  
+            onExited: parent.color = "transparent"  
+            onPressed: icon.color = "lightgray"  
+            onReleased: icon.color = "white"  
+        }
+    }
+}
+
         
        Button {
-    width: 40 
+    width: 30 
     icon.source: "images/high-volume.png" 
     icon.color: "white" 
     icon.width: 16
     icon.height: 16
 
-    
+
     background: Rectangle {
-        color: "transparent" 
-    }
+        color: "transparent"  
+        property color hoverColor: "#FF4500"  
 
     
-    MouseArea {
-        anchors.fill: parent
-        onClicked: {
-            
-        }
-        onPressed: {
-            
-            icon.color = "lightgray"; 
-        }
-        onReleased: {
-            icon.color = "white"; 
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: parent.color = parent.hoverColor  
+            onExited: parent.color = "transparent"  
+            onPressed: icon.color = "lightgray"  
+            onReleased: icon.color = "white"  
         }
     }
 }
-
 
         
         Button {
@@ -919,37 +1125,29 @@ Dialog {
     icon.width: 16
     icon.height: 16
 
-    
     background: Rectangle {
-        color: "transparent" 
-    }
+        color: "transparent"  
+        property color hoverColor: "#FF4500"  
 
-    
-    MouseArea {
-        anchors.fill: parent
-        onClicked: {
-            
-        }
-        onPressed: {
-            
-            icon.color = "lightgray"; 
-        }
-        onReleased: {
-            icon.color = "white"; 
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: parent.color = parent.hoverColor  
+            onExited: parent.color = "transparent"  
+            onPressed: icon.color = "lightgray"  
+            onReleased: icon.color = "white"  
         }
     }
 }
-
     }
-}
-
+       }
 
     
     Row {
     id: toolBar
     anchors.top: featureBar.bottom
     anchors.leftMargin: 0 
-    anchors.topMargin: 272.5
+    anchors.topMargin: 269
     anchors.horizontalCenterOffset: 0 
     anchors.horizontalCenter: parent.horizontalCenter 
     anchors.left: parent.left
@@ -965,21 +1163,17 @@ Dialog {
         icon.width: 22
         icon.height: 22
 
-        
         background: Rectangle {
             color: "transparent" 
-        }
+            property color hoverColor: "#FF4500"
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = parent.hoverColor
+                onExited: parent.color = "transparent"
+                onPressed: icon.color = "lightgray"
+                onReleased: icon.color = "white"
             }
         }
     }
@@ -991,21 +1185,17 @@ Dialog {
         icon.width: 22
         icon.height: 22
 
-        
         background: Rectangle {
-            color: "transparent" 
-        }
+            color: "transparent"
+            property color hoverColor: "#FF4500"
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = parent.hoverColor
+                onExited: parent.color = "transparent"
+                onPressed: icon.color = "lightgray"
+                onReleased: icon.color = "white"
             }
         }
     }
@@ -1017,21 +1207,17 @@ Dialog {
         icon.width: 22
         icon.height: 22
 
-        
         background: Rectangle {
-            color: "transparent" 
-        }
+            color: "transparent"
+            property color hoverColor: "#FF4500"
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+                onEntered: parent.color = parent.hoverColor
+                onExited: parent.color = "transparent"
+                onPressed: icon.color = "lightgray"
+                onReleased: icon.color = "white"
             }
         }
     }
@@ -1046,20 +1232,18 @@ Dialog {
         
         background: Rectangle {
             color: "transparent" 
-        }
+            property color hoverColor: "#FF4500"
+        
 
         MouseArea {
             anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
-            }
+            hoverEnabled: true
+            onEntered: parent.color=parent.hoverColor
+            onExited: parent.color="transparent"
+            onPressed: icon.color="lightgray"
+            onReleased: icon.color="white"
         }
+    }
     }
 
     Button {
@@ -1071,21 +1255,19 @@ Dialog {
 
         
         background: Rectangle {
-            color: "transparent" 
-        }
+            color: "transparent"
+            property color hoverColor: "#FF4500" 
+        
 
         MouseArea {
             anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
-            }
+            hoverEnabled: true
+            onEntered: parent.color=parent.hoverColor
+            onExited: parent.color= "transparent"
+            onPressed: icon.color= "lightgray"
+            onReleased: icon.color= "white"
         }
+    }
     }
 
     Button {
@@ -1098,24 +1280,22 @@ Dialog {
         
         background: Rectangle {
             color: "transparent" 
-        }
+            property color hoverColor: "#FF4500"
+
+        
 
         MouseArea {
             anchors.fill: parent
-            onClicked: {
-                
-            }
-            onPressed: {
-                icon.color = "lightgray"; 
-            }
-            onReleased: {
-                icon.color = "white"; 
-            }
+            hoverEnabled: true
+            onEntered: parent.color = parent.hoverColor
+            onExited: parent.color = "transparent"
+            onPressed: icon.color = "lightgray"
+            onReleased: icon.color = "white"
+            
         }
     }
+    }
 }
-
-
 
 
         Text {
@@ -1127,53 +1307,94 @@ Dialog {
             verticalAlignment: Text.AlignVCenter
         }
 
-        Rectangle {
-            width: 20 
-            height: 20 
-            color: "#e0e0e0" 
-            radius: 15 
-            x: 1280
-            y: 465
-            Text {
-                text: "-"
-                anchors.centerIn: parent 
-                font.pixelSize: 15 
-            }
+       property int incrementValue: 7
+
+Rectangle {
+    width: 30
+    height: 25 
+    color: "#1F1F1F"         
+    border.color: "#FF4500"  
+    border.width: 1           
+    radius: 15 
+    x: 1275
+    y: 465
+
+    MouseArea {
+        anchors.fill: parent 
+        cursorShape: Qt.PointingHandCursor 
+        hoverEnabled: true  
+
+        onClicked: {
+            timelineSizeSlider.value = Math.max(timelineSizeSlider.value - incrementValue, timelineSizeSlider.from);
         }
 
-        
-
-
-        
-        Slider {
-            id: timelineSizeSlider
-            width: 150 
-            from: 0 
-            to: 100 
-            stepSize: 1 
-            x: 1310
-            y: 465
+        onEntered: {
+            parent.color = "#FF4500"; 
         }
-
-        
-        Rectangle {
-            width: 20 
-            height: 20 
-            color: "#e0e0e0" 
-            radius: 15 
-            x: 1470
-            y: 465
-            Text {
-                text: "+"
-                anchors.centerIn: parent 
-                font.pixelSize: 15 
-            }
-
-
-
-
-
+        onExited: {
+            parent.color = "#1F1F1F"; 
+        }
     }
+
+    Text {
+        text: "-"
+        anchors.centerIn: parent 
+        font.pixelSize: 15 
+        color: "white" 
+        font.bold: true        
+    }
+}
+
+Slider {
+    id: timelineSizeSlider
+    width: 150 
+    from: 0 
+    to: 100 
+    stepSize: 1 
+    x: 1310
+    y: 465
+}
+
+Rectangle {
+    width: 30
+    height: 25 
+    color: "#1F1F1F"
+    border.color: "#FF4500"  
+    border.width: 1 
+    radius: 15 
+    x: 1470
+    y: 465
+
+    MouseArea {
+        anchors.fill: parent 
+        cursorShape: Qt.PointingHandCursor 
+        hoverEnabled: true  
+
+        onClicked: {
+            timelineSizeSlider.value = Math.min(timelineSizeSlider.value + incrementValue, timelineSizeSlider.to);
+        }
+
+        onEntered: {
+            parent.color = "#FF4500"; 
+        }
+        onExited: {
+            parent.color = "#1F1F1F"; 
+        }
+    }
+
+    Text {
+        text: "+"
+        anchors.centerIn: parent 
+        font.pixelSize: 15 
+        color: "white" 
+        font.bold: true 
+        verticalAlignment: Text.AlignVCenter 
+        horizontalAlignment: Text.AlignHCenter 
+    }
+}
+
+
+
 
     Rectangle {
         id: rectangle
@@ -1185,6 +1406,18 @@ Dialog {
         border.width: 1
         border.color: "#808080"
     }
+
+    Rectangle {
+    id: previewwindow
+    x: 776  
+    y: 51
+    width: parent.width * 0.8  
+    height: 369
+    color: "#1F1F1F"
+    border.width: 1
+    border.color: "#808080"
+}
+
 
     Rectangle {
         id: rectanglefeature
@@ -1290,6 +1523,22 @@ Dialog {
 
     }
 
+    Rectangle 
+    {
+    id: leftAlignment
+    x: 0
+    y: 52
+    width: 1
+    height: mainWindow.height - y
+    border.color: "#808080"
+
+    onHeightChanged: {
+        height = mainWindow.height - y;
+    }
+}
+
+
+
     Rectangle
     {
         id: rectangleeditbar
@@ -1300,5 +1549,51 @@ Dialog {
         color: "#808080"
     }
 
- 
+    Rectangle 
+    {
+    id: previewwindowright
+    x: mainWindow.width - 1  
+    y: 51
+    width: 1  
+    height: mainWindow.height - y  
+    border.color: "#808080"
+    }
+
+
+    Rectangle 
+    {
+    id: rectangletimeline
+    x: 0
+    y: 500
+    width: mainWindow.width 
+    height: mainWindow.height - y  
+    color: "#1F1F1F"
+    border.width: 1
+    border.color: "#808080"
+    }
+
+
+
+    Rectangle
+    {
+        id: rectangletrackcontrol
+        x: 0
+        y: 500
+        width: 200
+        height: 1
+        border.color: "#808080"
+        border.width: 1
+    }
+
+
+    Rectangle
+    {
+        id: trackcontrolvertical
+        x: 200
+        y: 500
+        width: 1
+        height: 579
+        border.color: "#808080"
+    }
+
 }
