@@ -6,8 +6,12 @@ Item {
         id: audioDialog
         title: "Audio Adjustments"
         modal: true
-        width: 400  // Adjusted to fit better for a dialog
-        height: 500 // Adjusted to fit better for a dialog
+        width: 400
+        height: 500
+        background: Rectangle {
+            color: "#1f1f1f"  
+            radius: 10
+        }
 
         contentItem: Column {
             spacing: 20
@@ -148,7 +152,34 @@ Item {
             }
         }
 
+        // Customize the buttons
         standardButtons: Dialog.Ok | Dialog.Cancel
+
+        Button {
+            id: okButton
+            text: "OK"
+            style: ButtonStyle {
+                background: Rectangle {
+                    color: "#ff4500"  
+                    radius: 5
+                }
+                padding: 10
+            }
+            onClicked: audioDialog.accept()
+        }
+
+        Button {
+            id: cancelButton
+            text: "Cancel"
+            style: ButtonStyle {
+                border: Border {
+                    width: 2
+                    color: "#ff4500"  
+                }
+                padding: 10
+            }
+            onClicked: audioDialog.reject()
+        }
     }
 
     Component.onCompleted: {
