@@ -1,17 +1,17 @@
 # ninja log v6
-2	108	7521593414552059	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-mkdir	9e0d05dea649af2a
 2	108	7521593414552059	E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-mkdir	9e0d05dea649af2a
+2	108	7521593414552059	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-mkdir	9e0d05dea649af2a
 4	135	7523248335626169	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-download	42d909774a2d3b12
 4	135	7523248335626169	E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-download	42d909774a2d3b12
-13	3001	7522501172319297	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-update	e5fe7e2abc9cb84b
 3001	3110	7522501203180267	E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-patch	3315929c83c55ae3
+13	3001	7522501172319297	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-update	e5fe7e2abc9cb84b
 3325	3427	7522501206311299	E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-install	b9946398b2ddff07
 3001	3110	7522501203180267	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-patch	3315929c83c55ae3
-13	3001	7522501172319297	E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-update	e5fe7e2abc9cb84b
 3325	3427	7522501206311299	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-install	b9946398b2ddff07
-3110	3216	7522501204216019	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-configure	b72461fac7fc22bc
-3110	3216	7522501204216019	E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-configure	b72461fac7fc22bc
+13	3001	7522501172319297	E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-update	e5fe7e2abc9cb84b
 3427	3538	7522501207478061	E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-test	7d78ecebf9950b5b
+3110	3216	7522501204216019	E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-configure	b72461fac7fc22bc
+3110	3216	7522501204216019	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-configure	b72461fac7fc22bc
 3216	3325	7522501205313125	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-build	9be8aefd6141c736
 3216	3325	7522501205313125	E:/Mission-Vardaan-Studio/VardaanUI/build/_deps/ds-subbuild/ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-build	9be8aefd6141c736
 3427	3538	7522501207478061	ds-populate-prefix/src/ds-populate-stamp/Debug/ds-populate-test	7d78ecebf9950b5b

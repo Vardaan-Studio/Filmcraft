@@ -6,7 +6,8 @@ typeinfo VardaanUIContent.qmltypes
 prefer :/qt/qml/VardaanUIContent/
 Customspeed 1.0 Customspeed.qml
 Screen01 1.0 Screen01.ui.qml
-AudioAdjust 1.0 AudioAdjust.qml
-App 1.0 App.qml
 Chromakey 1.0 Chromakey.qml
+App 1.0 App.qml
+AudioAdjust 1.0 AudioAdjust.qml
+Export_Media 1.0 Export_Media.qml
 
