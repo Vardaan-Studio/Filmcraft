@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Window 2.15 
+import QtQuick.Dialogs
 
 
 Window {
@@ -24,16 +25,14 @@ Window {
         color: "#1F1F1F" 
     }
 
-
-
-    property string closeIcon: "images/close-white.png"
+    property string closeIcon: "images/close.png"
     property string minimizeIcon: "images/minimize-white.png"
 
     property int minimizeIconWidth: 18 
     property int minimizeIconHeight: 18  
  
-    property int closeIconWidth: 26  
-    property int closeIconHeight: 26  
+    property int closeIconWidth: 21 
+    property int closeIconHeight: 21  
 
 Rectangle {
     anchors.top: parent.top
@@ -114,12 +113,11 @@ Rectangle {
         }
 
         onClicked: {
-            // Check if the window is currently maximized
             if (mainWindow.visibility === Window.Maximized) {
-                mainWindow.showNormal(); // Restore the window to normal size
-                mainWindow.width = 900; // Set your desired width for normal state
-                mainWindow.height = 450;  // Set your desired height for normal state
-                maximizeIconImage.source = "images/maximised-white.png"; // Set to maximize icon
+                mainWindow.showNormal(); 
+                mainWindow.width = 900; 
+                mainWindow.height = 450;  
+                maximizeIconImage.source = "images/maximised-white.png"; 
             } else {
                 mainWindow.showMaximized(); 
                 maximizeIconImage.source = "images/maximise-white.png"; 
@@ -132,7 +130,7 @@ Rectangle {
             width: 45
             height: 35
             background: Rectangle {
-                color: "#FF4500"
+                color: "#1F1F1F"
                 radius: 4
             }
 
@@ -153,8 +151,6 @@ Rectangle {
     }
 }
 
-
-    
     Row {
         anchors.top: parent.top
         anchors.left: parent.left
@@ -174,9 +170,7 @@ Rectangle {
         
         MenuBar {
             anchors.verticalCenter: parent.verticalCenter
-                    background: Color.black 
-
-
+            background: Color.black 
 
     Menu {
     id: fileMenu
@@ -197,7 +191,7 @@ Rectangle {
                 color: "white"
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
-                leftPadding: parent.width * 0.05 // 5% of the menu width
+                leftPadding: parent.width * 0.05 
             }
 
             Text {
@@ -205,7 +199,7 @@ Rectangle {
                 color: "white"
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
-                rightPadding: parent.width * 0.05 // 5% of the menu width
+                rightPadding: parent.width * 0.05 
             }
         }
 
@@ -230,7 +224,7 @@ Rectangle {
                 color: "white"
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
-                leftPadding: parent.width * 0.05 // 5% of the menu width
+                leftPadding: parent.width * 0.05 
             }
 
             Text {
@@ -238,7 +232,7 @@ Rectangle {
                 color: "white"
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
-                rightPadding: parent.width * 0.05 // 5% of the menu width
+                rightPadding: parent.width * 0.05 
             }
         }
 
@@ -263,7 +257,7 @@ Rectangle {
                 color: "white"
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
-                leftPadding: parent.width * 0.05 // 5% of the menu width
+                leftPadding: parent.width * 0.05
             }
 
             Text {
@@ -271,7 +265,7 @@ Rectangle {
                 color: "white"
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
-                rightPadding: parent.width * 0.05 // 5% of the menu width
+                rightPadding: parent.width * 0.05 
             }
         }
 
@@ -296,7 +290,7 @@ Rectangle {
                 color: "white"
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
-                leftPadding: parent.width * 0.05 // 5% of the menu width
+                leftPadding: parent.width * 0.05 
             }
 
             Text {
@@ -304,7 +298,7 @@ Rectangle {
                 color: "white"
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
-                rightPadding: parent.width * 0.05 // 5% of the menu width
+                rightPadding: parent.width * 0.05 
             }
         }
 
@@ -694,12 +688,35 @@ Rectangle {
     }
 
     MenuItem {
-        text: "Speed Control" 
-        onTriggered: speedControlDialog.open()
+        Item
+        {
+            width: parent.width
+            height: parent.height
+
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "#222222"
+            }
+            Text
+            {
+                text: "Speed Control"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width *0.05
+                MouseArea
+                {
+                    anchors.fill: parent
+                    onClicked: speedControlDialog.open()
+
+                }
+            }
+        }
     }
 }
 
-Dialog {
+    Dialog {
     id: audioAdjustDialog
     modal: true
    
@@ -817,30 +834,124 @@ Dialog {
 }
 
 
-            Menu {
+Menu {
     title: "View"
 
     MenuItem {
-        text: "Play/Pause\t                      Space"
-        Shortcut {
-            sequence: "Space"
-            onActivated: console.log("Play/Pause Triggered") 
+        Item
+        {
+            width: parent.width
+            height: parent.height
+
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "#222222"
+            }
+            Text
+            {
+                text: "Play/Pause"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width *0.05
+                MouseArea
+                {
+                    anchors.fill: parent
+                }
+            }
+            Text
+            {
+                text: "Space"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05
+            }
+            Shortcut
+            {
+                sequence: "Space"
+            }
         }
     }
 
     MenuItem {
-        text: "Stop\t                      Ctrl+/"
-        Shortcut {
-            sequence: "Ctrl+/"
-            onActivated: console.log("Stop Triggered") 
+        Item
+
+        {
+            width: parent.width
+            height: parent.height
+
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "#222222"
+            }
+            Text
+            {
+                text: "Stop"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width *0.05
+                MouseArea
+                {
+                    anchors.fill: parent
+                }
+            }
+
+            Text
+            {
+                text: "Ctrl+/"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05
+            }
+            Shortcut
+            {
+                sequence: "Ctrl+/"
+            }
         }
     }
 
     MenuItem {
-        text: "Full Screen View              Alt+Enter"
-        Shortcut {
-            sequence: "Alt+Enter"
-            onActivated: console.log("Full Screen View Triggered") 
+        Item
+
+        {
+            width: parent.width
+            height: parent.height
+
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "#222222"
+            }
+            Text
+            {
+                text: "Full Screen View"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width *0.05
+                MouseArea
+                {
+                    anchors.fill: parent
+                }
+            }
+
+            Text
+            {
+                text: "Alt+Enter"
+                color: "white"
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: parent.width * 0.05
+            }
+            Shortcut
+            {
+                sequence: "Alt+Enter"
+            }
         }
     }
 }
@@ -848,16 +959,118 @@ Dialog {
 
             Menu {
                 title: "Help"
-                MenuItem { text: "Mail Us" }
-                MenuItem { text: "Suggest Feature" }
-                MenuItem { text: "Feedback" }
-                MenuItem { text: "About Vardaan Studio" }
+    MenuItem 
+    { 
+                    
+        Item
+
+        {
+            width: parent.width
+            height: parent.height
+
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "#222222"
+            }
+            Text
+            {
+                text: "Mail Us"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width *0.05
+                MouseArea
+                {
+                    anchors.fill: parent
+                }
+            }
+        }
+ }
+                
+    MenuItem 
+    { 
+        Item
+        {
+            width: parent.width
+            height: parent.height
+
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "#222222"
+            }
+            Text
+            {
+                text: "Suggest Feature"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width *0.05
+                MouseArea
+                {
+                    anchors.fill: parent
+                }
+            }
+        }
+       
+        
+    }
+    MenuItem 
+    { 
+        Item
+        {
+            width: parent.width
+            height: parent.height
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "#222222"
+            }
+            Text
+            {
+                text: "Feedback"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width *0.05
+                MouseArea
+                {
+                    anchors.fill: parent
+                }
+            }
+        }
+       
+        
+    }
+    MenuItem 
+    { 
+                Item
+        {
+            width: parent.width
+            height: parent.height
+            Rectangle
+            {
+                anchors.fill: parent
+                color: "#222222"
+            }
+            Text
+            {
+                text: "About Vardaan Studio"
+                color: "white"
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                leftPadding: parent.width *0.05
+                MouseArea
+                {
+                    anchors.fill: parent
+                }
             }
         }
     }
-
-
-
+            }
+        }
+    }
 
   Button {
     x: 1300
@@ -866,6 +1079,8 @@ Dialog {
     height: 32
     font.pixelSize: 14
     font.bold: true
+    onClicked: exportDialog.open()
+    
 
     contentItem: Text {
         text: "Export"
@@ -883,7 +1098,66 @@ Dialog {
         radius: 15 
         color: "#FF4500" 
     }
+    Shortcut {
+        sequence: "Ctrl+E"
+        onActivated: exportDialog.open()
+    }
 }
+
+    Dialog {
+    id: exportDialog
+    modal: true
+    width: 600
+    height: 440
+    closePolicy: Popup.CloseOnEscape
+
+    x: (parent.width - width) / 2
+    y: (parent.height - height) / 2
+
+    background: Rectangle {
+        color: "#1F1F1F"
+        radius: 4
+    }
+
+    Loader {
+        id: loaderexport
+        source: "Export_Media.qml"
+        anchors.fill: parent 
+    }
+
+    Rectangle {
+        anchors.top: parent.top
+        width: parent.width
+        height: 40
+        color: "#1F1F1F"
+
+        Row {
+            anchors.right: parent.right
+            Button {
+                width: 45
+                height: 35
+                background: Rectangle {
+                    color: "#FF4500"
+                    radius: 4
+                }
+
+                Image {
+                    source: closeIcon
+                    anchors.centerIn: parent
+                    width: closeIconWidth
+                    height: closeIconHeight
+                    fillMode: Image.PreserveAspectFit
+                }
+
+                onClicked: {
+                    exportDialog.close();  // Close only the dialog, not the entire application
+                }
+            }
+        }
+    }
+}
+
+
 
 
 
@@ -1393,19 +1667,57 @@ Rectangle {
     }
 }
 
+Rectangle {
+    id: rectangle
+    x: 163
+    y: 120
+    width: 614
+    height: 335
+    color: "#1F1F1F"
+    border.width: 1
+    border.color: "#808080"
 
-
-
-    Rectangle {
-        id: rectangle
-        x: 163
-        y: 120
-        width: 614
-        height: 335
-        color: "#1F1F1F"
-        border.width: 1
-        border.color: "#808080"
+    MouseArea {
+        anchors.fill: parent
+        cursorShape: Qt.PointingHandCursor
+        onClicked: {
+            fileDialog.open()  // Open the file dialog when clicked
+        }
     }
+
+    Column {
+        anchors.centerIn: parent
+        spacing: 10 
+
+        Image {
+            source: "images/import.png"
+            width: 100  
+            height: 100 
+            anchors.horizontalCenter: parent.horizontalCenter  
+        }
+
+        Text {
+            text: "Click here to import media."
+            color: "white"
+            font.bold: true
+            anchors.horizontalCenter: parent.horizontalCenter  
+        }
+    }
+
+    FileDialog {
+        id: fileDialog
+        title: "Select Media File"
+        nameFilters: [
+            "Supported Files (*.mp4 *.jpg *.png *.mp3)",
+            "Video Files (*.mp4)",
+            "Audio Files (*.mp3)",
+            "Image Files (*.png *.jpg)"
+                    ]
+        onAccepted: {
+            console.log("Selected file: " + fileDialog.fileUrl)  
+        }
+    }
+}
 
     Rectangle {
     id: previewwindow
@@ -1585,15 +1897,24 @@ Rectangle {
         border.width: 1
     }
 
+      Rectangle {
+        id: videotimeline
+        x: 0 
+        y: mainWindow.height - 250 
+        width: mainWindow.width 
+        height: 100
+        border.color: "#808080"
+        border.width: 1
+        color: "#202932"
+    }
 
     Rectangle
     {
         id: trackcontrolvertical
-        x: 200
+        x: 125
         y: 500
         width: 1
         height: 579
-        border.color: "#808080"
+        border.color: "#000000"
     }
-
 }
