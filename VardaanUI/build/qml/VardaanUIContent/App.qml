@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Window 2.15 
+import QtQuick.Dialogs
 
 
 Window {
@@ -132,7 +133,7 @@ Rectangle {
             width: 45
             height: 35
             background: Rectangle {
-                color: "#FF4500"
+                color: "#1F1F1F"
                 radius: 4
             }
 
@@ -699,7 +700,7 @@ Rectangle {
     }
 }
 
-Dialog {
+    Dialog {
     id: audioAdjustDialog
     modal: true
    
@@ -817,7 +818,7 @@ Dialog {
 }
 
 
-            Menu {
+Menu {
     title: "View"
 
     MenuItem {
@@ -856,9 +857,6 @@ Dialog {
         }
     }
 
-
-
-
   Button {
     x: 1300
     y: 10
@@ -866,6 +864,8 @@ Dialog {
     height: 32
     font.pixelSize: 14
     font.bold: true
+    onClicked: exportDialog.open()
+    
 
     contentItem: Text {
         text: "Export"
@@ -883,7 +883,66 @@ Dialog {
         radius: 15 
         color: "#FF4500" 
     }
+    Shortcut {
+        sequence: "Ctrl+E"
+        onActivated: exportDialog.open()
+    }
 }
+
+    Dialog {
+    id: exportDialog
+    modal: true
+    width: 600
+    height: 440
+    closePolicy: Popup.CloseOnEscape
+
+    x: (parent.width - width) / 2
+    y: (parent.height - height) / 2
+
+    background: Rectangle {
+        color: "#1F1F1F"
+        radius: 4
+    }
+
+    Loader {
+        id: loaderexport
+        source: "Export_Media.qml"
+        anchors.fill: parent 
+    }
+
+    Rectangle {
+        anchors.top: parent.top
+        width: parent.width
+        height: 40
+        color: "#1F1F1F"
+
+        Row {
+            anchors.right: parent.right
+            Button {
+                width: 45
+                height: 35
+                background: Rectangle {
+                    color: "#FF4500"
+                    radius: 4
+                }
+
+                Image {
+                    source: closeIcon
+                    anchors.centerIn: parent
+                    width: closeIconWidth
+                    height: closeIconHeight
+                    fillMode: Image.PreserveAspectFit
+                }
+
+                onClicked: {
+                    exportDialog.close();  // Close only the dialog, not the entire application
+                }
+            }
+        }
+    }
+}
+
+
 
 
 
@@ -1393,19 +1452,57 @@ Rectangle {
     }
 }
 
+Rectangle {
+    id: rectangle
+    x: 163
+    y: 120
+    width: 614
+    height: 335
+    color: "#1F1F1F"
+    border.width: 1
+    border.color: "#808080"
 
-
-
-    Rectangle {
-        id: rectangle
-        x: 163
-        y: 120
-        width: 614
-        height: 335
-        color: "#1F1F1F"
-        border.width: 1
-        border.color: "#808080"
+    MouseArea {
+        anchors.fill: parent
+        cursorShape: Qt.PointingHandCursor
+        onClicked: {
+            fileDialog.open()  // Open the file dialog when clicked
+        }
     }
+
+    Column {
+        anchors.centerIn: parent
+        spacing: 10 
+
+        Image {
+            source: "images/import.png"
+            width: 100  
+            height: 100 
+            anchors.horizontalCenter: parent.horizontalCenter  
+        }
+
+        Text {
+            text: "Click here to import media."
+            color: "white"
+            font.bold: true
+            anchors.horizontalCenter: parent.horizontalCenter  
+        }
+    }
+
+    FileDialog {
+        id: fileDialog
+        title: "Select Media File"
+        nameFilters: [
+            "Supported Files (*.mp4 *.jpg *.png *.mp3)",
+            "Video Files (*.mp4)",
+            "Audio Files (*.mp3)",
+            "Image Files (*.png *.jpg)"
+                    ]
+        onAccepted: {
+            console.log("Selected file: " + fileDialog.fileUrl)  
+        }
+    }
+}
 
     Rectangle {
     id: previewwindow
