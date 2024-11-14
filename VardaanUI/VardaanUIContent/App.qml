@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Window 2.15 
-import QtQuick.Dialogs
+import QtQuick.Dialogs 
 
 
 Window {
@@ -23,6 +23,11 @@ Window {
      {
         anchors.fill: parent
         color: "#1F1F1F" 
+        Image {
+        anchors.fill: parent
+        source: "images/bg7.jpg"
+        fillMode: Image.PreserveAspectCrop  // This will ensure the image covers the entire area of the rectangle.
+    }
     }
 
     property string closeIcon: "images/close.png"
@@ -156,14 +161,14 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         spacing: 10
-        height: 60
+        height: 35
 
         
         Image {
             id: logo
             source: "images/vardaan.png" 
-            width: 130
-            height: 50
+            width: 120
+            height: 35
             fillMode: Image.PreserveAspectFit
         }
 
@@ -171,10 +176,12 @@ Rectangle {
         MenuBar {
             anchors.verticalCenter: parent.verticalCenter
             background: Color.black 
+            
 
     Menu {
     id: fileMenu
     title: qsTr("File")
+    
 
     MenuItem {
         Item {
@@ -1073,8 +1080,8 @@ Menu {
     }
 
   Button {
-    x: 1300
-    y: 10
+    x: 650
+    y: 70
     width: 80
     height: 32
     font.pixelSize: 14
@@ -1172,7 +1179,7 @@ Menu {
     anchors.left: parent.left
     anchors.right: parent.right
     height: 200 
-    spacing: 30 
+    spacing: 18 
     padding: 10 
 
     Repeater {
@@ -1349,7 +1356,6 @@ Menu {
     icon.width: 16
     icon.height: 16
 
-
     background: Rectangle {
         color: "transparent"  
         property color hoverColor: "#FF4500"  
@@ -1420,14 +1426,15 @@ Menu {
     Row {
     id: toolBar
     anchors.top: featureBar.bottom
-    anchors.leftMargin: 0 
+    anchors.leftMargin: 0
     anchors.topMargin: 269
-    anchors.horizontalCenterOffset: 0 
-    anchors.horizontalCenter: parent.horizontalCenter 
+    anchors.horizontalCenterOffset: 0
+    anchors.horizontalCenter: parent.horizontalCenter
     anchors.left: parent.left
-    anchors.right: parent.right
-    spacing: 20 
-    height: 50 
+    anchors.right: parent.right  // Ensures the row spans the entire width of the parent
+    spacing: 20
+    height: 50
+    width: parent.width  // Dynamically adjust width to match parent's width
 
     
     Button {
@@ -1673,7 +1680,7 @@ Rectangle {
     y: 120
     width: 614
     height: 335
-    color: "#1F1F1F"
+    color: "transparent"
     border.width: 1
     border.color: "#808080"
 
@@ -1725,7 +1732,7 @@ Rectangle {
     y: 51
     width: parent.width * 0.8  
     height: 369
-    color: "#1F1F1F"
+    color: "transparent"
     border.width: 1
     border.color: "#808080"
 }
@@ -1820,7 +1827,7 @@ Rectangle {
         y: 120
         width: 165
         height: 335
-        color: "#1F1F1F"
+        color: "transparent"
         border.width: 1
         border.color: "#808080"
     }
@@ -1879,7 +1886,7 @@ Rectangle {
     y: 500
     width: mainWindow.width 
     height: mainWindow.height - y  
-    color: "#1F1F1F"
+    color: "#161616"
     border.width: 1
     border.color: "#808080"
     }
@@ -1897,16 +1904,7 @@ Rectangle {
         border.width: 1
     }
 
-      Rectangle {
-        id: videotimeline
-        x: 0 
-        y: mainWindow.height - 250 
-        width: mainWindow.width 
-        height: 100
-        border.color: "#808080"
-        border.width: 1
-        color: "#202932"
-    }
+      
 
     Rectangle
     {
