@@ -1,17 +1,18 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
-Item {
+ApplicationWindow {
+    visible: true
+    width: 640
+    height: 480
+    title: "Audio Adjustments Dialog Example"
+
     Dialog {
         id: audioDialog
         title: "Audio Adjustments"
         modal: true
         width: 400
         height: 500
-        background: Rectangle {
-            color: "#1f1f1f"  
-            radius: 10
-        }
 
         contentItem: Column {
             spacing: 20
@@ -33,6 +34,7 @@ Item {
                     id: fadeInValue
                     text: fadeInSlider.value.toFixed(1)
                     width: 50
+                    validator: DoubleValidator { bottom: 0; top: 10 }
                     onTextChanged: {
                         fadeInSlider.value = parseFloat(fadeInValue.text) || 0;
                     }
@@ -54,6 +56,7 @@ Item {
                     id: fadeOutValue
                     text: fadeOutSlider.value.toFixed(1)
                     width: 50
+                    validator: DoubleValidator { bottom: 0; top: 10 }
                     onTextChanged: {
                         fadeOutSlider.value = parseFloat(fadeOutValue.text) || 0;
                     }
@@ -75,6 +78,7 @@ Item {
                     id: pitchValue
                     text: pitchSlider.value.toFixed(1)
                     width: 50
+                    validator: DoubleValidator { bottom: -12; top: 12 }
                     onTextChanged: {
                         pitchSlider.value = parseFloat(pitchValue.text) || 0;
                     }
@@ -144,6 +148,7 @@ Item {
                         id: duckingAmountValue
                         text: duckingSlider.value.toFixed(2)
                         width: 50
+                        validator: DoubleValidator { bottom: 0; top: 1 }
                         onTextChanged: {
                             duckingSlider.value = parseFloat(duckingAmountValue.text) || 0.5;
                         }
@@ -152,33 +157,29 @@ Item {
             }
         }
 
-        // Customize the buttons
         standardButtons: Dialog.Ok | Dialog.Cancel
 
-        Button {
-            id: okButton
-            text: "OK"
-            style: ButtonStyle {
+        footer: Row {
+            spacing: 10
+            padding: 10
+            Button {
+                text: "OK"
+                onClicked: audioDialog.close()
+                width: 80
                 background: Rectangle {
-                    color: "#ff4500"  
+                    color: "lightblue"
                     radius: 5
                 }
-                padding: 10
             }
-            onClicked: audioDialog.accept()
-        }
-
-        Button {
-            id: cancelButton
-            text: "Cancel"
-            style: ButtonStyle {
-                border: Border {
-                    width: 2
-                    color: "#ff4500"  
+            Button {
+                text: "Cancel"
+                onClicked: audioDialog.close()
+                width: 80
+                background: Rectangle {
+                    color: "lightgray"
+                    radius: 5
                 }
-                padding: 10
             }
-            onClicked: audioDialog.reject()
         }
     }
 
