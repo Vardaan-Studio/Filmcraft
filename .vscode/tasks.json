@@ -4,7 +4,7 @@
         {
             "label": "Run Customspeed QML",
             "type": "shell",
-            "command": "qmlscene D:\\Vardan_studio\\Mission-Vardaan-Studio\\VardaanUI\\VardaanUIContent\\Export_Media.qml",
+            "command": "qmlscene D:\\Vardan_studio\\Mission-Vardaan-Studio\\VardaanUI\\VardaanUIContent\\Export_Settings.qml",
             "group": {
                 "kind": "build",
                 "isDefault": true

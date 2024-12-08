@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
-Window {
+ApplicationWindow {
     visible: true
     width: 600
     height: 500
@@ -9,37 +9,42 @@ Window {
     color: "#1f1f1f"
 
     Column {
-        anchors.fill: parent
         spacing: 20
         padding: 20
+        anchors.fill: parent
 
         // Quality Selection
+        Label {
+            text: "Select Quality:"
+            color: "#FFFFFF"
+        }
+
+        ButtonGroup {
+            id: qualityGroup
+        }
+
         Row {
             spacing: 20
-            Label {
-                text: "Quality:"
-                color: "#FF4500"
-                width: 100
-            }
-            CheckBox {
+            RadioButton {
                 text: "Best"
-                checked: false
+                ButtonGroup.group: qualityGroup
             }
-            CheckBox {
+            RadioButton {
                 text: "Better"
-                checked: true
+                checked: true // Default selection
+                ButtonGroup.group: qualityGroup
             }
-            CheckBox {
+            RadioButton {
                 text: "Good"
-                checked: false
+                ButtonGroup.group: qualityGroup
             }
         }
 
         // Video Settings
         Label {
             text: "Video Settings"
+            color: "#FFFFFF"
             font.bold: true
-            color: "#FF4500"
         }
 
         Column {
@@ -49,14 +54,31 @@ Window {
                 spacing: 20
                 Label {
                     text: "Encoder:"
-                    color: "#FF4500"
+                    color: "#FFFFFF"
                     width: 150
                 }
                 ComboBox {
-                    model: ["H.264", "MPEG-4 (Disabled)"]
+                    id: encoderComboBox
+                    model: ["H.264", "MPEG-4 (Coming Soon)"]  // Modified model
                     currentIndex: 0
                     width: 300
-                    enabled: currentIndex !== 1 // MPEG-4 disabled
+
+                    delegate: ItemDelegate {
+                        width: parent.width
+                        text: modelData
+                        enabled: modelData !== "MPEG-4 (Coming Soon)" // Disable "MPEG-4" option
+                        background: Rectangle {
+                            color: enabled ? "transparent" : "#808080"  // Gray background for disabled
+                            radius: 5
+                            border.color: "#AAAAAA"
+                            border.width: 1
+                        }
+                        contentItem: Text {
+                            text: modelData
+                            color: enabled ? "#000000" : "#AAAAAA"  // Text color for disabled item
+                            anchors.centerIn: parent
+                        }
+                    }
                 }
             }
 
@@ -64,19 +86,18 @@ Window {
                 spacing: 20
                 Label {
                     text: "Resolution:"
-                    color: "#FF4500"
+                    color: "#FFFFFF"
                     width: 150
                 }
                 ComboBox {
+                    id: resolutionComboBox
                     model: ["352x288", "640x480", "720x480", "720x576", "1280x720", "1440x1080", "1920x1080", "3840x2160", "Custom"]
                     currentIndex: 0
                     width: 300
-                }
-                Button {
-                    text: "Set Custom"
-                    enabled: false // Enable only if "Custom" is selected
-                    onClicked: {
-                        customResolutionDialog.open()
+                    onActivated: {
+                        if (currentIndex === 8) { // Custom selected
+                            customResolutionDialog.open()
+                        }
                     }
                 }
             }
@@ -85,7 +106,7 @@ Window {
                 spacing: 20
                 Label {
                     text: "Frame Rate:"
-                    color: "#FF4500"
+                    color: "#FFFFFF"
                     width: 150
                 }
                 ComboBox {
@@ -99,20 +120,19 @@ Window {
                 spacing: 20
                 Label {
                     text: "Bit Rate:"
-                    color: "#FF4500"
+                    color: "#FFFFFF"
                     width: 150
                 }
-                Slider {
-                    id: videoBitRateSlider
-                    from: 384
-                    to: 1500
-                    stepSize: 1
-                    value: 768
+                ComboBox {
+                    id: videoBitRateComboBox
+                    model: ["384 kbps", "512 kbps", "768 kbps", "900 kbps", "1000 kbps", "1500 kbps", "Custom"]
+                    currentIndex: 3
                     width: 300
-                }
-                Label {
-                    text: videoBitRateSlider.value + " kbps"
-                    color: "#FF4500"
+                    onActivated: {
+                        if (currentIndex === 6) { // Custom selected
+                            customBitRateDialog.open()
+                        }
+                    }
                 }
             }
         }
@@ -120,8 +140,8 @@ Window {
         // Audio Settings
         Label {
             text: "Audio Settings"
+            color: "#FFFFFF"
             font.bold: true
-            color: "#FF4500"
         }
 
         Column {
@@ -131,14 +151,13 @@ Window {
                 spacing: 20
                 Label {
                     text: "Channel:"
-                    color: "#FF4500"
+                    color: "#FFFFFF"
                     width: 150
                 }
                 ComboBox {
-                    model: ["Mono", "Stereo", "5.1 Surround Sound (Disabled)"]
+                    model: ["Mono", "Stereo", "5.1 Surround Sound"]
                     currentIndex: 0
                     width: 300
-                    enabled: currentIndex !== 2 // Disable 5.1 Surround Sound
                 }
             }
 
@@ -146,7 +165,7 @@ Window {
                 spacing: 20
                 Label {
                     text: "Sample Rate:"
-                    color: "#FF4500"
+                    color: "#FFFFFF"
                     width: 150
                 }
                 ComboBox {
@@ -160,37 +179,20 @@ Window {
                 spacing: 20
                 Label {
                     text: "Bit Rate:"
-                    color: "#FF4500"
+                    color: "#FFFFFF"
                     width: 150
                 }
-                Slider {
-                    id: audioBitRateSlider
-                    from: 96
-                    to: 192
-                    stepSize: 1
-                    value: 128
+                ComboBox {
+                    id: audioBitRateComboBox
+                    model: ["96 kbps", "128 kbps", "192 kbps", "Custom"]
+                    currentIndex: 1
                     width: 300
+                    onActivated: {
+                        if (currentIndex === 3) { // Custom selected
+                            customBitRateDialog.open()
+                        }
+                    }
                 }
-                Label {
-                    text: audioBitRateSlider.value + " kbps"
-                    color: "#FF4500"
-                }
-            }
-        }
-
-        // GPU Acceleration
-        Label {
-            text: "Export Media"
-            font.bold: true
-            color: "#FF4500"
-        }
-        Row {
-            spacing: 20
-            CheckBox {
-                id: gpuAccelerationCheckbox
-                text: "Enable GPU Accelerated video encoding"
-                checked: false
-                
             }
         }
 
@@ -204,12 +206,14 @@ Window {
                 width: 120
                 height: 40
                 background: Rectangle {
-                    color: "#FF4500"
+                    border.color: "#FF4500"
+                    border.width: 2
+                    color: "#FFFFFF"
                     radius: 5
                 }
                 contentItem: Text {
                     text: "CANCEL"
-                    color: "#FFFFFF"
+                    color: "#FF4500"
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
@@ -228,20 +232,15 @@ Window {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                 }
-            }
-            Button {
-                text: "DEFAULT"
-                width: 120
-                height: 40
-                background: Rectangle {
-                    color: "#FF4500"
-                    radius: 5
-                }
-                contentItem: Text {
-                    text: "DEFAULT"
-                    color: "#FFFFFF"
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
+                MouseArea {
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onEntered: {
+                        parent.scale = 1.1
+                    }
+                    onExited: {
+                        parent.scale = 1.0
+                    }
                 }
             }
         }
@@ -271,8 +270,38 @@ Window {
             Button {
                 text: "OK"
                 onClicked: {
-                    // Process custom resolution
+                    resolutionComboBox.model[8] = customWidth.text + "x" + customHeight.text
                     customResolutionDialog.close()
+                }
+            }
+        }
+    }
+
+    // Custom Bit Rate Dialog
+    Dialog {
+        id: customBitRateDialog
+        modal: true
+        title: "Set Custom Bit Rate"
+
+        Column {
+            spacing: 10
+            padding: 10
+
+            Row {
+                spacing: 10
+                Label { text: "Bit Rate:" }
+                TextField { id: customBitRate; placeholderText: "e.g. 1024" }
+            }
+
+            Button {
+                text: "OK"
+                onClicked: {
+                    if (videoBitRateComboBox.currentIndex === 6) {
+                        videoBitRateComboBox.model[6] = customBitRate.text + " kbps"
+                    } else if (audioBitRateComboBox.currentIndex === 3) {
+                        audioBitRateComboBox.model[3] = customBitRate.text + " kbps"
+                    }
+                    customBitRateDialog.close()
                 }
             }
         }
