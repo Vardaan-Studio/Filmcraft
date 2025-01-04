@@ -1,3 +1,0 @@
-E:/Mission-Vardaan-Studio/Vardaancode/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/MissionVardaanStudio.dir
-E:/Mission-Vardaan-Studio/Vardaancode/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-E:/Mission-Vardaan-Studio/Vardaancode/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir

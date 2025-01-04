@@ -1,10 +1,12 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
-Item {
+ApplicationWindow {
     width: 600
     height: 500
     visible: true
+    title: "Export Window"
+    color: "#1f1f1f"
 
     Column {
         anchors.centerIn: parent
@@ -206,7 +208,9 @@ Item {
                             color: "#ffffff"
                             anchors.centerIn: parent
                         }
+                       
                     }
+                    
 
                     Button {
                         width: 100

@@ -1,0 +1,43 @@
+<RCC>
+    <qresource prefix="/">
+
+        <!-- UI Files-->
+        <file>ui/App.qml</file>
+        <file>ui/AudioAdjust.qml</file>
+        <file>ui/Chromakey.qml</file>
+        <file>ui/Crop.qml</file>
+        <file>ui/Customspeed.qml</file>
+        <file>ui/Export_Media.qml</file>
+        <file>ui/Export_Media_Settings.qml</file>
+
+        <!-- Assets-->
+        <file>ui/images/bg7.jpg</file>
+        <file>ui/images/camera.png</file>
+        <file>ui/images/close-white.png</file>
+        <file>ui/images/close.png</file>
+        <file>ui/images/color-palette.png</file>
+        <file>ui/images/crop.png</file>
+        <file>ui/images/delete.png</file>
+        <file>ui/images/download-speed.png</file>
+        <file>ui/images/effects.png</file>
+        <file>ui/images/exchange.png</file>
+        <file>ui/images/forward.png</file>
+        <file>ui/images/full-screen.png</file>
+        <file>ui/images/fullscreen.png</file>
+        <file>ui/images/high-volume.png</file>
+        <file>ui/images/import.png</file>
+        <file>ui/images/magic-wand.png</file>
+        <file>ui/images/maximise-white.png</file>
+        <file>ui/images/maximised-white.png</file>
+        <file>ui/images/minimize-white.png</file>
+        <file>ui/images/pause.png</file>
+        <file>ui/images/soundtrack.png</file>
+        <file>ui/images/step-back.png</file>
+        <file>ui/images/step-forward.png</file>
+        <file>ui/images/stop.png</file>
+        <file>ui/images/text.png</file>
+        <file>ui/images/undo.png</file>
+        <file>ui/images/vardaan.png</file>
+
+    </qresource>
+</RCC>

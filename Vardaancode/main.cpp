@@ -1,17 +1,15 @@
-
-#include <QGuiApplication>
+#include <QApplication>
 #include <QQmlApplicationEngine>
 
-// Include the generated QRC file
-#include "resources.qrc" // Include your resource file
-
-int main(int argc, char *argv[]) {
-    QGuiApplication app(argc, argv);
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/Main.qml"))); // Ensure this matches your QML file name
-    if (engine.rootObjects().isEmpty())
-        return -1;
+    engine.load(QUrl(QStringLiteral("qrc:/ui/App.qml")));  // This should be loaded only once
+    if (engine.rootObjects().isEmpty()) {
+        return -1;  // Exit if the QML file cannot be loaded
+    }
 
-    return app.exec();
+    return a.exec();
 }

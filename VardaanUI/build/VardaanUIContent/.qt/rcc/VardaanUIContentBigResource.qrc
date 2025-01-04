@@ -1,10 +1,10 @@
 <RCC>
   <qresource prefix="/qt/qml/VardaanUIContent">
+    <file alias="images/bg7.jpg">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/bg7.jpg</file>
     <file alias="images/bg3.jpg">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/bg3.jpg</file>
+    <file alias="images/bg5.jpg">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/bg5.jpg</file>
     <file alias="images/bg1.jpg">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/bg1.jpg</file>
     <file alias="images/bg2.jpg">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/bg2.jpg</file>
-    <file alias="images/bg5.jpg">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/bg5.jpg</file>
-    <file alias="images/bg7.jpg">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUIContent/images/bg7.jpg</file>
   </qresource>
 </RCC>
 

@@ -26,7 +26,7 @@ Window {
         Image {
         anchors.fill: parent
         source: "images/bg7.jpg"
-        fillMode: Image.PreserveAspectCrop  // This will ensure the image covers the entire area of the rectangle.
+        fillMode: Image.PreserveAspectCrop  
     }
     }
 
@@ -636,12 +636,15 @@ Rectangle {
         title: "Video"
         
         MenuItem {
-            text: "Crop & Zoom"
-            Shortcut {
-                sequence: "Alt+C"
-                onActivated: console.log("Crop & Zoom Triggered") 
-            }
+    text: "Crop & Zoom"
+    Shortcut {
+        sequence: "Alt+C"
+        onActivated: {
+            console.log("Crop & Zoom Triggered")
         }
+    }
+}
+
 
         MenuItem {
             text: "Crop to Fit"
@@ -1100,6 +1103,7 @@ Menu {
     }
 
     background: Rectangle {
+        id: export_Media
         width: parent.width
         height: parent.height
         radius: 15 
@@ -1130,6 +1134,13 @@ Menu {
         id: loaderexport
         source: "Export_Media.qml"
         anchors.fill: parent 
+        onLoaded: {
+            loaderexport.item.cancelClicked.connect(closeDialog)
+        }
+    }
+
+    function closeDialog() {
+        exportDialog.close() // Closes the dialog when the CANCEL button is clicked
     }
 
     Rectangle {

@@ -1,8 +1,8 @@
 <RCC>
   <qresource prefix="/qt/qml/VardaanUI/">
     <file alias="EventListModel.qml">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUI/EventListModel.qml</file>
-    <file alias="Constants.qml">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUI/Constants.qml</file>
     <file alias="EventListSimulator.qml">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUI/EventListSimulator.qml</file>
+    <file alias="Constants.qml">E:/Mission-Vardaan-Studio/VardaanUI/VardaanUI/Constants.qml</file>
   </qresource>
 </RCC>
 

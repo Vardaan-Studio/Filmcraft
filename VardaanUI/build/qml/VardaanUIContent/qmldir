@@ -4,10 +4,10 @@ optional plugin VardaanUIContentplugin
 classname VardaanUIContentPlugin
 typeinfo VardaanUIContent.qmltypes
 prefer :/qt/qml/VardaanUIContent/
-Screen01 1.0 Screen01.ui.qml
-Customspeed 1.0 Customspeed.qml
-Export_Media 1.0 Export_Media.qml
 AudioAdjust 1.0 AudioAdjust.qml
-App 1.0 App.qml
+Export_Media 1.0 Export_Media.qml
 Chromakey 1.0 Chromakey.qml
+Screen01 1.0 Screen01.ui.qml
+App 1.0 App.qml
+Customspeed 1.0 Customspeed.qml
 

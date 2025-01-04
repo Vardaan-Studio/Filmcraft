@@ -309,59 +309,71 @@ QT_ADDITIONAL_PACKAGES_PREFIX_PATH:STRING=
 
 QT_QMAKE_TARGET_MKSPEC:STRING=win32-g++
 
+//The directory containing a CMake configuration file for Qt6Concurrent.
+Qt6Concurrent_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6Concurrent
+
 //The directory containing a CMake configuration file for Qt6CoreTools.
-Qt6CoreTools_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6CoreTools
+Qt6CoreTools_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6CoreTools
 
 //The directory containing a CMake configuration file for Qt6Core.
-Qt6Core_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Core
+Qt6Core_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6Core
 
 //The directory containing a CMake configuration file for Qt6EntryPointPrivate.
-Qt6EntryPointPrivate_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6EntryPointPrivate
+Qt6EntryPointPrivate_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6EntryPointPrivate
+
+//The directory containing a CMake configuration file for Qt6ExamplesAssetDownloaderPrivate.
+Qt6ExamplesAssetDownloaderPrivate_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6ExamplesAssetDownloaderPrivate
 
 //The directory containing a CMake configuration file for Qt6GuiTools.
-Qt6GuiTools_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6GuiTools
+Qt6GuiTools_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6GuiTools
 
 //The directory containing a CMake configuration file for Qt6Gui.
-Qt6Gui_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Gui
+Qt6Gui_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6Gui
 
 //The directory containing a CMake configuration file for Qt6Network.
-Qt6Network_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Network
+Qt6Network_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6Network
 
 //The directory containing a CMake configuration file for Qt6OpenGL.
-Qt6OpenGL_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6OpenGL
+Qt6OpenGL_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6OpenGL
+
+//The directory containing a CMake configuration file for Qt6QmlAssetDownloader.
+Qt6QmlAssetDownloader_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6QmlAssetDownloader
+
+//The directory containing a CMake configuration file for Qt6QmlCompilerPlusPrivateTools.
+Qt6QmlCompilerPlusPrivateTools_DIR:PATH=Qt6QmlCompilerPlusPrivateTools_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for Qt6QmlCompilerPlusPrivate.
 Qt6QmlCompilerPlusPrivate_DIR:PATH=Qt6QmlCompilerPlusPrivate_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for Qt6QmlIntegration.
-Qt6QmlIntegration_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6QmlIntegration
+Qt6QmlIntegration_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6QmlIntegration
 
 //The directory containing a CMake configuration file for Qt6QmlMeta.
-Qt6QmlMeta_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6QmlMeta
+Qt6QmlMeta_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6QmlMeta
 
 //The directory containing a CMake configuration file for Qt6QmlModels.
-Qt6QmlModels_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6QmlModels
+Qt6QmlModels_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6QmlModels
 
 //The directory containing a CMake configuration file for Qt6QmlTools.
-Qt6QmlTools_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6QmlTools
+Qt6QmlTools_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6QmlTools
 
 //The directory containing a CMake configuration file for Qt6QmlWorkerScript.
-Qt6QmlWorkerScript_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6QmlWorkerScript
+Qt6QmlWorkerScript_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6QmlWorkerScript
 
 //The directory containing a CMake configuration file for Qt6Qml.
-Qt6Qml_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Qml
+Qt6Qml_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6Qml
 
 //The directory containing a CMake configuration file for Qt6QuickTools.
-Qt6QuickTools_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6QuickTools
+Qt6QuickTools_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6QuickTools
 
 //The directory containing a CMake configuration file for Qt6Quick.
-Qt6Quick_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Quick
+Qt6Quick_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6Quick
 
 //The directory containing a CMake configuration file for Qt6ZlibPrivate.
-Qt6ZlibPrivate_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6ZlibPrivate
+Qt6ZlibPrivate_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6ZlibPrivate
 
 //The directory containing a CMake configuration file for Qt6.
-Qt6_DIR:PATH=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6
+Qt6_DIR:PATH=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6
 
 //Value Computed by CMake
 VardaanUIApp_BINARY_DIR:STATIC=E:/Mission-Vardaan-Studio/VardaanUI/build
@@ -624,6 +636,8 @@ QT_FEATURE_avx512vbmi2:INTERNAL=ON
 QT_FEATURE_avx512vl:INTERNAL=ON
 //Qt feature: backtrace (from target Qt6::Core)
 QT_FEATURE_backtrace:INTERNAL=OFF
+//Qt feature: broken_threadlocal_dtors (from target Qt6::Core)
+QT_FEATURE_broken_threadlocal_dtors:INTERNAL=ON
 //Qt feature: brotli (from target Qt6::Network)
 QT_FEATURE_brotli:INTERNAL=OFF
 //Qt feature: cborstreamreader (from target Qt6::Core)
@@ -1311,5 +1325,5 @@ _CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=FALSE
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/VardaanUIApp
-__qt_qml_macros_module_base_dir:INTERNAL=C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Qml
+__qt_qml_macros_module_base_dir:INTERNAL=C:/Qt/6.8.1/mingw_64/lib/cmake/Qt6Qml
 
