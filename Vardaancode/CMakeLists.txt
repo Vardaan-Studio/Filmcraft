@@ -20,6 +20,11 @@ set(PROJECT_SOURCES
         qml.qrc
 )
 
+include_directories("C:/ffmpeg/include")
+link_directories("C:/ffmpeg/lib")
+
+set(FFMPEG_LIBRARIES avcodec avformat avutil swscale)
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Vardaancode
         MANUAL_FINALIZATION
@@ -43,7 +48,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(Vardaancode PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::Qml)
+target_link_libraries(Vardaancode PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::Qml ${FFMPEG_LIBRARIES})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

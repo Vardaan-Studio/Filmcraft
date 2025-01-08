@@ -1,15 +1,21 @@
 #include <QApplication>
 #include <QQmlApplicationEngine>
+#include <iostream>
 
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
+extern "C" {
+#include <libavcodec/avcodec.h>
+#include <libavutil/version.h>
+}
+
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+    std::cout << "FFmpeg Version: " << av_version_info() << std::endl;
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/ui/App.qml")));  // This should be loaded only once
+    engine.load(QUrl(QStringLiteral("qrc:/ui/App.qml")));
     if (engine.rootObjects().isEmpty()) {
-        return -1;  // Exit if the QML file cannot be loaded
+        return -1;
     }
 
-    return a.exec();
+    return app.exec();
 }
