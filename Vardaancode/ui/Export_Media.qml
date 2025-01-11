@@ -1,11 +1,11 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
-ApplicationWindow {
+Item {
+    id: export_Media
     width: 600
     height: 500
     visible: true
-    title: "Export Window"
     color: "#1f1f1f"
 
     Column {
